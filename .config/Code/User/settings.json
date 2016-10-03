@@ -1,0 +1,18 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "editor.fontFamily": "'Roboto Mono'",
+    "editor.fontSize": 12,
+    "editor.rulers": [80],
+    "editor.renderIndentGuides": true,
+    "editor.insertSpaces": false,
+
+    "haxe.displayConfigurations": [
+        ["display.hxml"],
+        ["build.hxml"]
+    ],
+
+    "TodoParser": {
+    "include": ["hx"],
+    "markers": ["TODO","FIXME"]
+    }
+}
