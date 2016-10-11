@@ -6,6 +6,8 @@
     "editor.renderIndentGuides": true,
     "editor.insertSpaces": false,
 
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+
     "haxe.displayConfigurations": [
         ["display.hxml"],
         ["build.hxml"]

@@ -1,0 +1,7 @@
+[user]
+	name = Jack Magnus
+	email = jackm@minobar.com
+[core]
+	editor = vim
+[alias]
+	lg = log --all --decorate --oneline --graph
