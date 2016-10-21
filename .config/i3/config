@@ -162,15 +162,13 @@ bar {
 
 bindsym $mod+Tab exec i3-msg move workspace to output right
 
-# start applications
-exec_always unclutter
-exec compton 
+# start 'system' applications 
+exec_always unclutter # hide mouse pointer
+exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
+exec compton # compositor for enabling alpha shiz
  
 # mouse pointer speed
 exec xset m 0 0
-
-# set background
-exec_always feh --bg-scale ~/Pictures/Wallpapers/Homecoming_Kuldar_Leement_final_HD_edited.jpg 
 
 # remove top bar 
 for_window [class="^.*"] border pixel 1
