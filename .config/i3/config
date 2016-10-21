@@ -169,11 +169,11 @@ set $clr-ia-txt  	#676E7D
 set $clr-urgent-bg  #E53935
 
 # colors
-# class                 border  	backgr. 	text    	indicator 	child_border
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#2e9ef4   	#285577
-client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	#5f676a 
-client.unfocused        #333333 	#222222 	#888888 	#292d2e   	#222222
-client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	#900000
+# class                 border  	backgr. 	text    	indicator 	
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	$clr-txt    	
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	
+client.unfocused        #333333 	#222222 	#888888 	#292d2e   	
+client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
 
 set $i3bar-clr-bg  		#2f343f
 set $i3bar-clr-ia-bg    #2f343f
@@ -187,7 +187,7 @@ bar {
 		separator #757575
 
 		#                  border             	background         	text
-		focused_workspace  $i3bar-clr-bg      	$i3bar-clr-bg      	$clr-txt
+		focused_workspace  $clr-ia-txt      	$i3bar-clr-bg      	$clr-txt
 		active_workspace   $i3bar-clr-bg      	$i3bar-clr-bg      	$clr-txt
 		inactive_workspace $i3bar-clr-ia-bg  	$i3bar-clr-bg  		$clr-ia-txt
 		urgent_workspace   $clr-urgent-bg    	$clr-urgent-bg    	$clr-txt 
