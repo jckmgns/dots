@@ -169,8 +169,8 @@ set $clr-ia-txt  	#676E7D
 set $clr-urgent-bg  #E53935
 
 # colors
-# class                 border  	backgr. 	text    	indicator 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	$clr-txt    	
+# class                 border  	backgr. 	text    	indicator	child_border 	
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	$clr-txt    	$clr-ia-txt
 client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	
 client.unfocused        #333333 	#222222 	#888888 	#292d2e   	
 client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
@@ -203,7 +203,7 @@ bindsym $mod+Tab exec i3-msg move workspace to output right
 # start 'system' applications 
 exec_always unclutter # hide mouse pointer
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
-exec compton # compositor for enabling alpha shiz
+exec compton --backend glx --paint-on-overlay --vsync opengl-swc  # compositor for enabling alpha shiz
  
 # mouse pointer speed
 exec xset m 0 0
