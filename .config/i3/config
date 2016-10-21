@@ -92,29 +92,41 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+# workspace variables
+set $workspace_1 "1: WWW"
+set $workspace_2 "2: Terminal"
+set $workspace_3 "3: Editor" 
+set $workspace_4 "4"
+set $workspace_5 "5"
+set $workspace_6 "6"
+set $workspace_7 "7"
+set $workspace_8 "8"
+set $workspace_9 "9"
+set $workspace_10 "10: System"
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $workspace_1
+bindsym $mod+2 workspace $workspace_2
+bindsym $mod+3 workspace $workspace_3
+bindsym $mod+4 workspace $workspace_4
+bindsym $mod+5 workspace $workspace_5
+bindsym $mod+6 workspace $workspace_6
+bindsym $mod+7 workspace $workspace_7
+bindsym $mod+8 workspace $workspace_8
+bindsym $mod+9 workspace $workspace_9
+bindsym $mod+0 workspace $workspace_10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $workspace_1
+bindsym $mod+Shift+2 move container to workspace $workspace_2
+bindsym $mod+Shift+3 move container to workspace $workspace_3
+bindsym $mod+Shift+4 move container to workspace $workspace_4
+bindsym $mod+Shift+5 move container to workspace $workspace_5
+bindsym $mod+Shift+6 move container to workspace $workspace_6
+bindsym $mod+Shift+7 move container to workspace $workspace_7
+bindsym $mod+Shift+8 move container to workspace $workspace_8
+bindsym $mod+Shift+9 move container to workspace $workspace_9
+bindsym $mod+Shift+0 move container to workspace $workspace_10
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -149,11 +161,37 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# color variables
+set $clr-bg 	    #2f343f
+set $clr-ia-bg   	#2f343f
+set $clr-txt        #f3f4f5
+set $clr-ia-txt  	#676E7D
+set $clr-urgent-bg  #E53935
+
+# colors
+# class                 border  	backgr. 	text    	indicator 	child_border
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#2e9ef4   	#285577
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	#5f676a 
+client.unfocused        #333333 	#222222 	#888888 	#292d2e   	#222222
+client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	#900000
+
+set $i3bar-clr-bg  		#2f343f
+set $i3bar-clr-ia-bg    #2f343f
+
+# bar
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        tray_output primary
+    status_command i3blocks -c ~/.config/i3/i3blocks.conf
+	tray_output primary
+	colors {
+		background $i3bar-clr-bg 
+		separator #757575
+
+		#                  border             	background         	text
+		focused_workspace  $i3bar-clr-bg      	$i3bar-clr-bg      	$clr-txt
+		active_workspace   $i3bar-clr-bg      	$i3bar-clr-bg      	$clr-txt
+		inactive_workspace $i3bar-clr-ia-bg  	$i3bar-clr-bg  		$clr-ia-txt
+		urgent_workspace   $clr-urgent-bg    	$clr-urgent-bg    	$clr-txt 
+	}
 }
 
 # CUSTOM
