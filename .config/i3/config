@@ -35,12 +35,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start dmenu (a program launcher)
+# start rofi --show-run
 bindsym $mod+d exec rofi -show run 
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -128,6 +124,22 @@ bindsym $mod+Shift+8 move container to workspace $workspace_8
 bindsym $mod+Shift+9 move container to workspace $workspace_9
 bindsym $mod+Shift+0 move container to workspace $workspace_10
 
+# output variables
+set $monitor_1 DVI-D-0
+set $monitor_2 HDMI-0
+
+# open workspaces on specific screens
+workspace $workspace_1 output $monitor_2
+workspace $workspace_2 output $monitor_1
+workspace $workspace_3 output $monitor_1
+workspace $workspace_4 output $monitor_1
+workspace $workspace_5 output $monitor_1
+workspace $workspace_6 output $monitor_1
+workspace $workspace_7 output $monitor_1
+workspace $workspace_8 output $monitor_1
+workspace $workspace_9 output $monitor_1
+workspace $workspace_10 output $monitor_1
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -162,11 +174,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # color variables
-set $clr-bg 	    #2f343f
+set $clr-bg 		#2f343f
 set $clr-ia-bg   	#2f343f
-set $clr-txt        #f3f4f5
+set $clr-txt 		#f3f4f5
 set $clr-ia-txt  	#676E7D
-set $clr-urgent-bg  #E53935
+set $clr-urgent-bg 	#E53935
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
@@ -181,7 +193,7 @@ set $i3bar-clr-ia-bg    #2f343f
 # bar
 bar {
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
-	tray_output primary
+#	tray_output primary
 	colors {
 		background $i3bar-clr-bg 
 		separator #757575
@@ -196,15 +208,17 @@ bar {
 
 # CUSTOM
 
-# move workspace to right 
+# move current workspace to other monitor 
 
 bindsym $mod+Tab exec i3-msg move workspace to output right
 
-# start 'system' applications 
+# system-apps 
 exec_always unclutter # hide mouse pointer
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
-exec compton --backend glx --paint-on-overlay --vsync opengl-swc  # compositor for enabling alpha shiz
- 
+# exec compton --backend glx --paint-on-overlay --vsync opengl-swc  # compositor 
+exec compton --backend glx --vsync opengl-swc # compositor
+exec nm-applet # network management applet
+
 # mouse pointer speed
 exec xset m 0 0
 
