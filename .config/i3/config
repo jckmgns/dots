@@ -208,6 +208,9 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
 exec compton --backend glx --vsync opengl-swc # compositor
 # exec --no-startup-id dbus-launch nm-applet # network management applet
 
+# custom application
+exec gnome-terminal 
+
 # app assignments
 assign [class="chromium-browser"] $workspace_1
 assign [class="discord"] $workspace_1
