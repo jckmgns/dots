@@ -85,8 +85,8 @@ set $workspace_5 "5"
 set $workspace_6 "6"
 set $workspace_7 "7"
 set $workspace_8 "8"
-set $workspace_9 "9: Audio"
-set $workspace_10 "10: System"
+set $workspace_9 "9"
+set $workspace_10 "10: Music"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace_1
@@ -208,6 +208,14 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
 exec compton --backend glx --vsync opengl-swc # compositor
 # exec --no-startup-id dbus-launch nm-applet # network management applet
 
+# app assignments
+assign [class="chromium-browser"] $workspace_1
+assign [class="discord"] $workspace_1
+
+assign [class="Code"] $workspace_3
+assign [class="Steam"] $workspace_4
+assign [class="Audacious"] $workspace_10
+
 # mouse pointer speed
 exec xset m 0 0
 
@@ -217,9 +225,9 @@ exec xset m 0 0
 # disable mouse focus on hover
 # focus_follows_mouse no
 
-# remove top bar 
-for_window [class="^.*"] border pixel 1
+# remove top bar and make border fat 
+for_window [class="^.*"] border pixel 2
 
 # gaps
-gaps inner 6
+gaps inner 0
 gaps outer 0 
