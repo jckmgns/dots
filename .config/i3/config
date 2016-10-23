@@ -204,7 +204,6 @@ bindsym $mod+Tab exec i3-msg move workspace to output right
 # system-apps 
 # exec_always unclutter # hide mouse pointer
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
-# exec compton --backend glx --paint-on-overlay --vsync opengl-swc  # compositor 
 exec compton --backend glx --vsync opengl-swc # compositor
 # exec --no-startup-id dbus-launch nm-applet # network management applet
 
