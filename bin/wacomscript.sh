@@ -1,5 +1,6 @@
 #!/bin/bash
 echo "setting up graphics tablet!"
-xsetwacom set 14 Touch off
-xsetwacom set 10 MapToOutput 1920x1080+1920+0
+xsetwacom set 'Wacom Intuos Pro L Finger touch' Touch off
+xsetwacom set 'Wacom Intuos Pro L Pen cursor' MapToOutput 1920x1080+1920+0
+
 
