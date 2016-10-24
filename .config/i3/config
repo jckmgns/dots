@@ -198,7 +198,6 @@ exec_always ~/bin/wacomscript.sh
 
 # custom applications
 exec --no-startup-id gnome-terminal 
-exec --no-startup-id audacious 
 exec --no-startup-id thunderbird 
 
 # app assignments
