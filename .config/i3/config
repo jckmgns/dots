@@ -219,8 +219,4 @@ exec xset m 0 0
 # focus_follows_mouse no
 
 # remove top bar and make border fat 
-for_window [class="^.*"] border pixel 2
-
-# gaps
-gaps inner 0
-gaps outer 0 
+for_window [class="^.*"] border pixel 1
