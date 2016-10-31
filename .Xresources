@@ -1,4 +1,4 @@
-! ------------------------------------------------------------
+! -----------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------
 rofi.color-enabled: true
@@ -13,11 +13,11 @@ rofi.color-urgent: #383c4a, #e53935, #383c4a, #e53935, #ffffff
 ! ------------------------------------------------------------
 
 ! set font
-URxvt.font: 		xft:Roboto Mono:pixelsize=12:antialias=true
+URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
 !  transparency
 URxvt.transparent: 	true
-URxvt.shading:		15				 
+URxvt.shading:		10				 
 
 URxvt.scrollBar:	false
 
