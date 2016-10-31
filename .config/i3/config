@@ -197,7 +197,6 @@ exec compton --backend glx --vsync opengl-swc # compositor
 exec_always ~/bin/wacomscript.sh
 
 # custom applications
-exec --no-startup-id gnome-terminal 
 exec --no-startup-id thunderbird 
 
 # app assignments
