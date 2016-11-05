@@ -156,12 +156,12 @@ set $clr-urgent-bg 	#E53935
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	$clr-txt    	$clr-ia-txt
-client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	
-client.unfocused        #333333 	#222222 	#888888 	#292d2e   	
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#ffffff    	#888888
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	#444444
+client.unfocused        #333333 	#222222 	#888888 	#292d2e  	#222222 
 client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
 
-set $i3bar-clr-bg  		#2f343f
+set $i3bar-clr-bg  	#2f343f
 set $i3bar-clr-ia-bg    #2f343f
 
 # bar
@@ -218,4 +218,4 @@ exec xset m 0 0
 # focus_follows_mouse no
 
 # remove top bar and make border fat 
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
