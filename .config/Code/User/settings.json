@@ -17,4 +17,6 @@
     "include": ["hx"],
     "markers": ["TODO","FIXME"]
     }
+,
+"workbench.statusBar.visible": false
 }
