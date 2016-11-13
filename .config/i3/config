@@ -158,7 +158,7 @@ set $clr-urgent-bg 	#E53935
 # class                 border  	backgr. 	text    	indicator	child_border 	
 client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#ffffff    	#888888
 client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	#444444
-client.unfocused        #333333 	#222222 	#888888 	#292d2e  	#222222 
+client.unfocused        #333333 	#222222 	#888888 	#292d2e  	#111111
 client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
 
 set $i3bar-clr-bg  	#2f343f
@@ -199,6 +199,8 @@ exec_always ~/bin/wacomscript.sh
 # custom applications
 exec --no-startup-id thunderbird 
 
+exec mpd
+
 # app assignments
 assign [class="chromium-browser"] $workspace_1
 assign [class="discord"] $workspace_1
@@ -219,3 +221,5 @@ exec xset m 0 0
 
 # remove top bar and make border fat 
 for_window [class="^.*"] border pixel 2
+
+gaps inner 6
