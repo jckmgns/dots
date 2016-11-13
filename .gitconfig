@@ -5,3 +5,5 @@
 	editor = vim
 [alias]
 	lg = log --decorate --oneline --graph
+[merge]
+	tool = kdiff3
