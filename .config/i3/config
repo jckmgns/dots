@@ -76,7 +76,7 @@ set $workspace_6 "6"
 set $workspace_7 "7"
 set $workspace_8 "8"
 set $workspace_9 "9"
-set $workspace_10 "10: Music"
+set $workspace_10 "10: System"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace_1
