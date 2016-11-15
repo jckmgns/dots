@@ -71,12 +71,12 @@ set $workspace_1 "1: WWW"
 set $workspace_2 "2: Terminal"
 set $workspace_3 "3: Editor" 
 set $workspace_4 "4: Steam"
-set $workspace_5 "5"
+set $workspace_5 "5: Other"
 set $workspace_6 "6"
 set $workspace_7 "7"
 set $workspace_8 "8"
 set $workspace_9 "9"
-set $workspace_10 "10: System"
+set $workspace_10 "10: Music"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace_1
