@@ -10,7 +10,8 @@
 
     "haxe.displayConfigurations": [
         ["display.hxml"],
-        ["build.hxml"]
+        ["build.hxml"],
+		["project.xml.hxml"]
     ],
 
     "TodoParser": {
