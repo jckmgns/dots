@@ -19,5 +19,6 @@
     "markers": ["TODO","FIXME"]
     }
 ,
-"workbench.statusBar.visible": false
+"workbench.statusBar.visible": false,
+"workbench.activityBar.visible": true
 }

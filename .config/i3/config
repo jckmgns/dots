@@ -192,6 +192,10 @@ bindsym $mod+Prior exec mpc prev
 # start music player daemon
 exec mpd
 
+# screen time stuff
+xset -dpms # turn off display power managament signaling
+xset s 1800 900 # set timeout to 30m = 1800s
+
 # switch back to last workspace on a repeated button press
 # workspace_auto_back_and_forth yes
 
