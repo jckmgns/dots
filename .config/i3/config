@@ -193,8 +193,8 @@ bindsym $mod+Prior exec mpc prev
 exec mpd
 
 # screen time stuff
-xset dpms 1800 1800 1800 # set display power managament signaling to 30m
-xset s off # set screensaver off
+exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
+exec xset s off # set screensaver off
 
 # switch back to last workspace on a repeated button press
 # workspace_auto_back_and_forth yes
@@ -213,7 +213,7 @@ exec_always ~/bin/wacomscript.sh
 exec --no-startup-id thunderbird 
 
 # app assignments
-assign [class="chromium-browser"] $workspace_1
+assign [class="Chromium-browser"] $workspace_1
 assign [class="discord"] $workspace_1
 assign [class="Thunderbird"] $workspace_1
 
