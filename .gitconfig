@@ -7,3 +7,5 @@
 	lg = log --decorate --oneline --graph
 [merge]
 	tool = kdiff3
+[push]
+	default = matching
