@@ -152,7 +152,7 @@ set $clr-bg 		#202020
 set $clr-ia-bg   	#202020
 set $clr-txt 		#eeeeee
 set $clr-ia-txt  	#666666
-set $clr-urgent-bg 	#f95656
+set $clr-urgent-bg 	#e53935
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
