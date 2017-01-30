@@ -68,15 +68,15 @@ bindsym $mod+q focus child
 
 # workspace variables
 set $workspace_1 "1: WWW"
-set $workspace_2 "2: Terminal"
-set $workspace_3 "3: Editor" 
+set $workspace_2 "2: Chat"
+set $workspace_3 "3: Mail" 
 set $workspace_4 "4: Steam"
 set $workspace_5 "5: Other"
-set $workspace_6 "6"
-set $workspace_7 "7"
-set $workspace_8 "8"
-set $workspace_9 "9"
-set $workspace_10 "10: Music"
+set $workspace_6 "6: Other"
+set $workspace_7 "7: Other"
+set $workspace_8 "8: Other"
+set $workspace_9 "9: Editor"
+set $workspace_10 "10: Terminal"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace_1
@@ -108,8 +108,8 @@ set $monitor_2 HDMI-0
 
 # open workspaces on specific screens
 workspace $workspace_1 output $monitor_2
-workspace $workspace_2 output $monitor_1
-workspace $workspace_3 output $monitor_1
+workspace $workspace_2 output $monitor_2
+workspace $workspace_3 output $monitor_2
 workspace $workspace_4 output $monitor_1
 workspace $workspace_5 output $monitor_1
 workspace $workspace_6 output $monitor_1
@@ -148,11 +148,11 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # color variables
-set $clr-bg 		#2f343f
-set $clr-ia-bg   	#2f343f
-set $clr-txt 		#f3f4f5
-set $clr-ia-txt  	#676E7D
-set $clr-urgent-bg 	#E53935
+set $clr-bg 		#202020
+set $clr-ia-bg   	#202020
+set $clr-txt 		#dddddd
+set $clr-ia-txt  	#666666
+set $clr-urgent-bg 	#f95656
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
@@ -161,8 +161,8 @@ client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	#444444
 client.unfocused        #333333 	#222222 	#888888 	#292d2e  	#111111
 client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
 
-set $i3bar-clr-bg  	#2f343f
-set $i3bar-clr-ia-bg    #2f343f
+set $i3bar-clr-bg		#202020
+set $i3bar-clr-ia-bg    #202020
 
 # bar
 bar {
@@ -209,17 +209,17 @@ exec compton --backend glx --vsync opengl-swc # compositor
 # exec --no-startup-id dbus-launch nm-applet # network management applet
 exec_always ~/bin/wacomscript.sh
 
-# custom applications
+# custom applications / autstart
 exec --no-startup-id thunderbird 
+exec --no-startup-id i3-msg 'workspace 10: Terminal; exec urxvtcd'
 
 # app assignments
 assign [class="Chromium-browser"] $workspace_1
-assign [class="discord"] $workspace_1
-assign [class="Thunderbird"] $workspace_1
+assign [class="discord"] $workspace_2
+assign [class="Thunderbird"] $workspace_3
 
-assign [class="Code"] $workspace_3
+assign [class="Code"] $workspace_9
 assign [class="Steam"] $workspace_4
-assign [class="Audacious"] $workspace_10
 
 # mouse pointer speed
 exec xset m 0 0

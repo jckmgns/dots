@@ -1,12 +1,22 @@
 ! -----------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------
+!rofi.color-enabled: true
+!rofi.separator-style: solid
+!rofi.color-window: #383c4a, #383c4a, #2f343f
+!rofi.color-normal: #383c4a, #c1c1c1, #383c4a, #4084d6, #ffffff
+!rofi.color-active: #383c4a, #00bf8c, #383c4a, #00bf8c, #ffffff
+!rofi.color-urgent: #383c4a, #e53935, #383c4a, #e53935, #ffffff
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
 rofi.color-enabled: true
+rofi.color-window: argb:ff202020, #dddddd, #cccccc
+rofi.color-normal: argb:0000000, #cccccc, argb:0000000, #333333, #cccccc
+rofi.color-active: argb:0000000, #6699cc, argb:0000000, #333333, #6699cc
+rofi.color-urgent: argb:0000000, #f95656, argb:0000000, #333333, #f95656
 rofi.separator-style: solid
-rofi.color-window: #383c4a, #383c4a, #2f343f
-rofi.color-normal: #383c4a, #c1c1c1, #383c4a, #4084d6, #ffffff
-rofi.color-active: #383c4a, #00bf8c, #383c4a, #00bf8c, #ffffff
-rofi.color-urgent: #383c4a, #e53935, #383c4a, #e53935, #ffffff
 
 ! ------------------------------------------------------------
 ! urxvt config
