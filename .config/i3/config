@@ -150,7 +150,7 @@ bindsym $mod+r mode "resize"
 # color variables
 set $clr-bg 		#202020
 set $clr-ia-bg   	#202020
-set $clr-txt 		#dddddd
+set $clr-txt 		#eeeeee
 set $clr-ia-txt  	#666666
 set $clr-urgent-bg 	#f95656
 
