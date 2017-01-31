@@ -16,7 +16,7 @@
 
     "TodoParser": {
     "include": ["hx"],
-    "markers": ["TODO", "FIXME", "INCOMPLETE", "TEMPORARY", "CLEANUP"]
+    "markers": ["TODO", "FIXME"]
     }
 ,
 "workbench.statusBar.visible": true,
