@@ -232,3 +232,5 @@ exec xset m 0 0
 
 # remove top bar and make border fat 
 for_window [class="^.*"] border pixel 2
+
+gaps inner 6

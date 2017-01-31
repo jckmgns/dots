@@ -12,10 +12,10 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: argb:ff202020, #dddddd, #cccccc
-rofi.color-normal: argb:0000000, #cccccc, argb:0000000, #333333, #cccccc
-rofi.color-active: argb:0000000, #6699cc, argb:0000000, #333333, #6699cc
-rofi.color-urgent: argb:0000000, #f95656, argb:0000000, #333333, #f95656
+rofi.color-window: argb:ee202020, #cccccc, #cccccc
+rofi.color-normal: argb:0000000, #cccccc, argb:0000000, #cccccc, #333333
+rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #333333
+rofi.color-urgent: argb:0000000, #f95656, argb:0000000, #f95656, #333333
 rofi.separator-style: solid
 
 ! ------------------------------------------------------------
@@ -27,7 +27,7 @@ URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
 !  transparency
 URxvt.transparent: 	true
-URxvt.shading:		10				 
+URxvt.shading:		10 
 
 URxvt.scrollBar:	false
 
