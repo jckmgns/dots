@@ -166,6 +166,7 @@ set $i3bar-clr-ia-bg    #202020
 
 # bar
 bar {
+	position top
     font pango: Roboto Mono, FontAwesome 10
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	# tray_output primary 
@@ -204,7 +205,7 @@ bindsym $mod+Tab exec i3-msg move workspace to output right
 
 # system applications 
 exec_always unclutter -noevents
-exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
+exec_always feh --bg-scale ~/Pictures/wallpaper.png # set desktop background
 exec compton --backend glx --vsync opengl-swc # compositor
 # exec --no-startup-id dbus-launch nm-applet # network management applet
 exec_always ~/bin/wacomscript.sh
