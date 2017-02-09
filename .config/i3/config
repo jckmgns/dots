@@ -107,9 +107,9 @@ set $monitor_1 DVI-D-0
 set $monitor_2 HDMI-0
 
 # open workspaces on specific screens
-workspace $workspace_1 output $monitor_2
-workspace $workspace_2 output $monitor_2
-workspace $workspace_3 output $monitor_2
+workspace $workspace_1 output $monitor_1
+workspace $workspace_2 output $monitor_1
+workspace $workspace_3 output $monitor_1
 workspace $workspace_4 output $monitor_1
 workspace $workspace_5 output $monitor_1
 workspace $workspace_6 output $monitor_1
@@ -156,9 +156,9 @@ set $clr-urgent-bg 	#e53935
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#ffffff    	#888888
-client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#484e50   	#444444
-client.unfocused        #333333 	#222222 	#888888 	#292d2e  	#111111
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#ffffff		#888888
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#444444		#444444
+client.unfocused        #333333 	#222222 	#888888 	#111111		#111111
 client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
 
 set $i3bar-clr-bg		#202020
@@ -167,7 +167,7 @@ set $i3bar-clr-ia-bg    #202020
 # bar
 bar {
 	position top
-    font pango: Roboto Mono, FontAwesome 10
+    font pango: Roboto Mono, FontAwesome 9
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	# tray_output primary 
 	colors {
