@@ -21,5 +21,12 @@
 ,
 "workbench.statusBar.visible": true,
 "workbench.activityBar.visible": true,
-"window.zoomLevel": 0
+"window.zoomLevel": 0,
+"window.menuBarVisibility": "toggle",
+"vim.insertModeKeyBindings": [
+    {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+    }
+]
 }
