@@ -28,7 +28,7 @@ URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
 !  transparency
 URxvt.transparent: 	true
-URxvt.shading:		10 
+URxvt.shading:		10
 
 URxvt.scrollBar:	false
 
