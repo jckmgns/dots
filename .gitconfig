@@ -3,6 +3,7 @@
 	email = jackm@minobar.com
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore_global
 [alias]
 	lg = log --decorate --oneline --graph
 [merge]
