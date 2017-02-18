@@ -13,6 +13,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'majutsushi/tagbar'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -26,6 +28,9 @@ let g:vaxe_enable_airline_defaults = 0
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
+
+" Tagbar
+nmap <F8> :TagbarToggle<CR>
 
 " Airline
 let g:airline#extensions#tabline#enabled = 1
