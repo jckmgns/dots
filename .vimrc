@@ -90,5 +90,3 @@ nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 map <C-j> :bprev<CR>
 map <C-k> :bnext<CR>
-
-inoremap <C-Space> <C-x><C-o>

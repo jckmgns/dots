@@ -7,7 +7,7 @@ sudo apt-get update
 sudo apt-get -f -y install software-properties-common
 
 # i3
-sudo apt-get -f -y install i3 i3blocks rofi feh compton unclutter rxvt-unicode-256color
+sudo apt-get -f -y install i3 suckless-tools i3blocks rofi feh compton unclutter rxvt-unicode-256color
 
 # ncmpcpp
 sudo apt-get -f -y install mpd ncmpcpp mpc 
@@ -19,6 +19,6 @@ sudo apt-get -f -y install arc-theme
 sudo apt-get -f -y install adwaita-icon-theme
 
 # applications
-sudo apt-get -f -y install vim chromium-browser thunderbird git lxappearance thunar ranger htop steam krita kdiff3
+sudo apt-get -f -y install nm-applet vim chromium-browser thunderbird git lxappearance thunar ranger htop steam krita kdiff3
 
 echo "don't forget to pull dotfiles from git-server!"
