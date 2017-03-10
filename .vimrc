@@ -63,9 +63,9 @@ set number " show line numbers
 set cursorline " highlight current line
 filetype indent on " load filetype specific indent files
 set wildmenu " visual autocomplete for command menu
-set colorcolumn=80
-highlight colorcolumn ctermbg=8
-
+set colorcolumn=81
+highlight colorcolumn ctermbg=darkgray
+                                                                               
 " SEARCHING
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
