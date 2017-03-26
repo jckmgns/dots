@@ -15,6 +15,12 @@ Plugin 'vim-airline/vim-airline-themes'
 
 Plugin 'majutsushi/tagbar'
 
+Plugin 'alvan/vim-closetag'
+
+Plugin 'vim-syntastic/syntastic'
+
+Plugin 'chriskempson/base16-vim'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -31,16 +37,28 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
+nmap <F7> :call vaxe#Ctags()<CR>
 
 " Airline
-let g:airline#extensions#tabline#enabled = 1
 set laststatus=2
 let g:airline_theme='base16_default'
-
-let g:airline#extensions#whitespace#enabled = 0
-
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#whitespace#enabled = 0
+let g:airline#extensions#syntastic#enabled = 0
+
+let g:airline_symbols = {}
+let g:airline_symbols.linenr = ':'
+let g:airline_symbols.maxlinenr = ''
+
+" vim-closetag
+let g:closetag_filenames = "*.html,*.xml"
+
+" syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " BASICS
 syntax enable " enable syntax highlighting
@@ -57,6 +75,7 @@ set shiftwidth=4 " when indenting with '>', use 4 spaces
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 set autowrite
+set formatoptions -= cro
 
 " UI CONFIG
 set number " show line numbers
@@ -65,7 +84,7 @@ filetype indent on " load filetype specific indent files
 set wildmenu " visual autocomplete for command menu
 set colorcolumn=81
 highlight colorcolumn ctermbg=darkgray
-                                                                               
+
 " SEARCHING
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
@@ -88,5 +107,14 @@ inoremap jj <esc>
 " removes all trailing whitespace when pressing F5
 nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
+" buffer switching
 map <C-j> :bprev<CR>
 map <C-k> :bnext<CR>
+
+" moving lines up and down using alt-j or alt-k
+nnoremap <A-k> :m .-2<CR>==
+nnoremap <A-j> :m .+1<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
