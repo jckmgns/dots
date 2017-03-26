@@ -1,5 +1,4 @@
-!
-!-----------------------------------------------------------
+! ------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------
 !rofi.color-enabled: true
@@ -9,9 +8,9 @@
 !rofi.color-active: #383c4a, #00bf8c, #383c4a, #00bf8c, #ffffff
 !rofi.color-urgent: #383c4a, #e53935, #383c4a, #e53935, #ffffff
 
-! ------------------------------------------------------------------------------
+! ------------------------------------------------------------
 ! ROFI Color theme
-! ------------------------------------------------------------------------------
+! ------------------------------------------------------------
 rofi.color-enabled: true
 rofi.color-window: argb:ee202020, #cccccc, #cccccc
 rofi.color-normal: argb:0000000, #cccccc, argb:0000000, #cccccc, #333333
@@ -26,9 +25,13 @@ rofi.separator-style: solid
 ! set font
 URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
-!  transparency
-URxvt.transparent: 	true
-URxvt.shading:		10
+! transparency
+! URxvt.transparent: 	true
+! URxvt.shading:		10
+
+! 'real' transparency
+urxvt.depth: 32
+urxvt.background: rgba:0000/0000/0000/eeee
 
 URxvt.scrollBar:	false
 
@@ -36,41 +39,27 @@ URxvt.scrollBar:	false
 ! urxvt color scheme
 ! ------------------------------------------------------------
 
-#define base00 #181818
-#define base01 #282828
-#define base02 #383838
-#define base03 #585858
-#define base04 #b8b8b8
-#define base05 #d8d8d8
-#define base06 #e8e8e8
-#define base07 #f8f8f8
-#define base08 #ab4642
-#define base09 #dc9656
-#define base0A #f7ca88
-#define base0B #a1b56c
-#define base0C #86c1b9
-#define base0D #7cafc2
-#define base0E #ba8baf
-#define base0F #a16946
+! base 16 default
+! at least i think it is...
 
-*.foreground:   #d8d8d8
-*.background:   #181818
-*.cursorColor:  #d8d8d8
+urxvt.foreground:   #d8d8d8
+! urxvt.background:   #181818
+urxvt.cursorColor:  #d8d8d8
 
-*.color0:       #181818
-*.color1:       #ab4642
-*.color2:       #a1b56c
-*.color3:       #f7ca88
-*.color4:       #7cafc2
-*.color5:       #ba8baf
-*.color6:       #86c1b9
-*.color7:       #d8d8d8
+urxvt.color0:       #181818
+urxvt.color1:       #ab4642
+urxvt.color2:       #a1b56c
+urxvt.color3:       #f7ca88
+urxvt.color4:       #7cafc2
+urxvt.color5:       #ba8baf
+urxvt.color6:       #86c1b9
+urxvt.color7:       #d8d8d8
 
-*.color8:       #585858
-*.color9:       #ab4642
-*.color10:      #a1b56c
-*.color11:      #f7ca88
-*.color12:      #7cafc2
-*.color13:      #ba8baf
-*.color14:      #86c1b9
-*.color15:      #f8f8f8
+urxvt.color8:       #585858
+urxvt.color9:       #ab4642
+urxvt.color10:      #a1b56c
+urxvt.color11:      #f7ca88
+urxvt.color12:      #7cafc2
+urxvt.color13:      #ba8baf
+urxvt.color14:      #86c1b9
+urxvt.color15:      #f8f8f8
