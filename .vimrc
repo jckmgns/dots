@@ -19,7 +19,8 @@ Plugin 'alvan/vim-closetag'
 
 Plugin 'vim-syntastic/syntastic'
 
-Plugin 'chriskempson/base16-vim'
+" needed for ailine theme
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
@@ -41,7 +42,7 @@ nmap <F7> :call vaxe#Ctags()<CR>
 
 " Airline
 set laststatus=2
-let g:airline_theme='base16_default'
+let g:airline_theme='gruvbox'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1

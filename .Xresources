@@ -25,7 +25,7 @@ rofi.separator-style: solid
 ! set font
 URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
-! transparency
+! 'fake' transparency
 ! URxvt.transparent: 	true
 ! URxvt.shading:		10
 
@@ -36,30 +36,55 @@ urxvt.background: rgba:0000/0000/0000/dddd
 URxvt.scrollBar:	false
 
 ! ------------------------------------------------------------
-! urxvt color scheme
+! color scheme
 ! ------------------------------------------------------------
-
 ! base 16 default
-! at least i think it is...
+! *.foreground:   #d8d8d8
+! ! *.background:   #181818
+! *.cursorColor:  #d8d8d8
+! 
+! *.color0:       #181818
+! *.color1:       #ab4642
+! *.color2:       #a1b56c
+! *.color3:       #f7ca88
+! *.color4:       #7cafc2
+! *.color5:       #ba8baf
+! *.color6:       #86c1b9
+! *.color7:       #d8d8d8
+! 
+! *.color8:       #585858
+! *.color9:       #ab4642
+! *.color10:      #a1b56c
+! *.color11:      #f7ca88
+! *.color12:      #7cafc2
+! *.color13:      #ba8baf
+! *.color14:      #86c1b9
+! *.color15:      #f8f8f8
 
-urxvt.foreground:   #d8d8d8
-! urxvt.background:   #181818
-urxvt.cursorColor:  #d8d8d8
-
-urxvt.color0:       #181818
-urxvt.color1:       #ab4642
-urxvt.color2:       #a1b56c
-urxvt.color3:       #f7ca88
-urxvt.color4:       #7cafc2
-urxvt.color5:       #ba8baf
-urxvt.color6:       #86c1b9
-urxvt.color7:       #d8d8d8
-
-urxvt.color8:       #585858
-urxvt.color9:       #ab4642
-urxvt.color10:      #a1b56c
-urxvt.color11:      #f7ca88
-urxvt.color12:      #7cafc2
-urxvt.color13:      #ba8baf
-urxvt.color14:      #86c1b9
-urxvt.color15:      #f8f8f8
+! *background: #282828
+*foreground: #ebdbb2
+*cursorColor:  #d8d8d8
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2
