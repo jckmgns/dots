@@ -75,7 +75,6 @@ set shiftwidth=4 " when indenting with '>', use 4 spaces
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
 set autowrite
-set formatoptions -= cro
 
 " UI CONFIG
 set number " show line numbers
