@@ -1,27 +1,16 @@
 ! ------------------------------------------------------------
 ! ROFI Color theme
 ! ------------------------------------------------------------
-!rofi.color-enabled: true
-!rofi.separator-style: solid
-!rofi.color-window: #383c4a, #383c4a, #2f343f
-!rofi.color-normal: #383c4a, #c1c1c1, #383c4a, #4084d6, #ffffff
-!rofi.color-active: #383c4a, #00bf8c, #383c4a, #00bf8c, #ffffff
-!rofi.color-urgent: #383c4a, #e53935, #383c4a, #e53935, #ffffff
-
-! ------------------------------------------------------------
-! ROFI Color theme
-! ------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: argb:ee202020, #cccccc, #cccccc
-rofi.color-normal: argb:0000000, #cccccc, argb:0000000, #cccccc, #333333
-rofi.color-active: argb:0000000, #6699cc, argb:0000000, #6699cc, #333333
-rofi.color-urgent: argb:0000000, #f95656, argb:0000000, #f95656, #333333
+rofi.color-window: argb:ee282828, #ebdbb2, #ebdbb2
+rofi.color-normal: argb:0000000, #ebdbb2, argb:0000000, #ebdbb2, #282828
+rofi.color-active: argb:0000000, #458588, argb:0000000, #458588, #282828
+rofi.color-urgent: argb:0000000, #cc241d, argb:0000000, #cc241d, #282828
 rofi.separator-style: solid
 
 ! ------------------------------------------------------------
 ! urxvt config
 ! ------------------------------------------------------------
-
 ! set font
 URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 

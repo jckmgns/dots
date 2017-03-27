@@ -14,7 +14,7 @@ bindsym $mod+Return exec urxvtcd
 bindsym $mod+Shift+q kill
 
 # start rofi --show-run
-bindsym $mod+d exec rofi -show run 
+bindsym $mod+d exec rofi -show run # -width 100 -padding 360
 
 # change focus
 bindsym $mod+j focus left
@@ -172,7 +172,7 @@ bar {
 	# tray_output primary 
 	colors {
 		background $i3bar-clr-bg 
-		separator #757575
+		# separator #757575
 
 		#                  border             	background         	text
 		focused_workspace  $clr-ia-txt      	$i3bar-clr-bg      	$clr-txt
@@ -233,3 +233,5 @@ exec xset m 0 0
 
 # remove top bar and make border fat 
 for_window [class="^.*"] border pixel 2
+
+gaps inner 6
