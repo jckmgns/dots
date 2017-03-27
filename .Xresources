@@ -2,10 +2,10 @@
 ! ROFI Color theme
 ! ------------------------------------------------------------
 rofi.color-enabled: true
-rofi.color-window: argb:ee282828, #ebdbb2, #ebdbb2
-rofi.color-normal: argb:0000000, #ebdbb2, argb:0000000, #ebdbb2, #282828
-rofi.color-active: argb:0000000, #458588, argb:0000000, #458588, #282828
-rofi.color-urgent: argb:0000000, #cc241d, argb:0000000, #cc241d, #282828
+rofi.color-window: argb:ee181818, #d8d8d8, #d8d8d8
+rofi.color-normal: argb:0000000, #d8d8d8, argb:0000000, #d8d8d8, #181818
+rofi.color-active: argb:0000000, #86c1b9, argb:0000000, #86c1b9, #181818
+rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #ab4642, #181818
 rofi.separator-style: solid
 
 ! ------------------------------------------------------------
@@ -15,43 +15,56 @@ rofi.separator-style: solid
 URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
 ! 'fake' transparency
-URxvt.transparent: 	true
-URxvt.shading:		10
+! URxvt.transparent: 	true
+! URxvt.shading:		10
 
 ! 'real' transparency
-! urxvt.depth: 32
-! urxvt.background: rgba:0000/0000/0000/dddd
+urxvt.depth: 32
+urxvt.background: rgba:0000/0000/0000/dddd
 
 URxvt.scrollBar:	false
 
 ! ------------------------------------------------------------
 ! color scheme
 ! ------------------------------------------------------------
-! hard contrast: *background: #1d2021
-*background: #282828
-! soft contrast: *background: #32302f
-*foreground: #ebdbb2
-! Black + DarkGrey
-*color0:  #282828
-*color8:  #928374
-! DarkRed + Red
-*color1:  #cc241d
-*color9:  #fb4934
-! DarkGreen + Green
-*color2:  #98971a
-*color10: #b8bb26
-! DarkYellow + Yellow
-*color3:  #d79921
-*color11: #fabd2f
-! DarkBlue + Blue
-*color4:  #458588
-*color12: #83a598
-! DarkMagenta + Magenta
-*color5:  #b16286
-*color13: #d3869b
-! DarkCyan + Cyan
-*color6:  #689d6a
-*color14: #8ec07c
-! LightGrey + White
-*color7:  #a89984
-*color15: #ebdbb2
+! Base16 Default Dark
+! Scheme: Chris Kempson (http://chriskempson.com)
+
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
+
+*.foreground:   #d8d8d8
+*.background:   #181818
+*.cursorColor:  #d8d8d8
+
+*.color0:       #181818
+*.color1:       #ab4642
+*.color2:       #a1b56c
+*.color3:       #f7ca88
+*.color4:       #7cafc2
+*.color5:       #ba8baf
+*.color6:       #86c1b9
+*.color7:       #d8d8d8
+
+*.color8:       #585858
+*.color9:       #ab4642
+*.color10:      #a1b56c
+*.color11:      #f7ca88
+*.color12:      #7cafc2
+*.color13:      #ba8baf
+*.color14:      #86c1b9
+*.color15:      #f8f8f8

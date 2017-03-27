@@ -148,21 +148,21 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # color variables
-set $clr-bg 		#282828
-set $clr-ia-bg   	#282828
-set $clr-txt 		#ebdbb2
-set $clr-ia-txt  	#7c6f64
-set $clr-urgent-bg 	#cc241d
+set $clr-bg 		#181818
+set $clr-ia-bg   	#181818
+set $clr-txt 		#d8d8d8
+set $clr-ia-txt  	#585858
+set $clr-urgent-bg 	#ab4642
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#fbf1c7		#928374
-client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#665c54		#665c54
-client.unfocused        #333333 	#222222 	#888888 	#3c3836		#3c3836
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#86c1b9		#b8b8b8
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#665c54		#585858
+client.unfocused        #333333 	#222222 	#888888 	#3c3836		#282828
 client.urgent           $clr-urgent-bg	$clr-urgent-bg $clr-txt $clr-urgent-bg
 
-set $i3bar-clr-bg		#282828
-set $i3bar-clr-ia-bg    #282828
+set $i3bar-clr-bg		#181818
+set $i3bar-clr-ia-bg    #181818
 
 # bar
 bar {
@@ -172,7 +172,7 @@ bar {
 	# tray_output primary 
 	colors {
 		background $i3bar-clr-bg 
-		# separator #757575
+		separator #585858
 
 		#                  border             	background         	text
 		focused_workspace  $clr-ia-txt      	$i3bar-clr-bg      	$clr-txt
@@ -233,5 +233,3 @@ exec xset m 0 0
 
 # remove top bar and make border fat 
 for_window [class="^.*"] border pixel 2
-
-gaps inner 6
