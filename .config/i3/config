@@ -148,21 +148,21 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # color variables
-set $clr-bg 		#202020
-set $clr-ia-bg   	#202020
-set $clr-txt 		#eeeeee
-set $clr-ia-txt  	#666666
-set $clr-urgent-bg 	#e53935
+set $clr-bg 		#282828
+set $clr-ia-bg   	#282828
+set $clr-txt 		#ebdbb2
+set $clr-ia-txt  	#7c6f64
+set $clr-urgent-bg 	#cc241d
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#ffffff		#888888
-client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#444444		#444444
-client.unfocused        #333333 	#222222 	#888888 	#111111		#111111
-client.urgent           #2f343a 	#900000 	$clr-txt  	#900000   	
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#fbf1c7		#928374
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#665c54		#665c54
+client.unfocused        #333333 	#222222 	#888888 	#3c3836		#3c3836
+client.urgent           $clr-urgent-bg	$clr-urgent-bg $clr-txt $clr-urgent-bg
 
-set $i3bar-clr-bg		#202020
-set $i3bar-clr-ia-bg    #202020
+set $i3bar-clr-bg		#282828
+set $i3bar-clr-ia-bg    #282828
 
 # bar
 bar {
