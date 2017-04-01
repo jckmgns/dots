@@ -57,6 +57,9 @@ let g:closetag_filenames = "*.html,*.xml"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
+let g:syntastic_mode_map = { 'mode': 'passive' } 
+
+nmap <F5> :SyntasticCheck<CR>
 
 " BASICS
 syntax enable " enable syntax highlighting
@@ -99,11 +102,11 @@ nnoremap k gk
 
 " LEADER SHORTCUTS
 
-" jk is escape
+" jj is escape
 inoremap jj <esc>
 
-" removes all trailing whitespace when pressing F5
-nnoremap <F5> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+" removes all trailing whitespace when pressing F4
+nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
 " buffer switching
 map <C-j> :bprev<CR>

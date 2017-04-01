@@ -8,7 +8,7 @@ font pango:Roboto Mono 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvtcd
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -156,7 +156,7 @@ set $clr-urgent-bg 	#ab4642
 
 # colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#86c1b9		#b8b8b8
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#f8f8f8		#b8b8b8
 client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#665c54		#585858
 client.unfocused        #333333 	#222222 	#888888 	#3c3836		#282828
 client.urgent           $clr-urgent-bg	$clr-urgent-bg $clr-txt $clr-urgent-bg
