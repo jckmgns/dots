@@ -35,7 +35,8 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-nmap <F7> :call vaxe#Ctags()<CR>
+" haxe specific ctags generation
+au FileType haxe nmap <F7> :call vaxe#Ctags()<CR> 
 
 " Airline
 set laststatus=2
