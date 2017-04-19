@@ -193,9 +193,11 @@ bindsym $mod+Prior exec mpc prev
 # start music player daemon
 exec mpd
 
-# screen time stuff
+# xset setting stuff
 exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
 exec xset s off # set screensaver off
+exec xset r rate 200 20 # keyboard repeat rate
+
 
 # switch back to last workspace on a repeated button press
 # workspace_auto_back_and_forth yes
