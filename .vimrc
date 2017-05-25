@@ -37,8 +37,14 @@ map <C-n> :NERDTreeToggle<CR>
 
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
-" haxe specific ctags generation
+
+" Haxe specific 
+" ctags generation
 au FileType haxe nmap <F7> :call vaxe#Ctags()<CR> 
+
+" C++ specific
+" au FileType cpp set cindent
+" au FileType cpp set cinoptions=g-1
 
 " Airline
 set laststatus=2
