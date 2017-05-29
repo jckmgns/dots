@@ -45,6 +45,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Tagbar
 nmap <F8> :TagbarToggle<CR>
 
+" YCM
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py" 
+
 " Haxe specific 
 " ctags generation
 au FileType haxe nmap <F7> :call vaxe#Ctags()<CR> 
