@@ -45,6 +45,9 @@ au FileType haxe nmap <F7> :call vaxe#Ctags()<CR>
 " C++ specific
 " au FileType cpp set cindent
 " au FileType cpp set cinoptions=g-1
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " Airline
 set laststatus=2
