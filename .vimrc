@@ -8,18 +8,25 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
+" languages
 Plugin 'jdonaldson/vaxe'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
+
+Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'scrooloose/nerdtree'
 
 Plugin 'majutsushi/tagbar'
 
 Plugin 'alvan/vim-closetag'
 
 Plugin 'vim-syntastic/syntastic'
+
+Plugin 'morhetz/gruvbox'
 
 call vundle#end()
 filetype plugin indent on
@@ -43,8 +50,8 @@ nmap <F8> :TagbarToggle<CR>
 au FileType haxe nmap <F7> :call vaxe#Ctags()<CR> 
 
 " C++ specific
-" au FileType cpp set cindent
-" au FileType cpp set cinoptions=g-1
+au FileType cpp set cindent
+au FileType cpp set cino=N-sg0 
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler = 'gcc'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
