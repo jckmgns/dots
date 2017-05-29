@@ -15,12 +15,12 @@ rofi.separator-style: solid
 URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
 
 ! 'fake' transparency
-! URxvt.transparent: 	true
+! URxvt.transparent: false	
 ! URxvt.shading:		10
 
 ! 'real' transparency
-urxvt.depth: 32
-urxvt.background: rgba:0000/0000/0000/dddd
+! urxvt.depth: 32
+! rgba: rgba:0000/0000/0000/dddd
 
 URxvt.scrollBar:	false
 

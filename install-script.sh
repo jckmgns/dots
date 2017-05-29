@@ -15,10 +15,13 @@ sudo systemctl stop mpd.service
 sudo systemctl disable mpd.service
 
 # appearance
-sudo apt-get -f -y install arc-theme
 sudo apt-get -f -y install adwaita-icon-theme
 
 # applications
 sudo apt-get -f -y install nm-applet vim chromium-browser thunderbird git lxappearance thunar ranger htop steam krita kdiff3
 
-echo "don't forget to pull dotfiles from git-server!"
+echo "Disable lightdm using: sudo systemctl disable lightdm.service"
+echo ""
+echo "=================================================="
+echo ""
+echo "Pull dot-files from git-server!"

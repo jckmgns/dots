@@ -58,7 +58,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " Airline
 set laststatus=2
-let g:airline_theme='base16_default'
+let g:airline_theme='gruvbox'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline#extensions#tabline#enabled = 1
@@ -83,6 +83,7 @@ nmap <F5> :SyntasticCheck<CR>
 " BASICS
 syntax enable " enable syntax highlighting
 set background=dark
+colorscheme gruvbox
 
 " remove vi support stuff
 set nocompatible
