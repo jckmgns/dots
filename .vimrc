@@ -4,12 +4,15 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim 
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 Plugin 'VundleVim/Vundle.vim'
 
 " languages
-Plugin 'jdonaldson/vaxe'
+Plugin 'jdonaldson/vaxe' " haxe
+Plugin 'rust-lang/rust.vim' " rust
+
+" other stuff
 
 Plugin 'Valloric/YouCompleteMe'
 
@@ -46,15 +49,16 @@ map <C-n> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
 
 " YCM
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py" 
+let g:ycm_auto_trigger = 0 " disable auto complete
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
 
-" Haxe specific 
+" Haxe specific
 " ctags generation
-au FileType haxe nmap <F7> :call vaxe#Ctags()<CR> 
+au FileType haxe nmap <F7> :call vaxe#Ctags()<CR>
 
 " C++ specific
 au FileType cpp set cindent
-au FileType cpp set cino=N-sg0 
+au FileType cpp set cino=N-sg0
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler = 'gcc'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
@@ -79,7 +83,7 @@ let g:closetag_filenames = "*.html,*.xml"
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-let g:syntastic_mode_map = { 'mode': 'passive' } 
+let g:syntastic_mode_map = { 'mode': 'passive' }
 
 nmap <F5> :SyntasticCheck<CR>
 
@@ -95,6 +99,7 @@ set nocompatible
 set tabstop=4 " tab size 4
 set softtabstop=4 " number of spaces in tab when editing
 set shiftwidth=4 " when indenting with '>', use 4 spaces
+set expandtab
 
 " CUSTOM
 filetype plugin on
@@ -117,6 +122,8 @@ set path+=**			" enables recursive folder search
 
 " SEARCH IGNORE STUFF
 set wildignore+=**/bin/**  " ignore stuff from compile folder
+set wildignore+=**/target/** " ignore stuff from (rust) compile folder
+set wildignore+=**/doc/** " ignore generated doc files
 
 " MOVEMENT
 " move vertically by visual line
