@@ -63,6 +63,9 @@ let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler = 'gcc'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
+" Rust specific
+let g:syntastic_rust_checkers = ['cargo'] " syntastic check for rust
+
 " Airline
 set laststatus=2
 let g:airline_theme='gruvbox'
