@@ -10,10 +10,13 @@ Plugin 'VundleVim/Vundle.vim'
 
 " languages
 Plugin 'jdonaldson/vaxe' " haxe
-Plugin 'rust-lang/rust.vim' " rust
+
+" rust
+Plugin 'rust-lang/rust.vim' " generic rust plugin
+
+" ===============
 
 " other stuff
-
 Plugin 'Valloric/YouCompleteMe'
 
 Plugin 'vim-airline/vim-airline'
@@ -65,6 +68,7 @@ let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " Rust specific
 let g:syntastic_rust_checkers = ['cargo'] " syntastic check for rust
+let g:ycm_rust_src_path = "/home/jackm/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 " Airline
 set laststatus=2
