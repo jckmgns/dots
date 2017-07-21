@@ -217,13 +217,15 @@ exec_always ~/bin/wacomscript.sh
 exec --no-startup-id thunderbird 
 exec --no-startup-id i3-msg 'workspace 10: Terminal'
 
-# app assignments
+# application assignments
 assign [class="Chromium-browser"] $workspace_1
 assign [class="discord"] $workspace_2
 assign [class="Thunderbird"] $workspace_3
+assign [class="Steam"] $workspace_4
 
 assign [class="Code"] $workspace_9
-assign [class="Steam"] $workspace_4
+assign [class="jetbrains-idea-ce"] $workspace_9
+assign [class="Gvim"] $workspace_9
 
 # mouse pointer speed
 exec xset m 0 0
