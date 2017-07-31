@@ -130,6 +130,7 @@ set path+=**			" enables recursive folder search
 set wildignore+=**/bin/**  " ignore stuff from compile folder
 set wildignore+=**/target/** " ignore stuff from (rust) compile folder
 set wildignore+=**/doc/** " ignore generated doc files
+set wildignore+=**/build/** " ignore build files for cmake
 
 " MOVEMENT
 " move vertically by visual line
