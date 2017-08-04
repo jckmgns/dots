@@ -121,8 +121,10 @@ set colorcolumn=81
 highlight colorcolumn ctermbg=darkgray
 
 " SEARCHING
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set incsearch   " search as characters are entered
+set hlsearch    " highlight matches
+set ignorecase  " ignores the case when seaching
+set smartcase   " if pattern contains an uppercase it will be case sensitive
 
 set path+=**			" enables recursive folder search
 
@@ -140,7 +142,8 @@ nnoremap k gk
 " LEADER SHORTCUTS
 
 " jj is escape
-inoremap jj <esc>
+inoremap jj <Esc>
+inoremap fd <Esc>
 
 " removes all trailing whitespace when pressing F4
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
