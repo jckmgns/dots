@@ -53,6 +53,7 @@ nmap <F8> :TagbarToggle<CR>
 " YCM
 let g:ycm_auto_trigger = 0 " disable auto complete
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Haxe specific
 " ctags generation
@@ -143,7 +144,6 @@ nnoremap k gk
 
 " jj is escape
 inoremap jj <Esc>
-inoremap fd <Esc>
 
 " removes all trailing whitespace when pressing F4
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
