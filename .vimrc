@@ -17,19 +17,16 @@ Plugin 'rust-lang/rust.vim' " generic rust plugin
 
 " other stuff
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'kien/ctrlp.vim'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-Plugin 'tpope/vim-surround'
-
 Plugin 'scrooloose/nerdtree'
-
 Plugin 'majutsushi/tagbar'
 
+Plugin 'tpope/vim-surround'
 Plugin 'alvan/vim-closetag'
-
-Plugin 'vim-syntastic/syntastic'
 
 Plugin 'morhetz/gruvbox'
 
@@ -52,7 +49,8 @@ nmap <F8> :TagbarToggle<CR>
 
 " YCM
 let g:ycm_auto_trigger = 0 " disable auto complete
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party
+            \/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Haxe specific
@@ -67,7 +65,7 @@ let g:syntastic_cpp_compiler = 'gcc'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " Rust specific
-let g:syntastic_rust_checkers = ['cargo'] " syntastic check for rust
+let g:syntastic_rust_checkers = ['cargo', 'rustc'] " syntastic check for rust
 let g:ycm_rust_src_path = "/home/jackm/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 " Airline
@@ -92,7 +90,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_mode_map = { 'mode': 'passive' }
 
-nmap <F5> :SyntasticCheck<CR>
+" nmap <F5> :SyntasticCheck<CR>
 
 " BASICS
 syntax enable " enable syntax highlighting
@@ -114,7 +112,8 @@ set omnifunc=syntaxcomplete#Complete
 set autowrite
 
 " UI CONFIG
-set number " show line numbers
+" set number " show line numbers
+set relativenumber " show relative line numbers
 set cursorline " highlight current line
 filetype indent on " load filetype specific indent files
 set wildmenu " visual autocomplete for command menu
@@ -140,13 +139,14 @@ set wildignore+=**/build/** " ignore build files for cmake
 nnoremap j gj
 nnoremap k gk
 
-" LEADER SHORTCUTS
+" SHORTCUTS
 
 " jj is escape
 inoremap jj <Esc>
 
 " removes all trailing whitespace when pressing F4
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <F5> :SyntasticCheck<CR>
 
 " buffer switching
 map <C-j> :bprev<CR>
