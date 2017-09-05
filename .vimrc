@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible " remove vi support
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -96,9 +96,8 @@ let g:syntastic_mode_map = { 'mode': 'passive' }
 syntax enable " enable syntax highlighting
 set background=dark
 colorscheme gruvbox
-
-" remove vi support stuff
-set nocompatible
+" disable automatic comment insert
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o 
 
 " SPACES AND TABS
 set tabstop=4 " tab size 4
@@ -151,12 +150,3 @@ nnoremap <F5> :SyntasticCheck<CR>
 " buffer switching
 map <C-j> :bprev<CR>
 map <C-k> :bnext<CR>
-
-" moving lines up and down using alt-j or alt-k
-nnoremap <A-k> :m .-2<CR>==
-nnoremap <A-j> :m .+1<CR>==
-inoremap <A-j> <Esc>:m .+1<CR>==gi
-inoremap <A-k> <Esc>:m .-2<CR>==gi
-vnoremap <A-j> :m '>+1<CR>gv=gv
-vnoremap <A-k> :m '<-2<CR>gv=gv
-
