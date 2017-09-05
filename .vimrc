@@ -8,26 +8,26 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " languages
-Plugin 'jdonaldson/vaxe' " haxe
-
-" rust
-Plugin 'rust-lang/rust.vim' " generic rust plugin
-
 " ===============
+Plugin 'jdonaldson/vaxe' " haxe
+Plugin 'rust-lang/rust.vim' " rust plugin
 
-" other stuff
+" funtionality
+" ===============
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'kien/ctrlp.vim'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/nerdtree'
-Plugin 'majutsushi/tagbar'
-
 Plugin 'tpope/vim-surround'
 Plugin 'alvan/vim-closetag'
 
+Plugin 'majutsushi/tagbar'
+Plugin 'scrooloose/nerdtree'
+
+" appearance
+" ===============
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
 
 call vundle#end()
@@ -36,10 +36,24 @@ filetype plugin indent on
 " :PluginInstall to install plugins and stuff
 " ----------------------------------------------------
 
-" Vaxe stuff
+" Vaxe & Vaxe
 let g:vaxe_lime_target = 'linux -neko -64'
-" let g:vaxe_cache_server = 1
 let g:vaxe_enable_airline_defaults = 0
+" haxe specific tags generation
+au FileType haxe nmap <F7> :call vaxe#Ctags()<CR>
+
+" Rust
+let g:syntastic_rust_checkers = ['cargo', 'rustc'] " syntastic check for rust
+" install rust sources: rustup component add rust-src
+let g:ycm_rust_src_path = system('rustc --print sysroot') + "
+            \/lib/rustlib/src/rust/src"
+
+" C++
+au FileType cpp set cindent
+au FileType cpp set cino=N-sg0
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 " NerdTree
 map <C-n> :NERDTreeToggle<CR>
@@ -52,21 +66,6 @@ let g:ycm_auto_trigger = 0 " disable auto complete
 let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party
             \/ycmd/cpp/ycm/.ycm_extra_conf.py"
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
-" Haxe specific
-" ctags generation
-au FileType haxe nmap <F7> :call vaxe#Ctags()<CR>
-
-" C++ specific
-au FileType cpp set cindent
-au FileType cpp set cino=N-sg0
-let g:syntastic_cpp_checkers = ['gcc']
-let g:syntastic_cpp_compiler = 'gcc'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
-
-" Rust specific
-let g:syntastic_rust_checkers = ['cargo', 'rustc'] " syntastic check for rust
-let g:ycm_rust_src_path = "/home/jackm/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src"
 
 " Airline
 set laststatus=2
@@ -89,15 +88,14 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_mode_map = { 'mode': 'passive' }
-
-" nmap <F5> :SyntasticCheck<CR>
+nnoremap <F5> :SyntasticCheck<CR>
 
 " BASICS
 syntax enable " enable syntax highlighting
 set background=dark
 colorscheme gruvbox
 " disable automatic comment insert
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 " SPACES AND TABS
 set tabstop=4 " tab size 4
@@ -108,7 +106,7 @@ set expandtab
 " CUSTOM
 filetype plugin on
 set omnifunc=syntaxcomplete#Complete
-set autowrite
+set autowrite " write on buffer switch
 
 " UI CONFIG
 " set number " show line numbers
@@ -123,8 +121,6 @@ highlight colorcolumn ctermbg=darkgray
 set incsearch   " search as characters are entered
 set hlsearch    " highlight matches
 set ignorecase  " ignores the case when seaching
-set smartcase   " if pattern contains an uppercase it will be case sensitive
-
 set path+=**			" enables recursive folder search
 
 " SEARCH IGNORE STUFF
@@ -139,13 +135,11 @@ nnoremap j gj
 nnoremap k gk
 
 " SHORTCUTS
-
 " jj is escape
 inoremap jj <Esc>
 
 " removes all trailing whitespace when pressing F4
 nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-nnoremap <F5> :SyntasticCheck<CR>
 
 " buffer switching
 map <C-j> :bprev<CR>
