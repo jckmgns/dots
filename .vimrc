@@ -111,7 +111,7 @@ set omnifunc=syntaxcomplete#Complete
 set autowrite
 
 " UI CONFIG
-" set number " show line numbers
+set number " show line numbers
 set relativenumber " show relative line numbers
 set cursorline " highlight current line
 filetype indent on " load filetype specific indent files
