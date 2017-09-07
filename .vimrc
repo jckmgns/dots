@@ -109,7 +109,7 @@ set omnifunc=syntaxcomplete#Complete
 set autowrite " write on buffer switch
 
 " UI CONFIG
-" set number " show line numbers
+set number " show line numbers
 set relativenumber " show relative line numbers
 set cursorline " highlight current line
 filetype indent on " load filetype specific indent files
