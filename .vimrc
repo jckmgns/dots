@@ -33,13 +33,11 @@ Plugin 'morhetz/gruvbox'
 call vundle#end()
 filetype plugin indent on
 
-" :PluginInstall to install plugins and stuff
 " ----------------------------------------------------
 
-" Vaxe & Vaxe
+" Haxe & Vaxe
 let g:vaxe_lime_target = 'linux -neko -64'
 let g:vaxe_enable_airline_defaults = 0
-" haxe specific tags generation
 au FileType haxe nmap <F7> :call vaxe#Ctags()<CR>
 
 " Rust
@@ -101,7 +99,7 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 set tabstop=4 " tab size 4
 set softtabstop=4 " number of spaces in tab when editing
 set shiftwidth=4 " when indenting with '>', use 4 spaces
-set expandtab
+set expandtab " replace tab with spaces
 
 " CUSTOM
 filetype plugin on
@@ -118,13 +116,13 @@ set colorcolumn=81
 highlight colorcolumn ctermbg=darkgray
 
 " SEARCHING
-set incsearch   " search as characters are entered
-set hlsearch    " highlight matches
-set ignorecase  " ignores the case when seaching
-set path+=**			" enables recursive folder search
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
+set ignorecase " ignores the case when seaching
+set path+=** " enables recursive folder search
 
 " SEARCH IGNORE STUFF
-set wildignore+=**/bin/**  " ignore stuff from compile folder
+set wildignore+=**/bin/** " ignore stuff from compile folder
 set wildignore+=**/target/** " ignore stuff from (rust) compile folder
 set wildignore+=**/doc/** " ignore generated doc files
 set wildignore+=**/build/** " ignore build files for cmake
