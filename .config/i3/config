@@ -147,6 +147,9 @@ mode "resize" {
 # enter resize mode
 bindsym $mod+r mode "resize"
 
+# colors
+# ===========================================
+
 # color variables
 set $clr-bg 		#181818
 set $clr-ia-bg   	#181818
@@ -154,7 +157,6 @@ set $clr-txt 		#d8d8d8
 set $clr-ia-txt  	#585858
 set $clr-urgent-bg 	#ab4642
 
-# colors
 # class                 border  	backgr. 	text    	indicator	child_border 	
 client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#7cafc2		#b8b8b8
 client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#585858		#585858
@@ -164,7 +166,6 @@ client.urgent           $clr-urgent-bg	$clr-urgent-bg $clr-txt $clr-urgent-bg
 set $i3bar-clr-bg		#181818
 set $i3bar-clr-ia-bg    #181818
 
-# bar
 bar {
 	position top
     font pango: Roboto Mono, FontAwesome 9
@@ -182,59 +183,53 @@ bar {
 	}
 }
 
-# custom 
+# MPD
+# ===========================================
+exec mpd # start daemon
 
-# mpd / mpc hotkeys
+# mpc hotkeys
 bindsym $mod+Home exec mpc toggle
 bindsym $mod+End exec mpc stop
 bindsym $mod+Next exec mpc next
 bindsym $mod+Prior exec mpc prev
 
-# start music player daemon
-exec mpd
 
-# xset setting stuff
+# xset 
+# ===========================================
 exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
 exec xset s off # set screensaver off
 exec xset r rate 250 25 # keyboard repeat rate
-
-# switch back to last workspace on a repeated button press
-# workspace_auto_back_and_forth yes
+exec xset m 0 0 # mouse pointer speed
 
 # move current workspace to other monitor 
-bindsym $mod+Tab exec i3-msg move workspace to output right
+# bindsym $mod+Tab exec i3-msg move workspace to output right
 
 # system applications 
+# ===========================================
 exec_always unclutter -noevents
-# exec_always feh --bg-scale ~/Pictures/wallpaper.png # set desktop background
-exec_always feh --bg-scale ~/Pictures/wallpaper.jpg # set desktop background
-# exec_always --no-startup-id xsetroot -solid "171717"
-exec compton --backend glx --vsync opengl-swc # compositor
-# exec --no-startup-id dbus-launch nm-applet # network management applet
-exec_always ~/bin/wacomscript.sh
+exec compton --backend glx --vsync opengl-swc
+# exec --no-startup-id dbus-launch nm-applet 
+
+exec_always feh --bg-scale ~/Pictures/wallpaper.jpg  
+# exec_always feh --bg-scale ~/Pictures/wallpaper.png
+# exec_always --no-startup-id xsetroot -solid "171717" 
 
 # custom applications / autstart
+# ===========================================
 exec --no-startup-id thunderbird 
 exec --no-startup-id i3-msg 'workspace 10: Terminal'
 
 # application assignments
+# ===========================================
 assign [class="Chromium-browser"] $workspace_1
 assign [class="discord"] $workspace_2
 assign [class="Thunderbird"] $workspace_3
+
 assign [class="Steam"] $workspace_4
 
-assign [class="Code"] $workspace_9
-assign [class="jetbrains-idea-ce"] $workspace_9
 assign [class="Gvim"] $workspace_9
+assign [class="jetbrains-idea-ce"] $workspace_9
 
-# mouse pointer speed
-exec xset m 0 0
-
-# disable mouse warping
-# mouse_warping none
-
-# disable mouse focus on hover
-# focus_follows_mouse no
-
-# remove top bar and make border fat 
-for_window [class="^.*"] border pixel 2
+# window config
+# ===========================================
+for_window [class="^.*"] border pixel 2 # remove top bar
