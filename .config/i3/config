@@ -167,7 +167,7 @@ set $i3bar-clr-bg		#181818
 set $i3bar-clr-ia-bg    #181818
 
 bar {
-	position top
+    position top
     font pango: Roboto Mono, FontAwesome 9
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	# tray_output primary 
@@ -194,12 +194,15 @@ bindsym $mod+Next exec mpc next
 bindsym $mod+Prior exec mpc prev
 
 
-# xset 
+# xset & setxkbmap 
 # ===========================================
 exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
 exec xset s off # set screensaver off
 exec xset r rate 250 25 # keyboard repeat rate
 exec xset m 0 0 # mouse pointer speed
+
+exec setxkbmap us
+exec setxkbmap -option compose:ralt
 
 # move current workspace to other monitor 
 # bindsym $mod+Tab exec i3-msg move workspace to output right
