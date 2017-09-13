@@ -1,0 +1,243 @@
+# set mod key
+set $mod Mod4
+
+# font 
+font pango:Roboto Mono 9 
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# start a terminal
+bindsym $mod+Return exec urxvt
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# start rofi --show-run
+bindsym $mod+d exec rofi -show run # -width 100 -padding 360
+
+# change focus
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+semicolon focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+semicolon move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+q focus child
+
+# workspace variables
+set $workspace_1 "1: WWW"
+set $workspace_2 "2: Chat"
+set $workspace_3 "3: Mail" 
+set $workspace_4 "4: Steam"
+set $workspace_5 "5: Other"
+set $workspace_6 "6: Other"
+set $workspace_7 "7: Other"
+set $workspace_8 "8: Other"
+set $workspace_9 "9: Editor"
+set $workspace_10 "10: Terminal"
+
+# switch to workspace
+bindsym $mod+1 workspace $workspace_1
+bindsym $mod+2 workspace $workspace_2
+bindsym $mod+3 workspace $workspace_3
+bindsym $mod+4 workspace $workspace_4
+bindsym $mod+5 workspace $workspace_5
+bindsym $mod+6 workspace $workspace_6
+bindsym $mod+7 workspace $workspace_7
+bindsym $mod+8 workspace $workspace_8
+bindsym $mod+9 workspace $workspace_9
+bindsym $mod+0 workspace $workspace_10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $workspace_1
+bindsym $mod+Shift+2 move container to workspace $workspace_2
+bindsym $mod+Shift+3 move container to workspace $workspace_3
+bindsym $mod+Shift+4 move container to workspace $workspace_4
+bindsym $mod+Shift+5 move container to workspace $workspace_5
+bindsym $mod+Shift+6 move container to workspace $workspace_6
+bindsym $mod+Shift+7 move container to workspace $workspace_7
+bindsym $mod+Shift+8 move container to workspace $workspace_8
+bindsym $mod+Shift+9 move container to workspace $workspace_9
+bindsym $mod+Shift+0 move container to workspace $workspace_10
+
+# output variables
+set $monitor_1 DVI-D-0
+set $monitor_2 HDMI-0
+
+# open workspaces on specific screens
+workspace $workspace_1 output $monitor_1
+workspace $workspace_2 output $monitor_1
+workspace $workspace_3 output $monitor_1
+workspace $workspace_4 output $monitor_1
+workspace $workspace_5 output $monitor_1
+workspace $workspace_6 output $monitor_1
+workspace $workspace_7 output $monitor_1
+workspace $workspace_8 output $monitor_1
+workspace $workspace_9 output $monitor_1
+workspace $workspace_10 output $monitor_1
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace 
+bindsym $mod+Shift+r restart
+# exit i3 
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window
+mode "resize" {
+# vim like bindings 
+		bindsym j resize shrink width 10 px or 10 ppt
+        bindsym k resize grow height 10 px or 10 ppt
+        bindsym l resize shrink height 10 px or 10 ppt
+        bindsym semicolon resize grow width 10 px or 10 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+# enter resize mode
+bindsym $mod+r mode "resize"
+
+# colors
+# ===========================================
+
+# color variables
+set $clr-bg 		#181818
+set $clr-ia-bg   	#181818
+set $clr-txt 		#d8d8d8
+set $clr-ia-txt  	#585858
+set $clr-urgent-bg 	#ab4642
+
+# class                 border  	backgr. 	text    	indicator	child_border 	
+client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#7cafc2		#b8b8b8
+client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#585858		#585858
+client.unfocused        #333333 	#222222 	#888888 	#282828		#282828
+client.urgent           $clr-urgent-bg	$clr-urgent-bg $clr-txt $clr-urgent-bg
+
+set $i3bar-clr-bg		#181818
+set $i3bar-clr-ia-bg    #181818
+
+bar {
+    position top
+    font pango: Roboto Mono, FontAwesome 9
+    status_command i3blocks -c ~/.i3/i3blocks.conf
+	# tray_output primary 
+	colors {
+		background $i3bar-clr-bg 
+		separator #585858
+
+		#                  border             	background         	text
+		focused_workspace  $clr-ia-txt      	$i3bar-clr-bg      	$clr-txt
+		active_workspace   $i3bar-clr-bg      	$i3bar-clr-bg      	$clr-txt
+		inactive_workspace $i3bar-clr-ia-bg  	$i3bar-clr-bg  		$clr-ia-txt
+		urgent_workspace   $clr-urgent-bg    	$clr-urgent-bg    	$clr-txt 
+	}
+}
+
+# MPD
+# ===========================================
+exec mpd # start daemon
+
+# mpc hotkeys
+bindsym $mod+Home exec mpc toggle
+bindsym $mod+End exec mpc stop
+bindsym $mod+Next exec mpc next
+bindsym $mod+Prior exec mpc prev
+
+
+# xset & setxkbmap 
+# ===========================================
+exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
+exec xset s off # set screensaver off
+exec xset r rate 250 25 # keyboard repeat rate
+exec xset m 0 0 # mouse pointer speed
+
+exec setxkbmap us
+exec setxkbmap -option compose:ralt
+
+# move current workspace to other monitor 
+# bindsym $mod+Tab exec i3-msg move workspace to output right
+
+# system applications 
+# ===========================================
+exec_always unclutter -noevents
+exec compton --backend glx --vsync opengl-swc
+# exec --no-startup-id dbus-launch nm-applet 
+
+exec_always feh --bg-scale ~/Pictures/wallpaper.jpg  
+# exec_always feh --bg-scale ~/Pictures/wallpaper.png
+# exec_always --no-startup-id xsetroot -solid "171717" 
+
+# custom applications / autstart
+# ===========================================
+exec --no-startup-id thunderbird 
+exec --no-startup-id i3-msg 'workspace 10: Terminal'
+
+# application assignments
+# ===========================================
+assign [class="Chromium-browser"] $workspace_1
+assign [class="discord"] $workspace_2
+assign [class="Thunderbird"] $workspace_3
+
+assign [class="Steam"] $workspace_4
+
+assign [class="Gvim"] $workspace_9
+assign [class="jetbrains-idea-ce"] $workspace_9
+
+# window config
+# ===========================================
+for_window [class="^.*"] border pixel 2 # remove top bar
+
+# gaps config
+# ===========================================
+gaps inner 6
+smart_borders on
