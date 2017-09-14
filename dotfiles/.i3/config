@@ -150,21 +150,36 @@ bindsym $mod+r mode "resize"
 # colors
 # ===========================================
 
-# color variables
-set $clr-bg 		#181818
-set $clr-ia-bg   	#181818
-set $clr-txt 		#d8d8d8
-set $clr-ia-txt  	#585858
-set $clr-urgent-bg 	#ab4642
+set $color-indicator   #7cafc2
 
-# class                 border  	backgr. 	text    	indicator	child_border 	
-client.focused          $clr-bg 	$clr-bg 	$clr-txt  	#7cafc2		#b8b8b8
-client.focused_inactive $clr-bg 	$clr-bg 	$clr-txt  	#585858		#585858
-client.unfocused        #333333 	#222222 	#888888 	#282828		#282828
-client.urgent           $clr-urgent-bg	$clr-urgent-bg $clr-txt $clr-urgent-bg
+set $color-txt         #d8d8d8
+set $color-bg          #181818
 
-set $i3bar-clr-bg		#181818
-set $i3bar-clr-ia-bg    #181818
+set $color-ia-txt      #585858
+set $color-ia-bg       #181818
+
+set $color-urgent      #ab4642
+
+# dark ---> light 
+# 0    ---> 10
+set $color-0  #181818  
+set $color-1  #363636
+set $color-2  #585858
+set $color-3  #7a7a7a
+set $color-4  #9b9b9b
+set $color-5  #bdbdbd
+
+# class                     border  	    backgr. 	    text    	    indicator           child_border 	
+client.focused              $color-bg 	    $color-bg 	    $color-txt      $color-indicator    $color-5
+client.focused_inactive     $color-bg 	    $color-bg 	    $color-txt      $color-2            $color-2
+client.unfocused            $color-bg 	    $color-bg 	    $color-txt      $color-2            $color-2
+client.urgent               $crl-urgent	    $crl-urgent     $color-txt      $crl-urgent
+
+set $i3bar-color-bg		    #181818
+set $i3bar-color-ia-bg      #181818
+
+# bar
+# ===========================================
 
 bar {
     position top
@@ -172,15 +187,15 @@ bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
 	# tray_output primary 
 	colors {
-		background $i3bar-clr-bg 
+		background $i3bar-color-bg 
 		separator #585858
 
-		#                  border             	background         	text
-		focused_workspace  $clr-ia-txt      	$i3bar-clr-bg      	$clr-txt
-		active_workspace   $i3bar-clr-bg      	$i3bar-clr-bg      	$clr-txt
-		inactive_workspace $i3bar-clr-ia-bg  	$i3bar-clr-bg  		$clr-ia-txt
-		urgent_workspace   $clr-urgent-bg    	$clr-urgent-bg    	$clr-txt 
-	}
+        #                      border             	background         	text
+		focused_workspace      $color-ia-txt      	$i3bar-color-bg     $color-txt
+		active_workspace       $i3bar-color-bg      $i3bar-color-bg     $color-txt
+		inactive_workspace     $i3bar-color-ia-bg  	$i3bar-color-bg  	$color-ia-txt
+		urgent_workspace       $crl-urgent    	    $crl-urgent    	    $color-txt 
+	} 
 }
 
 # MPD
@@ -188,11 +203,10 @@ bar {
 exec mpd # start daemon
 
 # mpc hotkeys
-bindsym $mod+Home exec mpc toggle
-bindsym $mod+End exec mpc stop
-bindsym $mod+Next exec mpc next
+bindsym $mod+Home  exec mpc toggle
+bindsym $mod+End   exec mpc stop
+bindsym $mod+Next  exec mpc next
 bindsym $mod+Prior exec mpc prev
-
 
 # xset & setxkbmap 
 # ===========================================
@@ -203,9 +217,6 @@ exec xset m 0 0 # mouse pointer speed
 
 exec setxkbmap us
 exec setxkbmap -option compose:ralt
-
-# move current workspace to other monitor 
-# bindsym $mod+Tab exec i3-msg move workspace to output right
 
 # system applications 
 # ===========================================
@@ -222,7 +233,7 @@ exec_always feh --bg-scale ~/Pictures/wallpaper.jpg
 exec --no-startup-id thunderbird 
 exec --no-startup-id i3-msg 'workspace 10: Terminal'
 
-# application assignments
+# application & monitor assignments
 # ===========================================
 assign [class="Chromium-browser"] $workspace_1
 assign [class="discord"] $workspace_2
@@ -232,6 +243,9 @@ assign [class="Steam"] $workspace_4
 
 assign [class="Gvim"] $workspace_9
 assign [class="jetbrains-idea-ce"] $workspace_9
+
+# move current workspace to other monitor 
+# bindsym $mod+Tab exec i3-msg move workspace to output right
 
 # window config
 # ===========================================
