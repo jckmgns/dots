@@ -12,7 +12,10 @@ rofi.separator-style: solid
 ! urxvt config
 ! ------------------------------------------------------------
 ! set font
-URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
+! URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
+! see below for all terminus names
+URxvt.font:         -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+URxvt.bold.font:    -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 
 ! 'fake' transparency
 ! URxvt.transparent: false	
@@ -68,3 +71,24 @@ URxvt.scrollBar:	false
 *.color13:      #ba8baf
 *.color14:      #86c1b9
 *.color15:      #f8f8f8
+
+! ------------------------------------------------------------  
+! general information
+! ------------------------------------------------------------  
+
+! The Terminus font uses the following X-names:
+! -xos4-terminus-medium-r-normal--12-120-72-72-c-60-iso10646-1
+! -xos4-terminus-medium-r-normal--14-140-72-72-c-80-iso10646-1
+! -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+! -xos4-terminus-medium-r-normal--20-200-72-72-c-100-iso10646-1
+! -xos4-terminus-medium-r-normal--22-220-72-72-c-110-iso10646-1
+! -xos4-terminus-medium-r-normal--24-240-72-72-c-120-iso10646-1
+! -xos4-terminus-medium-r-normal--28-280-72-72-c-140-iso10646-1
+! -xos4-terminus-medium-r-normal--32-320-72-72-c-160-iso10646-1
+! -xos4-terminus-bold-r-normal--12-120-72-72-c-60-iso10646-1
+! -xos4-terminus-bold-r-normal--14-140-72-72-c-80-iso10646-1
+! -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
+! -xos4-terminus-bold-r-normal--20-200-72-72-c-100-iso10646-1
+! -xos4-terminus-bold-r-normal--24-240-72-72-c-120-iso10646-1
+! -xos4-terminus-bold-r-normal--28-280-72-72-c-140-iso10646-1
+! -xos4-terminus-bold-r-normal--32-320-72-72-c-160-iso10646-1
