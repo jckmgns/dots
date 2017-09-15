@@ -7,6 +7,12 @@ rofi.color-normal: argb:0000000, #d8d8d8, argb:0000000, #d8d8d8, #181818
 rofi.color-active: argb:0000000, #86c1b9, argb:0000000, #86c1b9, #181818
 rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #ab4642, #181818
 rofi.separator-style: solid
+! rofi.color-enabled: true
+! rofi.color-window: argb:ee181818, #d8d8d8, #d8d8d8
+! rofi.color-normal: argb:0000000, #d8d8d8, argb:0000000, #d8d8d8, #181818
+! rofi.color-active: argb:0000000, #86c1b9, argb:0000000, #86c1b9, #181818
+! rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #ab4642, #181818
+! rofi.separator-style: solid
 
 ! ------------------------------------------------------------
 ! urxvt config
