@@ -175,9 +175,6 @@ client.focused_inactive     $color-bg 	    $color-bg 	    $color-txt      $color
 client.unfocused            $color-bg 	    $color-bg 	    $color-txt      $color-1            $color-1
 client.urgent               $crl-urgent	    $crl-urgent     $color-txt      $crl-urgent
 
-set $i3bar-color-bg		    $color-0
-set $i3bar-color-ia-bg      $col0r-0 
-
 # bar
 # ===========================================
 
@@ -187,13 +184,13 @@ bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
 	# tray_output primary 
 	colors {
-		background $i3bar-color-bg 
-		separator #585858
+		background $color-0
+		separator $color-2
 
         #                      border             	background         	text
-		focused_workspace      $color-ia-txt      	$i3bar-color-bg     $color-txt
-		active_workspace       $i3bar-color-bg      $i3bar-color-bg     $color-txt
-		inactive_workspace     $i3bar-color-ia-bg  	$i3bar-color-bg  	$color-ia-txt
+		focused_workspace      $color-ia-txt      	$color-0            $color-txt
+		active_workspace       $color-0             $color-0            $color-txt
+		inactive_workspace     $color-0  	        $color-0  	        $color-ia-txt
 		urgent_workspace       $crl-urgent    	    $crl-urgent    	    $color-txt 
 	} 
 }
