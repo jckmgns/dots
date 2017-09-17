@@ -191,7 +191,7 @@ bar {
 		focused_workspace      $color-ia-txt      	$color-0            $color-txt
 		active_workspace       $color-0             $color-0            $color-txt
 		inactive_workspace     $color-0  	        $color-0  	        $color-ia-txt
-		urgent_workspace       $crl-urgent    	    $crl-urgent    	    $color-txt 
+		urgent_workspace       $color-urgent    	$color-urgent    	$color-txt 
 	} 
 }
 
