@@ -1,25 +1,44 @@
 #/usr/bin/env bash
 
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 main() {
-    for directory in $(find "${HOME}/linux-config/dotfiles/" -type d); do
-        dest_dir="${HOME}/$directory"
+    create_links
+}
 
-        if [[ ! -d dest_dir ]]; then
-            mkdir $dest_dir 2> /dev/null
+create_links() {
+    local source="$DIR/dotfiles"
+    local backup_root="$DIR/backup/dotfiles"
+    local backup="${backup_root}/$(date +"%Y-%m-%d_%T")"
+
+    # create missing directories ...
+    for dir in $(find ${source} -type d); do
+        target_dir=${dir/$source\//$HOME/}
+        backup_dir=${dir/$source\//$backup/}
+
+        mkdir -p $backup_dir
+        if [[ ! -d $target_dir ]]; then
+            mkdir $target_dir
         fi
     done
 
-    for file in $(find "${HOME}/linux-config/dotfiles/" -type f); do
-        # replace first occurrence of '.' ... probably not necessary
-        # file=$(echo $f | sed 's/.//1') 
-        dest_file="${HOME}/${file}"
+    mkdir -p $backup
 
-        if [[ -f $dest_file ]]; then
-            mv -f "$dest_file" "${dest_file}.bak" &> /dev/null
+    for file in $(find ${source} -type f); do
+        target_file=${file/$source\//$HOME/}
+        backup_file=${file/$source\//$backup/}
+
+        # backup if target file exists and is not a link
+        if [[ -f $target_file ]] && [[ ! -L $target_file ]]; then
+            cp $target_file $backup_file
+            rm $target_file
         fi
 
-        ln -f -s $file $dest_file 
+        ln -f -s $file $target_file
     done
+
+    # cleanup backup directory 
+    find $backup_root -type d -empty -delete
 }
 
 main
