@@ -12,6 +12,5 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 xrdb ~/.Xresources 
-udiskie &
 
 exec i3
