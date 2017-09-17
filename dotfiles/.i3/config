@@ -233,6 +233,7 @@ exec --no-startup-id i3-msg 'workspace 10: Terminal'
 # application & monitor assignments
 # ===========================================
 assign [class="Chromium-browser"] $workspace_1
+assign [class="Chromium"] $workspace_1
 assign [class="discord"] $workspace_2
 assign [class="Thunderbird"] $workspace_3
 
