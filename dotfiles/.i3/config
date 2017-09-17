@@ -171,12 +171,12 @@ set $color-5  #bdbdbd
 
 # class                     border  	    backgr. 	    text    	    indicator           child_border 	
 client.focused              $color-bg 	    $color-bg 	    $color-txt      $color-indicator    $color-5
-client.focused_inactive     $color-bg 	    $color-bg 	    $color-txt      $color-2            $color-2
-client.unfocused            $color-bg 	    $color-bg 	    $color-txt      $color-2            $color-2
+client.focused_inactive     $color-bg 	    $color-bg 	    $color-txt      $color-1            $color-1
+client.unfocused            $color-bg 	    $color-bg 	    $color-txt      $color-1            $color-1
 client.urgent               $crl-urgent	    $crl-urgent     $color-txt      $crl-urgent
 
-set $i3bar-color-bg		    #181818
-set $i3bar-color-ia-bg      #181818
+set $i3bar-color-bg		    $color-0
+set $i3bar-color-ia-bg      $col0r-0 
 
 # bar
 # ===========================================
