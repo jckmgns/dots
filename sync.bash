@@ -1,10 +1,7 @@
 #/usr/bin/env bash
 
 main() {
-    (
-    cd ${HOME}/linux-config/dotfiles
-
-    for directory in $(find . -type d); do
+    for directory in $(find "${HOME}/linux-config/dotfiles/" -type d); do
         dest_dir="${HOME}/$directory"
 
         if [[ ! -d dest_dir ]]; then
@@ -12,7 +9,7 @@ main() {
         fi
     done
 
-    for file in $(find . -type f); do
+    for file in $(find "${HOME}/linux-config/dotfiles/" -type f); do
         # replace first occurrence of '.' ... probably not necessary
         # file=$(echo $f | sed 's/.//1') 
         dest_file="${HOME}/${file}"
@@ -21,9 +18,8 @@ main() {
             mv -f "$dest_file" "${dest_file}.bak" &> /dev/null
         fi
 
-        ln -f $file $dest_file 
+        ln -f -s $file $dest_file 
     done
-    )
 }
 
 main
