@@ -200,10 +200,10 @@ bar {
 exec mpd # start daemon
 
 # mpc hotkeys
-bindsym $mod+Insert     exec mpc toggle
-bindsym $mod+Delete     exec mpc stop
-bindsym $mod+Home       exec mpc volume +5
-bindsym $mod+End        exec mpc volume -5
+bindsym $mod+Insert     exec mpc volume +5
+bindsym $mod+Delete     exec mpc volume -5
+bindsym $mod+Home       exec mpc toggle
+bindsym $mod+End        exec mpc stop
 bindsym $mod+Next       exec mpc next
 bindsym $mod+Prior      exec mpc prev
 
@@ -214,8 +214,7 @@ exec xset s off # set screensaver off
 exec xset r rate 250 25 # keyboard repeat rate
 exec xset m 0 0 # mouse pointer speed
 
-exec setxkbmap us
-exec setxkbmap -option compose:ralt
+exec --no-startup-id "setxkbmap -layout us -option compose:ralt"
 
 # system applications 
 # ===========================================
