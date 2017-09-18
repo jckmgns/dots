@@ -11,7 +11,7 @@ install='sudo pacman -S --noconfirm'
 remove='sudo pacman -R --noconfirm'
 
 main() {
-    sudo pacman -Syyuu # update package list and start full upgrade
+    sudo pacman -Syyuu --noconfirm # update package list and start full upgrade
 
     basics
     essentials
@@ -20,19 +20,22 @@ main() {
 
     # install and setup nonfree graphics card drivers, 
     # via manjaro hardware detection (0300 is the ID for graphics cards)
+    echo
     if ask "Do you want to install nonfree graphics card drivers?" y; then
         sudo mhwd -a pci nonfree 0300
     fi
 
     echo
     echo "Installation of packages finished!"
+    echo
     if ask "Do you want to configure your system now?" y; then
         bash ./configure.bash
     fi
     
     echo
     echo "Configuration finished!"
-    echo "It's recommended that you restart your computer now."
+    echo
+    echo "It is recommended that you restart your computer now."
     if ask "Do you want to reboot?" y; then
         sudo shutdown -r 0
     fi
@@ -65,6 +68,7 @@ essentials() {
 
 
     $install mpd ncmpcpp mpc
+    echo
     if ask "Do you want to setup mpd for local play?" y; then
         sudo systemctl stop mpd.service
         sudo systemctl disable mpd.service
@@ -74,7 +78,7 @@ essentials() {
 
 programming_essentials() {
     # ycm dependencies
-    pacaur --noconfirm -S libtinfo
+    echo y | pacaur -S libtinfo5 # could be deprecated in the future ...
 
     # rust
     curl https://sh.rustup.rs -sSf | sh
@@ -86,22 +90,27 @@ programming_essentials() {
 }
 
 additionals() {
+    echo
     if ask "Do you want to install krita?" y; then
         $install krita
     fi
 
+    echo
     if ask "Do you want to install blender?" y; then
         $install blender 
     fi
 
+    echo
     if ask "Do you want to install steam?" y; then
         $install steam 
     fi
 
+    echo
     if ask "Do you want to install discord?" y; then
         install_discord 
     fi
 
+    echo
     if ask "Do you want to install k3b?" y; then
         $install k3b
     fi
@@ -121,7 +130,7 @@ install_discord() {
     done
     )
 
-    pacaur -S --noconfirm discord-canary
+    echo 'y' | pacaur -S discord-canary
 }
 
 main
