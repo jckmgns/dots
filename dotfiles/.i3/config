@@ -213,6 +213,7 @@ exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
 exec xset s off # set screensaver off
 exec xset r rate 250 25 # keyboard repeat rate
 exec xset m 0 0 # mouse pointer speed
+exec xset b off
 
 exec --no-startup-id "setxkbmap -layout us -option compose:ralt"
 
@@ -252,5 +253,5 @@ for_window [class="^.*"] border pixel 2 # remove top bar
 
 # gaps config
 # ===========================================
-gaps inner 6
-smart_borders on
+# gaps inner 6
+# smart_borders on
