@@ -13,17 +13,12 @@ remove='sudo pacman -R --noconfirm'
 main() {
     sudo pacman -Syyuu --noconfirm # update package list and start full upgrade
 
+    drivers
     basics
     essentials
     additionals
     programming_essentials
 
-    # install and setup nonfree graphics card drivers, 
-    # via manjaro hardware detection (0300 is the ID for graphics cards)
-    echo
-    if ask "Do you want to install nonfree graphics card drivers?" y; then
-        sudo mhwd -a pci nonfree 0300
-    fi
 
     echo
     echo "Installation of packages finished!"
@@ -38,6 +33,21 @@ main() {
     echo "It is recommended that you restart your computer now."
     if ask "Do you want to reboot?" y; then
         sudo shutdown -r 0
+    fi
+}
+
+drivers() {
+    # install and setup nonfree graphics card drivers, 
+    # via manjaro hardware detection (0300 is the ID for graphics cards)
+    echo
+    if ask "Do you want to install nonfree graphics card drivers?" y; then
+        sudo mhwd -a pci nonfree 0300
+    fi
+
+    echo
+    if ask "Do you want to install wacom drivers?" y; then
+        $install libwacom
+        # $install xf86-input-wacom
     fi
 }
 
