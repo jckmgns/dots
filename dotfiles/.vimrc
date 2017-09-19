@@ -92,6 +92,7 @@ nnoremap <F5> :SyntasticCheck<CR>
 syntax enable " enable syntax highlighting
 set background=dark
 colorscheme gruvbox
+set history=200 " set command mode history to 200
 " disable automatic comment insert
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
