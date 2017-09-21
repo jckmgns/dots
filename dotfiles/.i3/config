@@ -171,8 +171,8 @@ set $color-5  #bdbdbd
 
 # class                     border  	    backgr. 	    text    	    indicator           child_border 	
 client.focused              $color-bg 	    $color-bg 	    $color-txt      $color-indicator    $color-5
-client.focused_inactive     $color-bg 	    $color-bg 	    $color-txt      $color-1            $color-1
-client.unfocused            $color-bg 	    $color-bg 	    $color-txt      $color-1            $color-1
+client.focused_inactive     $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-1            $color-1
+client.unfocused            $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-1            $color-1
 client.urgent               $crl-urgent	    $crl-urgent     $color-txt      $crl-urgent
 
 # bar
