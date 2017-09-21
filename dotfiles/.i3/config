@@ -220,7 +220,7 @@ exec --no-startup-id "setxkbmap -layout us -option compose:ralt"
 # system applications 
 # ===========================================
 exec_always unclutter -noevents
-exec compton 
+exec compton --config ~/.config/compton.conf -b
 # exec --no-startup-id dbus-launch nm-applet 
 
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg  
