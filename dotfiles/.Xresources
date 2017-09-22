@@ -3,28 +3,17 @@
 ! ------------------------------------------------------------
 rofi.color-enabled: true
 rofi.color-window: argb:ee181818, #d8d8d8, #d8d8d8
-rofi.color-normal: argb:00000000, #d8d8d8, argb:00000000, #d8d8d8, #181818
-rofi.color-active: argb:00000000, #86c1b9, argb:00000000, #86c1b9, #181818
-rofi.color-urgent: argb:00000000, #ab4642, argb:00000000, #ab4642, #181818
+rofi.color-normal: argb:0000000, #d8d8d8, argb:0000000, #d8d8d8, #181818
+rofi.color-active: argb:0000000, #86c1b9, argb:0000000, #86c1b9, #181818
+rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #ab4642, #181818
 rofi.separator-style: solid
 rofi.width: 50
 rofi.padding: 30
-
-! rofi.fullscreen: false 
-! rofi.padding: 240
-
-! rofi.color-enabled: true
-! rofi.color-window: argb:ee181818, #d8d8d8, #d8d8d8
-! rofi.color-normal: argb:0000000, #d8d8d8, argb:0000000, #d8d8d8, #181818
-! rofi.color-active: argb:0000000, #86c1b9, argb:0000000, #86c1b9, #181818
-! rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #ab4642, #181818
-! rofi.separator-style: solid
-
 ! ------------------------------------------------------------
 ! urxvt config
 ! ------------------------------------------------------------
 ! set font
-URxvt.font: 		xft:Roboto Mono:pixelsize=14:antialias=true
+URxvt.font: 		xft:Roboto Mono:pixelsize=13:antialias=true
 ! see below for all terminus names
 ! URxvt.font:         -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
 ! URxvt.bold.font:    -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
