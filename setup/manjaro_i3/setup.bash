@@ -73,7 +73,7 @@ essentials() {
     $install git network-manager lxappearance htop ranger w3m                    
 
     # these are probably not installed
-    $install chromium thunderbird thunar libreoffice evince
+    $install chromium thunderbird thunar libreoffice evince unzip
     # pacaur -S --noconfirm shutter # shutter is appearantly giant ...
 
 
