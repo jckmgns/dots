@@ -1,22 +1,10 @@
 ! ------------------------------------------------------------
-! ROFI Color theme
+! Urxvt Config
 ! ------------------------------------------------------------
-rofi.color-enabled: true
-rofi.color-window: argb:ee181818, #d8d8d8, #d8d8d8
-rofi.color-normal: argb:0000000, #d8d8d8, argb:0000000, #d8d8d8, #181818
-rofi.color-active: argb:0000000, #86c1b9, argb:0000000, #86c1b9, #181818
-rofi.color-urgent: argb:0000000, #ab4642, argb:0000000, #ab4642, #181818
-rofi.separator-style: solid
-rofi.width: 50
-rofi.padding: 30
-! ------------------------------------------------------------
-! urxvt config
-! ------------------------------------------------------------
-! set font
-URxvt.font: 		xft:Roboto Mono:pixelsize=13:antialias=true
+! URxvt.font: 		xft:Roboto Mono:pixelsize=13:antialias=true
+URxvt.font:         -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
+URxvt.bold.font:    -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 ! see below for all terminus names
-! URxvt.font:         -xos4-terminus-medium-r-normal--16-160-72-72-c-80-iso10646-1
-! URxvt.bold.font:    -xos4-terminus-bold-r-normal--16-160-72-72-c-80-iso10646-1
 
 ! 'fake' transparency
 ! URxvt.transparent: false
@@ -33,30 +21,9 @@ URxvt.keysym.Control-Up:     \033[1;5A
 URxvt.keysym.Control-Down:   \033[1;5B
 URxvt.keysym.Control-Left:   \033[1;5D
 URxvt.keysym.Control-Right:  \033[1;5C
-
 ! ------------------------------------------------------------
 ! color scheme
 ! ------------------------------------------------------------
-! Base16 Default Dark
-! Scheme: Chris Kempson (http://chriskempson.com)
-
-#define base00 #181818
-#define base01 #282828
-#define base02 #383838
-#define base03 #585858
-#define base04 #b8b8b8
-#define base05 #d8d8d8
-#define base06 #e8e8e8
-#define base07 #f8f8f8
-#define base08 #ab4642
-#define base09 #dc9656
-#define base0A #f7ca88
-#define base0B #a1b56c
-#define base0C #86c1b9
-#define base0D #7cafc2
-#define base0E #ba8baf
-#define base0F #a16946
-
 *.foreground:   #d8d8d8
 *.background:   #181818
 *.cursorColor:  #d8d8d8
@@ -80,7 +47,7 @@ URxvt.keysym.Control-Right:  \033[1;5C
 *.color15:      #f8f8f8
 
 ! ------------------------------------------------------------  
-! general information
+! General Information
 ! ------------------------------------------------------------  
 
 ! The Terminus font uses the following X-names:
