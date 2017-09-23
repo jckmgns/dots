@@ -163,16 +163,16 @@ set $color-urgent      #ab4642
 # dark ---> light 
 # 0    ---> 10
 set $color-0  #181818  
-set $color-1  #363636
-set $color-2  #585858
-set $color-3  #7a7a7a
-set $color-4  #9b9b9b
-set $color-5  #bdbdbd
+set $color-1  #282828
+set $color-2  #383838
+set $color-3  #585858
+set $color-4  #b8b8b8
+set $color-5  #d8d8d8
 
 # class                     border  	    backgr. 	    text    	    indicator           child_border 	
 client.focused              $color-bg 	    $color-bg 	    $color-txt      $color-indicator    $color-5
-client.focused_inactive     $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-1            $color-1
-client.unfocused            $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-1            $color-1
+client.focused_inactive     $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-0            $color-0
+client.unfocused            $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-0            $color-0
 client.urgent               $crl-urgent	    $crl-urgent     $color-txt      $crl-urgent
 
 # bar
@@ -250,6 +250,13 @@ assign [class="jetbrains-idea-ce"] $workspace_9
 # window config
 # ===========================================
 for_window [class="^.*"] border pixel 2 # remove top bar
+
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
 
 # gaps config
 # ===========================================
