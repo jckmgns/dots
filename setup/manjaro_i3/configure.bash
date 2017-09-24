@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 
 main() {
-    echo "Configure script!"
+    echo
+    echo "Configure script finished!"
 }
 
 main

@@ -11,6 +11,19 @@ install='sudo pacman -S --noconfirm'
 remove='sudo pacman -R --noconfirm'
 
 main() {
+    echo "Official packages can be installed without user interaction."
+    echo "(AUR packages still needs a user present to read and confirm PKGBUILDS)"
+    echo 
+    if ask "Do you want this installer to be (mostly) non-interactive?" y; then
+        install='sudo pacman -S --noconfirm'
+        remove='sudo pacman -R --noconfirm'
+    else 
+        install='sudo pacman -S'
+        remote='sudo pacman -R'
+    fi
+
+    echo 
+    echo "Updating package list and upgrading already installed packages ..."
     sudo pacman -Syyuu --noconfirm # update package list and start full upgrade
 
     drivers
@@ -40,7 +53,7 @@ drivers() {
     # install and setup nonfree graphics card drivers, 
     # via manjaro hardware detection (0300 is the ID for graphics cards)
     echo
-    if ask "Do you want to install nonfree graphics card drivers?" y; then
+    if ask "Do you want to install (nonfree) graphics card drivers?" y; then
         sudo mhwd -a pci nonfree 0300
     fi
 
@@ -116,13 +129,18 @@ additionals() {
     fi
 
     echo
-    if ask "Do you want to install discord?" y; then
+    if ask "Do you want to install k3b?" y; then
+        $install k3b
+    fi
+
+    echo
+    if ask "Do you want to install discord-canary? (AUR)" y; then
         install_discord 
     fi
 
     echo
-    if ask "Do you want to install k3b?" y; then
-        $install k3b
+    if ask "Do you want to install pulsemixer? (AUR)" y; then
+        echo y | pacaur -S  pulsemixer-git
     fi
 }
 
