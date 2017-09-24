@@ -70,7 +70,7 @@ bindsym $mod+q focus child
 set $workspace_1 "1: WWW"
 set $workspace_2 "2: Chat"
 set $workspace_3 "3: Mail" 
-set $workspace_4 "4: Steam"
+set $workspace_4 "4: Games"
 set $workspace_5 "5: Other"
 set $workspace_6 "6: Other"
 set $workspace_7 "7: Other"
@@ -209,13 +209,14 @@ bindsym $mod+Prior      exec mpc prev
 
 # xset & setxkbmap 
 # ===========================================
-exec xset dpms 1800 1800 1800 # set display power managament signaling to 30m
-exec xset s off # set screensaver off
-exec xset r rate 250 25 # keyboard repeat rate
-exec xset m 0 0 # mouse pointer speed
-exec xset b off
+# set display power managament signaling to 30m
+exec_always --no-startup-id xset dpms 1800 1800 1800 
+exec_always --no-startup-id xset s off # set screensaver off
+exec_always --no-startup-id xset r rate 250 25 # keyboard repeat rate
+exec_always --no-startup-id xset m 0 0 # mouse pointer speed
+exec_always --no-startup-id xset b off
 
-exec --no-startup-id "setxkbmap -layout us -option compose:ralt"
+exec_always --no-startup-id "setxkbmap -layout us -option compose:ralt"
 
 # system applications 
 # ===========================================
@@ -241,7 +242,7 @@ assign [class="Thunderbird"] $workspace_3
 
 assign [class="Steam"] $workspace_4
 
-assign [class="Gvim"] $workspace_9
+# assign [class="Gvim"] $workspace_9
 assign [class="jetbrains-idea-ce"] $workspace_9
 
 # move current workspace to other monitor 
