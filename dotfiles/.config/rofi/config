@@ -1,4 +1,4 @@
-#include "/usr/share/rofi/themes/gruvbox-dark.theme"
+#include "./themes/dark-alpha.theme"
 rofi.separator-style: solid
 rofi.width: 50
 rofi.padding: 30 

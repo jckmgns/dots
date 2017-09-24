@@ -1,0 +1,8 @@
+! ------------------------------------------------------------------------------
+! Dark Alpha Color Theme (lossely based on base16)
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+rofi.color-window: argb:ee181818, #e8e8e8, #e8e8e8
+rofi.color-normal: argb:00000000, #e8e8e8, argb:00000000, argb:48ffffff, #e8e8e8
+rofi.color-active: argb:00000000, #7cafc2, argb:00000000, argb:48ffffff, #7cafc2
+rofi.color-urgent: argb:00000000, #ab4642, argb:00000000, argb:48ffffff, #ab4642
