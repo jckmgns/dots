@@ -1,145 +1,145 @@
-set nocompatible " remove vi support
+" ------------------------------------------------------------
+" VUNDLE
+" ------------------------------------------------------------
+
+set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+" ------------------------------------------------------------
+
+" Base
+" ==============================
+
 Plugin 'VundleVim/Vundle.vim'
 
-" languages
-" ===============
-Plugin 'jdonaldson/vaxe' " haxe
-Plugin 'rust-lang/rust.vim' " rust plugin
+" Languages
+" ==============================
 
-" funtionality
-" ===============
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'rust-lang/rust.vim'
+
+" General Functionality
+" ==============================
+
 Plugin 'vim-syntastic/syntastic'
+Plugin 'vim-airline/vim-airline'
+Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-surround'
-Plugin 'alvan/vim-closetag'
 
-Plugin 'majutsushi/tagbar'
-Plugin 'scrooloose/nerdtree'
+Plugin 'octref/RootIgnore' " Set 'wildignore' from .gitignore
 
-" appearance
-" ===============
-Plugin 'vim-airline/vim-airline'
+" Appearance
+" ==============================
+
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'morhetz/gruvbox'
+
+" ------------------------------------------------------------
 
 call vundle#end()
 filetype plugin indent on
 
-" ----------------------------------------------------
+" ------------------------------------------------------------
+" SETTINGS
+" ------------------------------------------------------------
 
-" Haxe & Vaxe
-let g:vaxe_lime_target = 'linux -neko -64'
-let g:vaxe_enable_airline_defaults = 0
-au FileType haxe nmap <F7> :call vaxe#Ctags()<CR>
+" Languages
+" ==============================
+" Language specific settings are located under ~/.vim/ftplugin/*
+let g:syntastic_rust_checkers = ['cargo', 'rustc']
 
-" Rust
-let g:syntastic_rust_checkers = ['cargo', 'rustc'] " syntastic check for rust
-" install rust sources: rustup component add rust-src
-let g:ycm_rust_src_path = system('rustc --print sysroot') + "
-            \/lib/rustlib/src/rust/src"
-
-" C++
-au FileType cpp set cindent
-au FileType cpp set cino=N-sg0
-let g:syntastic_cpp_checkers = ['gcc']
-let g:syntastic_cpp_compiler = 'gcc'
-let g:syntastic_cpp_compiler_options = '-std=c++14'
-
-" NerdTree
-map <C-n> :NERDTreeToggle<CR>
-
-" Tagbar
-nmap <F8> :TagbarToggle<CR>
-
-" YCM
-let g:ycm_auto_trigger = 0 " disable auto complete
-let g:ycm_global_ycm_extra_conf = "~/.vim/bundle/YouCompleteMe/third_party
-            \/ycmd/cpp/ycm/.ycm_extra_conf.py"
-let g:ycm_autoclose_preview_window_after_insertion = 1
+" Plugins
+" ==============================
 
 " Airline
 set laststatus=2
-let g:airline_theme='gruvbox'
-let g:airline_left_sep=''
-let g:airline_right_sep=''
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#whitespace#enabled = 0
-let g:airline#extensions#syntastic#enabled = 0
 
+let g:airline#extensions#syntastic#enabled = 0
+let g:airline#extensions#whitespace#enabled = 0
+
+let g:airline_theme = 'gruvbox'
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_symbols = {}
 let g:airline_symbols.linenr = ':'
 let g:airline_symbols.maxlinenr = ''
 
-" vim-closetag
-let g:closetag_filenames = "*.html,*.xml"
-
-" syntastic
+" Syntastic
+set statusline+=%*
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+
 let g:syntastic_mode_map = { 'mode': 'passive' }
-nnoremap <F5> :SyntasticCheck<CR>
 
-" BASICS
-syntax enable " enable syntax highlighting
+" General
+" ==============================
+
+" History
+set history=128 " Command mode history
+
+" Completion
+set omnifunc=syntaxcomplete#Complete " Enable omni-completion
+
+" User Interface
+syntax enable
 set background=dark
-colorscheme gruvbox
-set history=200 " set command mode history to 200
-" disable automatic comment insert
-autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" SPACES AND TABS
-set tabstop=4 " tab size 4
-set softtabstop=4 " number of spaces in tab when editing
-set shiftwidth=4 " when indenting with '>', use 4 spaces
-set expandtab " replace tab with spaces
+silent! colorscheme gruvbox
 
-" CUSTOM
-filetype plugin on
-set omnifunc=syntaxcomplete#Complete
-set autowrite " write on buffer switch
+set number " Show line numbers
+set relativenumber " Show relative line numbers
 
-" UI CONFIG
-set number " show line numbers
-set relativenumber " show relative line numbers
-set cursorline " highlight current line
-filetype indent on " load filetype specific indent files
-set wildmenu " visual autocomplete for command menu
+set wildmenu " Visual autocomplete for command menu
+
+set cursorline " Highligh current line
+
 set colorcolumn=81
 highlight colorcolumn ctermbg=darkgray
 
-" SEARCHING
-set incsearch " search as characters are entered
-set hlsearch " highlight matches
-set ignorecase " ignores the case when seaching
-set path+=** " enables recursive folder search
+" Tabs and Spaces
+set tabstop=4 " How many columns a tab counts for
+set softtabstop=4 " How many columns are inserted when pressing tab
+set shiftwidth=4 " How many columns text will be shifted
+set expandtab " Insert spaces when pressing tab
 
-" SEARCH IGNORE STUFF
-set wildignore+=**/bin/** " ignore stuff from compile folder
-set wildignore+=**/target/** " ignore stuff from (rust) compile folder
-set wildignore+=**/doc/** " ignore generated doc files
-set wildignore+=**/build/** " ignore build files for cmake
+filetype indent on " Load filetype specific indent files
 
-" MOVEMENT
-" move vertically by visual line
+" Searching
+set incsearch " Search as characters are entered
+set hlsearch " Highlight matches
+set ignorecase " Ignores the case when searching
+set smartcase " Case sensitive if pattern contains upper case character
+
+set path+=** " Recursive folder search
+
+" ------------------------------------------------------------
+" KEY MAPPINGS
+" ------------------------------------------------------------
+
+" Plugins
+" ==============================
+
+" Tagbar
+nnoremap <Leader>t :TagbarToggle<CR>
+
+" Syntastic
+nnoremap <Leader>s :SyntasticCheck<CR>
+
+" General
+" ==============================
+
+inoremap jj <Esc>
+
+" Move vertically by visual line
 nnoremap j gj
 nnoremap k gk
 
-" SHORTCUTS
-" jj is escape
-inoremap jj <Esc>
+" Remove all trailing whitespace when pressing <Leader>w
+nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 
-" removes all trailing whitespace when pressing F4
-nnoremap <F4> :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-
-" buffer switching
-map <C-j> :bprev<CR>
-map <C-k> :bnext<CR>
+" Mute search highlighting when pressing Control-l
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
