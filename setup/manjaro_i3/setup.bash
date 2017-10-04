@@ -110,6 +110,9 @@ programming_essentials() {
     # python
     $install python-pip
     sudo python -m pip install flake8 # linting engine
+
+    # other
+    $install ctags
 }
 
 additionals() {
