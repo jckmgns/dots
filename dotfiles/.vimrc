@@ -23,14 +23,17 @@ Plugin 'rust-lang/rust.vim'
 " General Functionality
 " ==============================
 
-Plugin 'vim-syntastic/syntastic'
+Plugin 'w0rp/ale'
+Plugin 'shougo/neocomplete.vim'
+Plugin 'sirver/ultisnips'
+
 Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
 Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-surround'
 
-Plugin 'octref/RootIgnore' " Set 'wildignore' from .gitignore
+Plugin 'octref/rootignore' " Set 'wildignore' from .gitignore
 
 " Appearance
 " ==============================
@@ -50,10 +53,16 @@ filetype plugin indent on
 " Languages
 " ==============================
 " Language specific settings are located under ~/.vim/ftplugin/*
-let g:syntastic_rust_checkers = ['cargo', 'rustc']
 
 " Plugins
 " ==============================
+
+" Ale
+let g:ale_lint_on_text_changed = 'never'
+
+" UltiSnips
+let g:UltiSnipsEditSplit="vertical"
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " Airline
 set laststatus=2
@@ -68,12 +77,10 @@ let g:airline_symbols = {}
 let g:airline_symbols.linenr = ':'
 let g:airline_symbols.maxlinenr = ''
 
-" Syntastic
-set statusline+=%*
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+" Internal / Shipped Plugins
+" ==============================
 
-let g:syntastic_mode_map = { 'mode': 'passive' }
+runtime! macros/matchit.vim " Extended % matching for HTML, LaTeX, and more ...
 
 " General
 " ==============================
@@ -123,11 +130,13 @@ set path+=** " Recursive folder search
 " Plugins
 " ==============================
 
-" Tagbar
+" Tagbar (Tags)
 nnoremap <Leader>t :TagbarToggle<CR>
 
-" Syntastic
-nnoremap <Leader>s :SyntasticCheck<CR>
+" UltiSnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " General
 " ==============================
@@ -139,7 +148,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Remove all trailing whitespace when pressing <Leader>w
-nnoremap <silent> <Leader>w :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nnoremap <silent> <leader>w :let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
+            \<Bar> :nohl <Bar> :unlet _s <CR>
 
 " Mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
