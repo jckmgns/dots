@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
 main() {
+    echo "Synchronising dotfiles ... "
+    bash ../../sync.bash
+
     vim_setup
+
     echo
     echo "Configure script finished!"
 }

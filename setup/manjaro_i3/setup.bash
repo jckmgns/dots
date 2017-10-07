@@ -156,8 +156,8 @@ install_discord() {
     tar -xaf "${tmp_dir}libc++.tar.gz" -C ${tmp_dir}
     . $(echo "${tmp_dir}libc++/PKGBUILD")
     for key in ${validpgpkeys[@]}; do
-        echo gpg --recv-key $key
-        echo gpg --lsign $key
+        gpg --recv-key $key
+        gpg --lsign $key
     done
     )
 
