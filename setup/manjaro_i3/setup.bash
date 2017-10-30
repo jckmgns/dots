@@ -161,7 +161,7 @@ install_discord() {
     done
     )
 
-    echo 'y' | pacaur -S discord-canary
+    'y' | pacaur -S discord-canary
 }
 
 main

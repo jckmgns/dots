@@ -95,7 +95,7 @@ set omnifunc=syntaxcomplete#Complete " Enable omni-completion
 syntax enable
 set background=dark
 
-silent! colorscheme gruvbox
+colorscheme gruvbox
 
 set number " Show line numbers
 set relativenumber " Show relative line numbers
