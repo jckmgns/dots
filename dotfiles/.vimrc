@@ -80,7 +80,12 @@ let g:airline_symbols.maxlinenr = ''
 " Internal / Shipped Plugins
 " ==============================
 
+" matchit
 runtime! macros/matchit.vim " Extended % matching for HTML, LaTeX, and more ...
+
+" netrw
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
 
 " General
 " ==============================
@@ -95,7 +100,7 @@ set omnifunc=syntaxcomplete#Complete " Enable omni-completion
 syntax enable
 set background=dark
 
-colorscheme gruvbox
+silent! colorscheme gruvbox
 
 set number " Show line numbers
 set relativenumber " Show relative line numbers
