@@ -45,6 +45,7 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;3
 PROMPT_DIRTRIM=3
 
 alias ls='ls -CF --color=auto'
+alias ll='ls -AlF --color=auto'
 
 # add ~/bin to path
 PATH=${HOME}/bin:${PATH}
