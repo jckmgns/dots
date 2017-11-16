@@ -33,8 +33,6 @@ Plugin 'kien/ctrlp.vim'
 
 Plugin 'tpope/vim-surround'
 
-Plugin 'octref/rootignore' " Set 'wildignore' from .gitignore
-
 " Appearance
 " ==============================
 
