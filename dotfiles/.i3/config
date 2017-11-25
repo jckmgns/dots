@@ -218,6 +218,11 @@ exec_always --no-startup-id xset b off
 
 exec_always --no-startup-id "setxkbmap -layout us -option compose:ralt"
 
+# custom keybinds
+# ===========================================
+bindsym $mod+i exec xdotool click 1 # 'fake' left mouseclick
+
+
 # system applications 
 # ===========================================
 exec unclutter -noevents -root -idle 3
