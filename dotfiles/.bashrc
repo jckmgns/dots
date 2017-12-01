@@ -18,7 +18,8 @@ shopt -s checkwinsize
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='ls --color=auto'
+    alias ls='ls -CF --color=auto'
+    alias ll='ls -AlF --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -43,9 +44,6 @@ fi
 PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[00m\]@\[\033[01;32m\]\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 #export PS1="\[$(tput bold)\]\u\[$(tput sgr0)\]@\[$(tput bold)\]\h\[$(tput sgr0)\]:\[$(tput bold)\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]"
 PROMPT_DIRTRIM=3
-
-alias ls='ls -CF --color=auto'
-alias ll='ls -AlF --color=auto'
 
 # add ~/bin to path
 PATH=${HOME}/bin:${PATH}
