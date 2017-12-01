@@ -8,6 +8,6 @@
 	lg = log --decorate --oneline --graph
 	la = log --all --decorate --oneline --graph
 [merge]
-	tool = kdiff3
+	tool = vimdiff
 [push]
 	default = matching
