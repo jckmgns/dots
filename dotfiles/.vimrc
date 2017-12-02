@@ -19,6 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 " ==============================
 
 Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
 
 " General Functionality
 " ==============================
