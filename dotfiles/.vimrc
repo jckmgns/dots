@@ -108,7 +108,7 @@ set wildmenu " Visual autocomplete for command menu
 
 set cursorline " Highligh current line
 
-set colorcolumn=81
+set colorcolumn=80
 highlight colorcolumn ctermbg=darkgray
 
 " Tabs and Spaces
