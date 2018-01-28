@@ -1,18 +1,14 @@
 #!/usr/bin/env bash
 
 main() {
-    echo "Synchronising dotfiles ... "
+    echo "Synchronising dotfiles ..."
     bash ../../sync.bash
 
-    vim_setup
+    echo "Configuring vim ..."
+    bash ../vimconfig.bash 2> /dev/null
 
     echo
-    echo "Configure script finished!"
-}
-
-vim_setup() {
-    git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-    echo | vim +PluginInstall
+    echo "Configuration script finished successfully!"
 }
 
 main
