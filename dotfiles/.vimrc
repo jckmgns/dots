@@ -18,8 +18,12 @@ Plugin 'VundleVim/Vundle.vim'
 " Languages
 " ==============================
 
+" Rust
 Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer'
+Plugin 'racer-rust/vim-racer' " completion
+
+" Python
+Plugin 'davidhalter/jedi-vim' " completion
 
 " General Functionality
 " ==============================
@@ -30,9 +34,10 @@ Plugin 'sirver/ultisnips'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'majutsushi/tagbar'
-Plugin 'kien/ctrlp.vim'
+Plugin 'junegunn/fzf.vim'
 
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " Appearance
 " ==============================
@@ -55,6 +60,10 @@ filetype plugin indent on
 
 " Plugins
 " ==============================
+
+" Jedi
+let g:jedi#popup_on_dot = 0
+let g:jedi#smart_auto_mappings = 0
 
 " Ale
 let g:ale_lint_on_text_changed = 'never'
@@ -84,7 +93,6 @@ runtime! macros/matchit.vim " Extended % matching for HTML, LaTeX, and more ...
 
 " netrw
 let g:netrw_banner = 0
-let g:netrw_liststyle = 3
 
 " General
 " ==============================
@@ -94,6 +102,9 @@ set history=128 " Command mode history
 
 " Completion
 set omnifunc=syntaxcomplete#Complete " Enable omni-completion
+
+" Minimize interpretation time of escape sequences
+set ttimeoutlen=1
 
 " User Interface
 syntax enable
@@ -135,7 +146,11 @@ set path+=** " Recursive folder search
 " ==============================
 
 " Tagbar (Tags)
-nnoremap <Leader>t :TagbarToggle<CR>
+nnoremap <Leader>T :TagbarToggle<CR>
+
+" fzf
+nnoremap <Leader>t :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -144,8 +159,6 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " General
 " ==============================
-
-inoremap jj <Esc>
 
 " Move vertically by visual line
 nnoremap j gj
