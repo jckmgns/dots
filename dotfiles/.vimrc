@@ -18,12 +18,15 @@ Plugin 'VundleVim/Vundle.vim'
 " Languages
 " ==============================
 
+" Python
+Plugin 'davidhalter/jedi-vim' " completion
+
 " Rust
 Plugin 'rust-lang/rust.vim'
 Plugin 'racer-rust/vim-racer' " completion
 
-" Python
-Plugin 'davidhalter/jedi-vim' " completion
+" XML
+Plugin 'othree/xml.vim'
 
 " General Functionality
 " ==============================
