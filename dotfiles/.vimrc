@@ -33,19 +33,22 @@ Plugin 'othree/xml.vim'
 
 Plugin 'w0rp/ale'
 Plugin 'shougo/neocomplete.vim'
-Plugin 'sirver/ultisnips'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
 
-Plugin 'tpope/vim-surround'
+Plugin 'sirver/ultisnips'
+Plugin 'majutsushi/tagbar'
+
+Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
+Plugin 'tpope/vim-surround'
 
 " Appearance
 " ==============================
 
+Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 Plugin 'morhetz/gruvbox'
 
 " ------------------------------------------------------------
