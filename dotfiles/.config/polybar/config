@@ -1,0 +1,126 @@
+[colors/gruvbox]
+color00 = #282828
+color01 = #cc241d
+color02 = #98971a
+color03 = #d79921
+color04 = #458588
+color05 = #b16286
+color06 = #689d6a
+color07 = #a89984
+color08 = #928374
+color09 = #fb4934
+color10 = #b8bb26
+color11 = #fabd2f
+color12 = #83a598
+color13 = #d3869b
+color14 = #8ec07c
+color15 = #ebdbb2
+
+[colors]
+inherit = colors/gruvbox
+foreground = ${colors.color15}
+background = ${colors.color00}
+
+; ============================================================
+
+[bar/default]
+width = 100%
+
+line-size = 2
+
+fixed-center = false
+
+padding-left = 1
+padding-right = 1
+
+module-margin-left = 1
+module-margin-right = 0
+
+bottom = false
+
+foreground = ${colors.foreground}
+background = ${colors.background}
+
+font-0 = Inconsolata:pixelsize=12;1
+
+tray-position = right
+
+modules-left = i3
+modules-right = volume disk memory cpu load date time
+
+; ============================================================
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+padding = 1
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = "%name%"
+label-unfocused-padding = ${module/i3.padding}
+
+; focused = Active workspace on focused monitor
+label-focused = "%name%"
+label-focused-underline = ${colors.foreground}
+label-focused-padding = ${module/i3.padding}
+
+; visible = Active workspace on unfocused monitor
+label-visible = "%name%"
+label-visible-underline = ${colors.color07}
+label-visible-padding = ${module/i3.padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = "%name%"
+label-urgent-underline = ${colors.color09}
+label-urgent-padding = ${module/i3.padding}
+
+; ==============================
+
+[module/time]
+type = internal/date
+label = "%time%"
+format-underline = ${colors.color06}
+time = %H:%M:%S
+
+[module/date]
+type = internal/date
+label = "%date%"
+format-underline = ${colors.color06}
+date = %Y-%m-%d
+
+[module/load]
+type = custom/script
+format = "LOAD <label>"
+interval = 5
+exec = /home/jackm/.config/polybar/modules/load_average.py
+format-underline = ${colors.color15}
+
+[module/cpu]
+type = internal/cpu
+format = "CPU <label>"
+interval = 5
+label = "%percentage%%"
+format-underline = ${colors.color15}
+
+[module/memory]
+type = internal/memory
+interval = 10
+label = "RAM %gb_free%"
+format-underline = ${colors.color12}
+
+[module/disk]
+type = internal/fs
+mount-0 = /
+label-mounted = "DISK %free%"
+format-mounted-underline = ${colors.color02}
+
+[module/volume]
+type = internal/volume
+format-volume = VOL <label-volume>
+format-volume-underline = ${colors.color03}
+
+label-muted = VOL MUTED
+label-muted-underline = ${colors.color03}
