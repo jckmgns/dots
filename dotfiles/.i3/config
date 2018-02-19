@@ -2,7 +2,7 @@
 set $mod Mod4
 
 # font 
-font pango:Roboto Mono 9 
+font pango:Inconsolata 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -67,39 +67,39 @@ bindsym $mod+a focus parent
 bindsym $mod+q focus child
 
 # workspace variables
-set $workspace_1 "1: WWW"
-set $workspace_2 "2: Chat"
-set $workspace_3 "3: Mail" 
-set $workspace_4 "4: Games"
-set $workspace_5 "5: Other"
-set $workspace_6 "6: Other"
-set $workspace_7 "7: Other"
-set $workspace_8 "8: Other"
-set $workspace_9 "9: Editor"
+set $workspace_01 "1: WWW"
+set $workspace_02 "2: Chat"
+set $workspace_03 "3: Mail" 
+set $workspace_04 "4: Games"
+set $workspace_05 "5"
+set $workspace_06 "6"
+set $workspace_07 "7"
+set $workspace_08 "8"
+set $workspace_09 "9: Editor"
 set $workspace_10 "10: Terminal"
 
 # switch to workspace
-bindsym $mod+1 workspace $workspace_1
-bindsym $mod+2 workspace $workspace_2
-bindsym $mod+3 workspace $workspace_3
-bindsym $mod+4 workspace $workspace_4
-bindsym $mod+5 workspace $workspace_5
-bindsym $mod+6 workspace $workspace_6
-bindsym $mod+7 workspace $workspace_7
-bindsym $mod+8 workspace $workspace_8
-bindsym $mod+9 workspace $workspace_9
+bindsym $mod+1 workspace $workspace_01
+bindsym $mod+2 workspace $workspace_02
+bindsym $mod+3 workspace $workspace_03
+bindsym $mod+4 workspace $workspace_04
+bindsym $mod+5 workspace $workspace_05
+bindsym $mod+6 workspace $workspace_06
+bindsym $mod+7 workspace $workspace_07
+bindsym $mod+8 workspace $workspace_08
+bindsym $mod+9 workspace $workspace_09
 bindsym $mod+0 workspace $workspace_10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $workspace_1
-bindsym $mod+Shift+2 move container to workspace $workspace_2
-bindsym $mod+Shift+3 move container to workspace $workspace_3
-bindsym $mod+Shift+4 move container to workspace $workspace_4
-bindsym $mod+Shift+5 move container to workspace $workspace_5
-bindsym $mod+Shift+6 move container to workspace $workspace_6
-bindsym $mod+Shift+7 move container to workspace $workspace_7
-bindsym $mod+Shift+8 move container to workspace $workspace_8
-bindsym $mod+Shift+9 move container to workspace $workspace_9
+bindsym $mod+Shift+1 move container to workspace $workspace_01
+bindsym $mod+Shift+2 move container to workspace $workspace_02
+bindsym $mod+Shift+3 move container to workspace $workspace_03
+bindsym $mod+Shift+4 move container to workspace $workspace_04
+bindsym $mod+Shift+5 move container to workspace $workspace_05
+bindsym $mod+Shift+6 move container to workspace $workspace_06
+bindsym $mod+Shift+7 move container to workspace $workspace_07
+bindsym $mod+Shift+8 move container to workspace $workspace_08
+bindsym $mod+Shift+9 move container to workspace $workspace_09
 bindsym $mod+Shift+0 move container to workspace $workspace_10
 
 # output variables
@@ -107,15 +107,15 @@ set $monitor_1 DVI-D-0
 set $monitor_2 HDMI-0
 
 # open workspaces on specific screens
-workspace $workspace_1 output $monitor_1
-workspace $workspace_2 output $monitor_1
-workspace $workspace_3 output $monitor_1
-workspace $workspace_4 output $monitor_1
-workspace $workspace_5 output $monitor_1
-workspace $workspace_6 output $monitor_1
-workspace $workspace_7 output $monitor_1
-workspace $workspace_8 output $monitor_1
-workspace $workspace_9 output $monitor_1
+workspace $workspace_01 output $monitor_1
+workspace $workspace_02 output $monitor_1
+workspace $workspace_03 output $monitor_1
+workspace $workspace_04 output $monitor_1
+workspace $workspace_05 output $monitor_1
+workspace $workspace_06 output $monitor_1
+workspace $workspace_07 output $monitor_1
+workspace $workspace_08 output $monitor_1
+workspace $workspace_09 output $monitor_1
 workspace $workspace_10 output $monitor_1
 
 # reload the configuration file
@@ -150,53 +150,37 @@ bindsym $mod+r mode "resize"
 # colors
 # ===========================================
 
-set $color-indicator   #7cafc2
-
-set $color-txt         #d8d8d8
-set $color-bg          #181818
-
-set $color-ia-txt      #585858
-set $color-ia-bg       #181818
-
-set $color-urgent      #ab4642
-
-# dark ---> light 
-# 0    ---> 10
-set $color-0  #181818  
-set $color-1  #282828
-set $color-2  #383838
-set $color-3  #585858
-set $color-4  #b8b8b8
-set $color-5  #d8d8d8
+set $color00  #282828
+set $color01  #cc241d
+set $color02  #98971a
+set $color03  #d79921
+set $color04  #458588
+set $color05  #b16286
+set $color06  #689d6a
+set $color07  #a89984
+set $color08  #928374
+set $color09  #fb4934
+set $color10  #b8bb26
+set $color11  #fabd2f
+set $color12  #83a598
+set $color13  #d3869b
+set $color14  #8ec07c
+set $color15  #ebdbb2
 
 # class                     border  	    backgr. 	    text    	    indicator           child_border 	
-client.focused              $color-bg 	    $color-bg 	    $color-txt      $color-indicator    $color-5
-client.focused_inactive     $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-0            $color-0
-client.unfocused            $color-ia-bg 	$color-bg 	    $color-ia-txt   $color-0            $color-0
-client.urgent               $crl-urgent	    $crl-urgent     $color-txt      $crl-urgent
+client.focused              $color08        $color00        $color15        $color04            $color08
+client.focused_inactive     $color00        $color00        $color15        $color00            $color00
+client.unfocused            $color00        $color00        $color15        $color00            $color00
+client.urgent               $color01        $color01        $color15        $color01
 
 # bar
 # ===========================================
 
-bar {
-    position top
-    font pango: Roboto Mono, FontAwesome 9
-    status_command i3blocks -c ~/.i3/i3blocks.conf
-	# tray_output primary 
-	colors {
-		background $color-0
-		separator $color-2
-
-        #                      border             	background         	text
-		focused_workspace      $color-ia-txt      	$color-0            $color-txt
-		active_workspace       $color-0             $color-0            $color-txt
-		inactive_workspace     $color-0  	        $color-0  	        $color-ia-txt
-		urgent_workspace       $color-urgent    	$color-urgent    	$color-txt 
-	} 
-}
+exec_always ${HOME}/.config/polybar/launch.sh
 
 # MPD
 # ===========================================
+
 exec mpd # start daemon
 
 # mpc hotkeys
@@ -209,6 +193,7 @@ bindsym $mod+Prior      exec mpc prev
 
 # xset & setxkbmap 
 # ===========================================
+
 # set display power managament signaling to 30m
 exec_always --no-startup-id xset dpms 1800 1800 1800 
 exec_always --no-startup-id xset s off # set screensaver off
@@ -220,41 +205,45 @@ exec_always --no-startup-id "setxkbmap -layout us -option compose:ralt"
 
 # custom keybinds
 # ===========================================
-bindsym $mod+i exec xdotool click 1 # 'fake' left mouseclick
 
+bindsym $mod+i exec xdotool click 1 # 'fake' left mouseclick
 
 # system applications 
 # ===========================================
+
 exec unclutter -noevents -root -idle 3
 exec compton --config ~/.config/compton.conf -b
 # exec --no-startup-id dbus-launch nm-applet 
 
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg  
 # exec_always feh --bg-scale ~/Pictures/wallpaper.png
-# exec_always --no-startup-id xsetroot -solid "171717" 
+# exec_always --no-startup-id xsetroot -solid $color00
 
 # custom applications / autstart
 # ===========================================
+
 exec --no-startup-id thunderbird 
 exec --no-startup-id i3-msg 'workspace 10: Terminal'
 
 # application & monitor assignments
 # ===========================================
-assign [class="Chromium-browser"] $workspace_1
-assign [class="Chromium"] $workspace_1
-assign [class="discord"] $workspace_2
-assign [class="Thunderbird"] $workspace_3
 
-assign [class="Steam"] $workspace_4
+assign [class="Chromium-browser"] $workspace_01
+assign [class="Chromium"] $workspace_01
+assign [class="discord"] $workspace_02
+assign [class="Thunderbird"] $workspace_03
 
-# assign [class="Gvim"] $workspace_9
-assign [class="jetbrains-idea-ce"] $workspace_9
+assign [class="Steam"] $workspace_04
+
+# assign [class="Gvim"] $workspace_09
+assign [class="jetbrains-idea-ce"] $workspace_09
 
 # move current workspace to other monitor 
 # bindsym $mod+Tab exec i3-msg move workspace to output right
 
 # window config
 # ===========================================
+
 for_window [class="^.*"] border pixel 2 # remove top bar
 
 for_window [window_role="pop-up"] floating enable
@@ -266,4 +255,5 @@ for_window [window_type="menu"] floating enable
 
 # gaps config
 # ===========================================
+
 gaps inner 6
