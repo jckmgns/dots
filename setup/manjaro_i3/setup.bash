@@ -66,9 +66,10 @@ basics() {
 
     $install bash-completion
 
-    # i3blocks & dependencies
-    $install acpi sysstat playerctl
-    $install i3blocks
+    # polybar & dependencies
+    $install cairo libxcb python2 
+    $install xcb-proto xcb-util-image xcb-util-wm xcb-util-xrm
+    bash ../packages/polybar.bash
 
     $install rofi feh compton unclutter rxvt-unicode
 }
@@ -82,7 +83,7 @@ essentials() {
     $install git network-manager lxappearance htop ranger w3m
 
     # these are probably not installed
-    $install chromium thunderbird thunar libreoffice evince
+    $install firefox thunderbird thunar libreoffice evince
     $install unzip fzf deepin-screenshot
 
     $install mpd ncmpcpp mpc
@@ -144,9 +145,15 @@ install_discord() {
 }
 
 development() {
+    echo
+    echo "Installing Rust ..."
+
     # rust
-    curl https://sh.rustup.rs -sSf | sh
+    curl -s https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
     rustup component add rust-src # rust-src is needed for completions
+
+    echo
+    echo "Installing Python extras ..."
 
     # python
     $install python-pip
