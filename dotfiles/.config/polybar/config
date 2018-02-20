@@ -124,3 +124,5 @@ format-volume-underline = ${colors.color3}
 
 label-muted = VOL MUTED
 label-muted-underline = ${colors.color3}
+
+# vim: ft=dosini cms=#%s
