@@ -150,16 +150,16 @@ bindsym $mod+r mode "resize"
 # colors
 # ===========================================
 
-set $color00  #282828
-set $color01  #cc241d
-set $color02  #98971a
-set $color03  #d79921
-set $color04  #458588
-set $color05  #b16286
-set $color06  #689d6a
-set $color07  #a89984
-set $color08  #928374
-set $color09  #fb4934
+set $color0  #282828
+set $color1  #cc241d
+set $color2  #98971a
+set $color3  #d79921
+set $color4  #458588
+set $color5  #b16286
+set $color6  #689d6a
+set $color7  #a89984
+set $color8  #928374
+set $color9  #fb4934
 set $color10  #b8bb26
 set $color11  #fabd2f
 set $color12  #83a598
@@ -168,10 +168,10 @@ set $color14  #8ec07c
 set $color15  #ebdbb2
 
 # class                     border  	    backgr. 	    text    	    indicator           child_border 	
-client.focused              $color08        $color00        $color15        $color04            $color08
-client.focused_inactive     $color00        $color00        $color15        $color00            $color00
-client.unfocused            $color00        $color00        $color15        $color00            $color00
-client.urgent               $color01        $color01        $color15        $color01
+client.focused              $color8         $color0         $color15        $color4             $color8
+client.focused_inactive     $color0         $color0         $color15        $color0             $color0
+client.unfocused            $color0         $color0         $color15        $color0             $color0
+client.urgent               $color1         $color1         $color15        $color1
 
 # bar
 # ===========================================
@@ -217,7 +217,7 @@ exec compton --config ~/.config/compton.conf -b
 
 exec_always feh --bg-scale ~/Pictures/wallpaper.jpg  
 # exec_always feh --bg-scale ~/Pictures/wallpaper.png
-# exec_always --no-startup-id xsetroot -solid $color00
+# exec_always --no-startup-id xsetroot -solid $color0
 
 # custom applications / autstart
 # ===========================================
@@ -230,6 +230,7 @@ exec --no-startup-id i3-msg 'workspace 10: Terminal'
 
 assign [class="Chromium-browser"] $workspace_01
 assign [class="Chromium"] $workspace_01
+assign [class="Firefox"] $workspace_01
 assign [class="discord"] $workspace_02
 assign [class="Thunderbird"] $workspace_03
 

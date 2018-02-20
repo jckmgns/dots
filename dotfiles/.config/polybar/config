@@ -1,14 +1,14 @@
 [colors/gruvbox]
-color00 = #282828
-color01 = #cc241d
-color02 = #98971a
-color03 = #d79921
-color04 = #458588
-color05 = #b16286
-color06 = #689d6a
-color07 = #a89984
-color08 = #928374
-color09 = #fb4934
+color0 = #282828
+color1 = #cc241d
+color2 = #98971a
+color3 = #d79921
+color4 = #458588
+color5 = #b16286
+color6 = #689d6a
+color7 = #a89984
+color8 = #928374
+color9 = #fb4934
 color10 = #b8bb26
 color11 = #fabd2f
 color12 = #83a598
@@ -19,7 +19,7 @@ color15 = #ebdbb2
 [colors]
 inherit = colors/gruvbox
 foreground = ${colors.color15}
-background = ${colors.color00}
+background = ${colors.color0}
 
 ; ============================================================
 
@@ -69,12 +69,12 @@ label-focused-padding = ${module/i3.padding}
 
 ; visible = Active workspace on unfocused monitor
 label-visible = "%name%"
-label-visible-underline = ${colors.color07}
+label-visible-underline = ${colors.color7}
 label-visible-padding = ${module/i3.padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = "%name%"
-label-urgent-underline = ${colors.color09}
+label-urgent-underline = ${colors.color9}
 label-urgent-padding = ${module/i3.padding}
 
 ; ==============================
@@ -82,13 +82,13 @@ label-urgent-padding = ${module/i3.padding}
 [module/time]
 type = internal/date
 label = "%time%"
-format-underline = ${colors.color06}
+format-underline = ${colors.color6}
 time = %H:%M:%S
 
 [module/date]
 type = internal/date
 label = "%date%"
-format-underline = ${colors.color06}
+format-underline = ${colors.color6}
 date = %Y-%m-%d
 
 [module/load]
@@ -115,12 +115,12 @@ format-underline = ${colors.color12}
 type = internal/fs
 mount-0 = /
 label-mounted = "DISK %free%"
-format-mounted-underline = ${colors.color02}
+format-mounted-underline = ${colors.color2}
 
 [module/volume]
 type = internal/volume
 format-volume = VOL <label-volume>
-format-volume-underline = ${colors.color03}
+format-volume-underline = ${colors.color3}
 
 label-muted = VOL MUTED
-label-muted-underline = ${colors.color03}
+label-muted-underline = ${colors.color3}
