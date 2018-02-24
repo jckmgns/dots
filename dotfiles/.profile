@@ -1,5 +1,5 @@
 # ~/bin
-export PATH=$PATH:$HOME/bin
+export PATH="$HOME/bin:$PATH"
 
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
