@@ -82,13 +82,13 @@ label-urgent-padding = ${module/i3.padding}
 [module/time]
 type = internal/date
 label = "%time%"
-format-underline = ${colors.color6}
+format-underline = ${colors.color15}
 time = %H:%M:%S
 
 [module/date]
 type = internal/date
 label = "%date%"
-format-underline = ${colors.color6}
+format-underline = ${colors.color15}
 date = %Y-%m-%d
 
 [module/load]
@@ -96,14 +96,14 @@ type = custom/script
 format = "LOAD <label>"
 interval = 5
 exec = /home/jackm/.config/polybar/modules/load_average.py
-format-underline = ${colors.color15}
+format-underline = ${colors.color4}
 
 [module/cpu]
 type = internal/cpu
 format = "CPU <label>"
 interval = 5
 label = "%percentage%%"
-format-underline = ${colors.color15}
+format-underline = ${colors.color4}
 
 [module/memory]
 type = internal/memory
@@ -122,7 +122,7 @@ type = internal/volume
 format-volume = VOL <label-volume>
 format-volume-underline = ${colors.color3}
 
-label-muted = VOL MUTED
-label-muted-underline = ${colors.color3}
+label-muted = VOL MUT
+label-muted-underline = ${colors.color8}
 
 # vim: ft=dosini cms=#%s
