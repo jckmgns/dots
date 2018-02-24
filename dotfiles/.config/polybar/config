@@ -96,14 +96,14 @@ type = custom/script
 format = "LOAD <label>"
 interval = 5
 exec = /home/jackm/.config/polybar/modules/load_average.py
-format-underline = ${colors.color4}
+format-underline = ${colors.color6}
 
 [module/cpu]
 type = internal/cpu
 format = "CPU <label>"
 interval = 5
 label = "%percentage%%"
-format-underline = ${colors.color4}
+format-underline = ${colors.color6}
 
 [module/memory]
 type = internal/memory
