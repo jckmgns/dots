@@ -71,7 +71,7 @@ basics() {
     $install xcb-proto xcb-util-image xcb-util-wm xcb-util-xrm
     bash ../packages/polybar.bash
 
-    $install rofi feh compton unclutter rxvt-unicode
+    $install rofi feh compton unclutter termite
 }
 
 essentials() {
@@ -146,10 +146,12 @@ install_discord() {
 
 development() {
     echo
-    echo "Installing Rust ..."
+    echo "Starting Rust installation ..."
 
     # rust
-    curl -s https://static.rust-lang.org/rustup.sh | sh -s -- --channel=nightly
+    curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+    export PATH="${HOME}/.cargo/bin:${PATH}"
+    cargo install racer
     rustup component add rust-src # rust-src is needed for completions
 
     echo
