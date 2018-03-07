@@ -128,6 +128,8 @@ set cursorline " Highligh current line
 set colorcolumn=80
 highlight colorcolumn ctermbg=darkgray
 
+set scrolloff=10 " 'padding' between cursor line and vertical edges
+
 " Tabs and Spaces
 set tabstop=4 " How many columns a tab counts for
 set softtabstop=4 " How many columns are inserted when pressing tab
@@ -159,7 +161,6 @@ nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 
 " commentary.vim
-nnoremap <Leader>c :Commentary<CR>
 vnoremap <Leader>c :Commentary<CR>
 
 " UltiSnips
