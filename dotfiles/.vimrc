@@ -28,6 +28,9 @@ Plugin 'racer-rust/vim-racer' " completion
 " XML
 Plugin 'othree/xml.vim'
 
+" GLSL
+Plugin 'tikhomirov/vim-glsl'
+
 " General Functionality
 " ==============================
 
@@ -119,7 +122,6 @@ set background=dark
 silent! colorscheme gruvbox
 
 set number " Show line numbers
-set relativenumber " Show relative line numbers
 
 set wildmenu " Visual autocomplete for command menu
 
