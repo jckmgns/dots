@@ -1,1 +1,1 @@
-autocmd FileType glsl setlocal commentstring=// %s
+setlocal commentstring=//\ %s
