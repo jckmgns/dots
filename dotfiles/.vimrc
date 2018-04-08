@@ -163,6 +163,7 @@ nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 
 " commentary.vim
+nnoremap <Leader>c :Commentary<CR>
 vnoremap <Leader>c :Commentary<CR>
 
 " UltiSnips
