@@ -133,8 +133,6 @@ set softtabstop=4 " How many columns are inserted when pressing tab
 set shiftwidth=4 " How many columns text will be shifted
 set expandtab " Insert spaces when pressing tab
 
-filetype indent on " Load filetype specific indent files
-
 " Searching
 set incsearch " Search as characters are entered
 set hlsearch " Highlight matches
