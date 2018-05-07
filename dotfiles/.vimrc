@@ -70,10 +70,6 @@ filetype plugin indent on
 " Plugins
 " ==============================
 
-" Jedi
-let g:jedi#popup_on_dot = 0
-let g:jedi#smart_auto_mappings = 0
-
 " Ale
 let g:ale_lint_on_text_changed = 'never'
 
