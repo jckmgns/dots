@@ -106,19 +106,20 @@ let g:netrw_banner = 0
 " General
 " ==============================
 
-" History
-set history=128 " Command mode history
+set history=128 " Number of rememebered command-lines
 
-" Completion
 set omnifunc=syntaxcomplete#Complete " Enable omni-completion
 
-" Minimize interpretation time of escape sequences
-set ttimeoutlen=1
+set scrolloff=10 " Minimal number of screen lines to keep above / below cursor
+
+set textwidth=79 " Wraps text as close to set characters as white space allows
+
+set ttimeoutlen=10 " Lower time that is waited for a key code / sequence
 
 " User Interface
-syntax enable
-set background=dark
+syntax enable " Enables syntax highlighting
 
+set background=dark
 silent! colorscheme gruvbox
 
 set number " Show line numbers
@@ -129,8 +130,6 @@ set cursorline " Highligh current line
 
 set colorcolumn=80
 highlight colorcolumn ctermbg=darkgray
-
-set scrolloff=10 " 'padding' between cursor line and vertical edges
 
 " Tabs and Spaces
 set tabstop=4 " How many columns a tab counts for
