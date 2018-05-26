@@ -184,12 +184,20 @@ exec_always ${HOME}/.config/polybar/launch.sh
 exec mpd # start daemon
 
 # mpc hotkeys
-bindsym $mod+Insert     exec mpc volume +5
-bindsym $mod+Delete     exec mpc volume -5
-bindsym $mod+Home       exec mpc toggle
-bindsym $mod+End        exec mpc stop
-bindsym $mod+Next       exec mpc next
-bindsym $mod+Prior      exec mpc prev
+bindsym $mod+Insert     exec mpc toggle
+bindsym $mod+Home       exec mpc stop
+bindsym $mod+End        exec mpc next
+bindsym $mod+Delete     exec mpc prev
+bindsym $mod+Prior      exec mpc volume +5
+bindsym $mod+Next       exec mpc volume -5
+
+# mpc hokeys - media keys
+bindsym XF86AudioPlay           exec mpc toggle
+bindsym XF86AudioStop           exec mpc stop
+bindsym XF86AudioNext           exec mpc next
+bindsym XF86AudioPrev           exec mpc prev
+bindsym XF86AudioRaiseVolume    exec mpc volume +5
+bindsym XF86AudioLowerVolume    exec mpc volume -5
 
 # xset & setxkbmap 
 # ===========================================
