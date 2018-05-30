@@ -1,13 +1,14 @@
 [user]
-	name = Jack Magnus
-	email = jackm@minobar.com
+    name = Jack Magnus
+    email = jackm@minobar.com
 [core]
-	editor = vim
-	excludesfile = ~/.gitignore_global
+    editor = vim
+    excludesfile = ~/.gitignore_global
 [alias]
-	lg = log --decorate --oneline --graph
-	la = log --all --decorate --oneline --graph
+    lg = log --decorate --oneline --graph
+    la = log --all --decorate --oneline --graph
 [merge]
-	tool = vimdiff
+    tool = vimdiff
+    ff = only
 [push]
-	default = matching
+    default = simple
