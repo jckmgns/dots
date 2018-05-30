@@ -42,6 +42,8 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'majutsushi/tagbar'
 
+Plugin 'airblade/vim-gitgutter'
+
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-surround'
