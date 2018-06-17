@@ -7,4 +7,4 @@ if test -r ~/.dircolors
 end
 
 # call theme setting script
-theme_gruvbox
+theme_gruvbox_gray
