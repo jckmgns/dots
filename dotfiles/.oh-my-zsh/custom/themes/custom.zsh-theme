@@ -1,5 +1,5 @@
 local user_host='%{$terminfo[bold]$fg[green]%}%n%{$reset_color%}@%{$terminfo[bold]$fg[green]%}%m%{$reset_color%} '
-local current_dir='%{$terminfo[bold]$fg[blue]%}$(shrink_path -f)%{$reset_color%} '
+local current_dir='%{$terminfo[bold]$fg[blue]%}$(shrink_path -l -t)%{$reset_color%} '
 
 local git_branch='$(git_prompt_info)%{$reset_color%}'
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$terminfo[bold]$fg[yellow]%}("
