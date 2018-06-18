@@ -157,10 +157,6 @@ nnoremap <Leader>T :TagbarToggle<CR>
 nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 
-" commentary.vim
-nnoremap <Leader>c :Commentary<CR>
-vnoremap <Leader>c :Commentary<CR>
-
 " UltiSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
