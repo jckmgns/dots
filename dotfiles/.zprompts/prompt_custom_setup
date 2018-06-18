@@ -1,0 +1,29 @@
+function prompt_custom_precmd {
+    vcs_info
+}
+
+function prompt_custom_setup {
+    setopt LOCAL_OPTIONS
+    unsetopt XTRACE KSH_ARRAYS
+    prompt_opts=(cr percent sp subst)
+
+    autoload -U vcs_info
+
+    # Add hook for calling precmd before each command
+    add-zsh-hook precmd prompt_custom_precmd
+
+    # setopt prompt_subst
+
+    zstyle ':vcs_info:*' enable git svn
+    zstyle ':vcs_info:git*' formats "(%b%c) "
+
+    local user='%{$terminfo[bold]$fg[green]%}${USERNAME}%{$reset_color%}'
+    local host='%{$terminfo[bold]$fg[green]%}${HOST}%{$reset_color%} '
+    local dir='%{$terminfo[bold]$fg[blue]%}$(prompt-pwd)%{$reset_color%} '
+    local vcs='%{$terminfo[bold]$fg[yellow]%}${vcs_info_msg_0_}%{$reset_color%}'
+
+    PROMPT="${user}@${host}${dir}${vcs}%% "
+    RPROMPT=''
+}
+
+prompt_custom_setup "$@"

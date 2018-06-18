@@ -1,12 +1,26 @@
-# Path to oh-my-zsh installation
-export ZSH=$HOME/.oh-my-zsh
+# Source Prezto.
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-# ~/.oh-my-zsh/custom/themes/custom.zsh-theme
-ZSH_THEME="custom"
+# Source custom prompts folder
+fpath=( "$HOME/.zprompts" $fpath )
 
-# Enable custom ls colors
-eval $(dircolors $HOME/.dircolors)
+# Enables symbolic color names
+autoload -U colors
+colors
 
-plugins=( fzf-zsh gitfast shrink-path)
+# Source zsh function files
+autoload -U compinit
+compinit
+promptinit
 
-source $ZSH/oh-my-zsh.sh
+# Set custom prompt (~/.zprompts/prompt_custom_setup)
+prompt custom
+
+# Overwrite LS_COLORS with custom settings
+eval $(dircolors -b $HOME/.dircolors)
+
+# Enable interactive and colored completion menu
+zstyle ':completion:*' menu select
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
