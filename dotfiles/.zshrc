@@ -3,16 +3,12 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-# Source custom prompts folder
-fpath=( "$HOME/.zprompts" $fpath )
-
 # Enables symbolic color names
 autoload -U colors
 colors
 
-# Source zsh function files
-autoload -U compinit
-compinit
+# Source custom prompts folder
+fpath=( "$HOME/.zprompts" $fpath )
 promptinit
 
 # Set custom prompt (~/.zprompts/prompt_custom_setup)
