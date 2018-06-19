@@ -11,7 +11,7 @@ def main():
     cores = int(cores)
 
     # print(f"{percent}%")
-    print(f"{rounded_load}")
+    print(rounded_load)
 
 
 main()

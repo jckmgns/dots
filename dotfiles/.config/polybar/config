@@ -95,7 +95,7 @@ date = %Y-%m-%d
 type = custom/script
 format = "LOAD <label>"
 interval = 5
-exec = /home/jackm/.config/polybar/modules/load_average.py
+exec = ~/.config/polybar/modules/load_average.py
 format-underline = ${colors.color6}
 
 [module/cpu]
