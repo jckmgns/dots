@@ -7,6 +7,10 @@ fi
 autoload -U colors
 colors
 
+# Enable zsh completion
+autoload -Uz compinit
+compinit
+
 # Source custom prompts folder
 fpath=( "$HOME/.zprompts" $fpath )
 promptinit
@@ -20,3 +24,7 @@ eval $(dircolors -b $HOME/.dircolors)
 # Enable interactive and colored completion menu
 zstyle ':completion:*' menu select
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+
+# Source fzf key bindings and completion
+source  /usr/share/fzf/key-bindings.zsh
+source  /usr/share/fzf/completion.zsh
