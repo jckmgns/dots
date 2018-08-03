@@ -8,3 +8,5 @@ highlight ALEWarning cterm=none
 
 " set colorcolumn wider to accomondate officially encouraged text width
 set colorcolumn=100
+
+compiler cargo
