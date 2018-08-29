@@ -109,8 +109,6 @@ set omnifunc=syntaxcomplete#Complete " Enable omni-completion
 
 set scrolloff=10 " Minimal number of screen lines to keep above / below cursor
 
-set textwidth=79 " Wraps text as close to set characters as white space allows
-
 set ttimeoutlen=10 " Lower time that is waited for a key code / sequence
 
 " User Interface
