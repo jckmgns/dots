@@ -50,9 +50,6 @@ Plugin 'tpope/vim-unimpaired'
 " Appearance
 " ==============================
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-
 Plugin 'morhetz/gruvbox'
 
 " ------------------------------------------------------------
@@ -77,19 +74,6 @@ let g:ale_lint_on_text_changed = 'never'
 " UltiSnips
 let g:UltiSnipsEditSplit="vertical"
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
-
-" Airline
-set laststatus=2
-
-let g:airline#extensions#syntastic#enabled = 0
-let g:airline#extensions#whitespace#enabled = 0
-
-let g:airline_theme = 'gruvbox'
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline_symbols = {}
-let g:airline_symbols.linenr = ':'
-let g:airline_symbols.maxlinenr = ''
 
 " Internal / Shipped Plugins
 " ==============================
@@ -125,6 +109,23 @@ set cursorline " Highligh current line
 
 set colorcolumn=80
 highlight colorcolumn ctermbg=darkgray
+
+" Status line
+set laststatus=2 " always show status line
+
+set statusline=
+set statusline+=\ %n\  " buffer number
+set statusline+=\ %<%t " file name
+set statusline+=%m " modified flag
+set statusline+=%r " modified flag
+
+set statusline+=%= " separation point between left and right aligned items
+
+set statusline+=%y\  " file type (filetype plugin)
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " file encoding
+set statusline+=%5l " current line
+set statusline+=/%L " total lines
+set statusline+=%4v\  " virtual column number
 
 " Tabs and Spaces
 set tabstop=4 " How many columns a tab counts for
