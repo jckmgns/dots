@@ -115,9 +115,9 @@ set laststatus=2 " always show status line
 
 set statusline=
 set statusline+=\ %n\  " buffer number
-set statusline+=\ %<%t " file name
+set statusline+=\ %<%t\  " file name
 set statusline+=%m " modified flag
-set statusline+=%r " modified flag
+set statusline+=%r " readonly flag
 
 set statusline+=%= " separation point between left and right aligned items
 
