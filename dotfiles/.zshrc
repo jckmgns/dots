@@ -28,3 +28,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # Source fzf key bindings and completion
 source  /usr/share/fzf/key-bindings.zsh
 source  /usr/share/fzf/completion.zsh
+
+# Disable changing directory to a path stored in a variable.
+# (directory module in zprezto)
+unsetopt CDABLE_VARS
