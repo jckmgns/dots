@@ -61,7 +61,7 @@ drivers() {
 }
 
 basics() {
-    $install pacaur
+    $install yay
     $install pulseaudio-alsa
 
     $install bash-completion
@@ -81,6 +81,10 @@ essentials() {
 
     # following packages should already be installed ...
     $install git network-manager lxappearance htop ranger w3m
+
+    # zsh & zprezto
+    $install zsh
+    git clone git clone --recursive https://github.com/sorin-ionescu/prezto.git "${$HOME}/.zprezto"
 
     # these are probably not installed
     $install firefox thunderbird thunar libreoffice evince
@@ -123,7 +127,7 @@ additionals() {
 
     echo
     if ask "Do you want to install pulsemixer? (AUR)" y; then
-        pacaur -S  pulsemixer-git
+        yay -S  pulsemixer-git
     fi
 }
 
@@ -141,7 +145,7 @@ install_discord() {
     done
     )
 
-    pacaur -S discord-canary
+    yay -S discord-canary
 }
 
 development() {
