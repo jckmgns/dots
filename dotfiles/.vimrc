@@ -141,6 +141,18 @@ set smartcase " Case sensitive if pattern contains upper case character
 
 set path+=** " Recursive folder search
 
+" Save backup files outside of working directory
+if !isdirectory($HOME."/.vim/backup")
+    silent call mkdir($HOME."/.vim/backup", "p")
+endif
+set backupdir=$HOME/.vim/backup//
+
+" Save swap files outside of working directory
+if !isdirectory($HOME."/.vim/swap")
+    silent call mkdir($HOME."/.vim/swap", "p")
+endif
+set directory=$HOME/.vim/swap//
+
 " ------------------------------------------------------------
 " KEY MAPPINGS
 " ------------------------------------------------------------
