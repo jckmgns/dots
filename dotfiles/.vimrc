@@ -115,7 +115,7 @@ set laststatus=2 " always show status line
 
 set statusline=
 set statusline+=\ %n\  " buffer number
-set statusline+=\ %<%t\  " file name
+set statusline+=\ %<%f\  " file name
 set statusline+=%m " modified flag
 set statusline+=%r " readonly flag
 

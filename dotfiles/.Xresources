@@ -4,6 +4,7 @@
 
 URxvt.font: 		xft:Inconsolata:pixelsize=14:antialias=true
 URxvt.scrollBar:	false
+URxvt.letterSpace:  0
 
 ! 'enable' word jumping
 URxvt.keysym.Control-Up:     \033[1;5A
