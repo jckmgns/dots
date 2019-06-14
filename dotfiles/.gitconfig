@@ -3,14 +3,18 @@
     email = jckmgns@gmail.com
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.excludesfile
+    whitespace = trailing-space,space-before-tab
 [alias]
     lg = log --decorate --oneline --graph
     la = log --all --decorate --oneline --graph
 [merge]
     tool = vimdiff
+[pull]
     ff = only
 [push]
-    default = simple
+    default = current
 [log]
 	date = iso
+[apply]
+    whitespace = fix
