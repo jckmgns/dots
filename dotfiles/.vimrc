@@ -1,65 +1,73 @@
 " ------------------------------------------------------------
-" VUNDLE
+" PLUG
 " ------------------------------------------------------------
 
-set nocompatible
-filetype off
+if empty(glob('~/.vim/autoload/plug.vim'))
+    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
 " ------------------------------------------------------------
-
-" Base
-" ==============================
-
-Plugin 'VundleVim/Vundle.vim'
 
 " Languages
 " ==============================
 
-" Python
-Plugin 'davidhalter/jedi-vim' " completion
-
 " Rust
-Plugin 'rust-lang/rust.vim'
-Plugin 'racer-rust/vim-racer' " completion
+Plug 'rust-lang/rust.vim'
 
 " XML
-Plugin 'othree/xml.vim'
+Plug 'othree/xml.vim'
 
 " GLSL
-Plugin 'tikhomirov/vim-glsl'
-
-" General Functionality
+Plug 'tikhomirov/vim-glsl'
+" General
 " ==============================
 
-Plugin 'w0rp/ale'
-Plugin 'shougo/neocomplete.vim'
+" Completion & Linting
+Plug 'w0rp/ale'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
-Plugin 'junegunn/fzf.vim'
+" Searching
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'rking/ag.vim'
 
-Plugin 'sirver/ultisnips'
-Plugin 'majutsushi/tagbar'
-
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-repeat'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-unimpaired'
+" Utility
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
 " Appearance
 " ==============================
 
-Plugin 'morhetz/gruvbox'
+Plug 'morhetz/gruvbox'
 
 " ------------------------------------------------------------
 
-call vundle#end()
-filetype plugin indent on
+call plug#end()
 
 " ------------------------------------------------------------
 " SETTINGS
 " ------------------------------------------------------------
+
+" Language servers
+" ==============================
+
+" Rust
+if executable('rls')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'rls',
+        \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
+        \ 'whitelist': ['rust']
+        \ })
+endif
 
 " Languages
 " ==============================
@@ -69,11 +77,14 @@ filetype plugin indent on
 " ==============================
 
 " Ale
-let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_text_changed = 'normal'
+highlight ALEWarning cterm=none
 
-" UltiSnips
-let g:UltiSnipsEditSplit="vertical"
-let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+" Language server protocol
+let g:lsp_diagnostics_echo_cursor = 1
+
+" asyncomplete.vim
+let g:asyncomplete_popup_delay = 200
 
 " Internal / Shipped Plugins
 " ==============================
@@ -160,17 +171,9 @@ set directory=$HOME/.vim/swap//
 " Plugins
 " ==============================
 
-" Tagbar (Tags)
-nnoremap <Leader>T :TagbarToggle<CR>
-
 " fzf
 nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
-
-" UltiSnips
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " General
 " ==============================
