@@ -155,18 +155,8 @@ development() {
     # rust
     curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
     export PATH="${HOME}/.cargo/bin:${PATH}"
-    cargo install racer
-    rustup component add rust-src # rust-src is needed for completions
-
-    echo
-    echo "Installing Python extras ..."
-
-    # python
-    $install python-pip
-    sudo python -m pip install flake8 jedi
-
-    # other
-    $install ctags
+    rustup component add clippy # clippy
+    rustup component add rls rust-analysis rust-src # language server
 }
 
 main
