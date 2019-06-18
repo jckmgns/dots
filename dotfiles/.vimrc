@@ -17,6 +17,7 @@ call plug#begin('~/.vim/bundle')
 
 " Rust
 Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 
 " XML
 Plug 'othree/xml.vim'
