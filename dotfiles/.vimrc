@@ -76,10 +76,6 @@ endif
 " Plugins
 " ==============================
 
-" Ale
-let g:ale_lint_on_text_changed = 'normal'
-highlight ALEWarning cterm=none
-
 " Language server protocol
 let g:lsp_diagnostics_echo_cursor = 1
 

@@ -6,9 +6,10 @@ nmap <leader>D <Plug>(rust-def) " goto definition
 set colorcolumn=100
 
 " Disable ale
-let b:ale_linters = ['']
-" let b:ale_linters = ['rls']
-" let g:lsp_diagnostics_enabled = 0
+" let b:ale_linters = ['']
+
+" Disable language server diagnostics (currently broken)
+let g:lsp_diagnostics_enabled = 0
 
 " Use language server as omni completion provider
 set omnifunc=lsp#omni#complete
