@@ -10,18 +10,20 @@ It is strongly recommended to store this repository on the same disk as your
 
 Cloning this repository yields following file structure:
 
+```
 dotfiles/
 ├── dotfiles/
 ├── setup/
 ├── sync.bash
 └── README.md
+```
 
 An additional directory called `backup/` will be created after running
 sync.bash.
 
 #### dotfiles/
 Contains relevant configuration files. Can by synchronized by using `sync.bash`
-(please see [below](#sync.bash) for further reading).
+(please see [below](#syncbash) for further reading).
 
 #### setup/
 Houses setup scripts for installing and configuring a clean system.
