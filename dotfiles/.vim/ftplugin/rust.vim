@@ -5,8 +5,9 @@ nmap <leader>D <Plug>(rust-def) " goto definition
 " Set colorcolumn wider to accomondate officially encouraged text width
 set colorcolumn=100
 
-" Disable ale
-" let b:ale_linters = ['']
+" Disable underlining of warnings
+highlight ALEWarning cterm=none
+" highlight ALEError cterm=none
 
 " Disable language server diagnostics (currently broken)
 let g:lsp_diagnostics_enabled = 0
