@@ -37,5 +37,5 @@ time of backup.
 #### sync.bash
 Synchronizes everything contained in `dotfiles/` to `HOME`. This is done by
 creating softlinks to every file contained in `dotfiles/`, creating necessary
-folders as needed. Files that where already present before synchronization will
+folders as needed. Files that were already present before synchronization will
 be copied into its respective `backup/` subfolder.
