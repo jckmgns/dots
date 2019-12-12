@@ -168,7 +168,7 @@ set $color14  #8ec07c
 set $color15  #ebdbb2
 
 # class                     border  	    backgr. 	    text    	    indicator           child_border 	
-client.focused              $color8         $color0         $color15        $color4             $color8
+client.focused              $color8         $color0         $color15        $color15            $color8
 client.focused_inactive     $color0         $color0         $color15        $color0             $color0
 client.unfocused            $color0         $color0         $color15        $color0             $color0
 client.urgent               $color1         $color1         $color15        $color1
