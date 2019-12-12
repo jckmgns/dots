@@ -220,7 +220,7 @@ bindsym $mod+i exec xdotool click 1 # 'fake' left mouseclick
 # ===========================================
 
 exec unclutter -noevents -root -idle 3
-exec compton --config ~/.config/compton.conf -b
+exec picom --config ~/.config/picom.conf -b
 # exec --no-startup-id dbus-launch nm-applet 
 
 exec_always feh --randomize --bg-fill ~/.wallpaper/*
