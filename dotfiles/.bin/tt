@@ -38,12 +38,11 @@ def main():
         m = s // 60
         s = s % 60
 
-        print("\rtime remainig: %0.2dm %0.2ds " % (m, s), end='', flush=True)
+        print("\rTime remainig: %0.2dm %0.2ds " % (m, s), end='', flush=True)
 
-    print("\nYour tea is done!")
-    file_name = os.path.basename(__file__).title()
-    os.system("notify-send \"" + file_name + "\" \"Your tea is done!\"")
-    os.system("spd-say \"Your tea is done!\"")
+    print("\rYour tea is done!     ", end='\n', flush=True)
+    os.system("notify-send \"Your tea is done!\"")
+    os.system("spd-say \"Your tea is done!\" 2> /dev/null")
 
 arguments()
 main()
