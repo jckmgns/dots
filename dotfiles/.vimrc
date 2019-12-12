@@ -17,22 +17,24 @@ call plug#begin('~/.vim/bundle')
 
 " Rust
 Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
 
 " XML
 Plug 'othree/xml.vim'
 
 " GLSL
 Plug 'tikhomirov/vim-glsl'
+
 " General
 " ==============================
 
-" Completion & Linting
-Plug 'w0rp/ale'
+" Completion
+Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/async.vim'
 Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+" Linting
+Plug 'w0rp/ale'
 
 " Searching
 Plug 'junegunn/fzf'
