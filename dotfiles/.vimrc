@@ -111,7 +111,7 @@ syntax enable " Enables syntax highlighting
 set background=dark
 silent! colorscheme gruvbox
 
-set number " Show line numbers
+set number relativenumber " Show hybrid numbers
 
 set wildmenu " Visual autocomplete for command menu
 
