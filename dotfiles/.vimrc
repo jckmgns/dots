@@ -12,18 +12,6 @@ call plug#begin('~/.vim/bundle')
 
 " ------------------------------------------------------------
 
-" Languages
-" ==============================
-
-" Rust
-Plug 'rust-lang/rust.vim'
-
-" XML
-Plug 'othree/xml.vim'
-
-" GLSL
-Plug 'tikhomirov/vim-glsl'
-
 " General
 " ==============================
 
@@ -46,6 +34,18 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
+
+" Languages
+" ==============================
+
+" Rust
+Plug 'rust-lang/rust.vim'
+
+" XML
+Plug 'othree/xml.vim'
+
+" GLSL
+Plug 'tikhomirov/vim-glsl'
 
 " Appearance
 " ==============================
