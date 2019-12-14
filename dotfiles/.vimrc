@@ -112,6 +112,8 @@ set scrolloff=10 " Minimal number of screen lines to keep above / below cursor
 
 set ttimeoutlen=10 " Lower time that is waited for a key code / sequence
 
+set autoread " Autoload file changes.
+
 " User Interface
 syntax enable " Enables syntax highlighting
 
