@@ -29,6 +29,9 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'rking/ag.vim'
 
+" Snippets
+Plug 'sirver/UltiSnips'
+
 " Utility
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-repeat'
@@ -38,19 +41,23 @@ Plug 'tpope/vim-unimpaired'
 " Languages
 " ==============================
 
+" GLSL
+Plug 'tikhomirov/vim-glsl'
+
 " Rust
 Plug 'rust-lang/rust.vim'
 
 " XML
 Plug 'othree/xml.vim'
 
-" GLSL
-Plug 'tikhomirov/vim-glsl'
-
 " Appearance
 " ==============================
 
+" Color scheme
 Plug 'morhetz/gruvbox'
+
+" Git
+Plug 'airblade/vim-gitgutter'
 
 " ------------------------------------------------------------
 
