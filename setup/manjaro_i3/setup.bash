@@ -71,7 +71,7 @@ basics() {
     $install xcb-proto xcb-util-image xcb-util-wm xcb-util-xrm
     bash ../packages/polybar.bash
 
-    $install rofi feh compton unclutter termite
+    $install rofi feh picom unclutter rxvt-unicode redshift
 }
 
 essentials() {

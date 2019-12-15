@@ -227,6 +227,8 @@ exec_always feh --randomize --bg-fill ~/.wallpaper/*
 # exec_always feh --bg-scale ~/Pictures/wallpaper.png
 # exec_always --no-startup-id xsetroot -solid $color0
 
+exec redshift
+
 # custom applications / autstart
 # ===========================================
 
