@@ -112,7 +112,7 @@ additionals() {
 
     echo
     if ask "Do you want to install steam?" y; then
-        $install steam
+        $install steam linux-steam-integration
     fi
 
     echo
