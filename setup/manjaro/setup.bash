@@ -66,12 +66,7 @@ basics() {
 
     $install bash-completion
 
-    # polybar & dependencies
-    $install cairo libxcb python2 
-    $install xcb-proto xcb-util-image xcb-util-wm xcb-util-xrm
-    bash ../packages/polybar.bash
-
-    $install rofi feh picom unclutter rxvt-unicode redshift
+    $install polybar rofi feh picom unclutter rxvt-unicode redshift
 }
 
 essentials() {
