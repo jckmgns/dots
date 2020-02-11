@@ -19,7 +19,7 @@ def arguments():
     # OPTIONAL
     parser.add_argument(
             "--version",
-            version="1.0.1",
+            version="1.0.2",
             action="version")
 
     args = parser.parse_args()
@@ -33,16 +33,16 @@ def main():
     args = parser.parse_args()
     seconds = args.minutes * 60 - 1
 
-    for s in range(seconds, 0, -1):
+    for s in range(seconds, -1, -1):
         time.sleep(1)
         m = s // 60
         s = s % 60
 
         print("\rTime remainig: %0.2dm %0.2ds " % (m, s), end='', flush=True)
 
-    print("\rYour tea is done!     ", end='\n', flush=True)
-    os.system("notify-send \"Your tea is done!\"")
-    os.system("spd-say \"Your tea is done!\" 2> /dev/null")
+    print("\rYour tea is ready!        ")
+    os.system("notify-send \"Your tea is ready!\"")
+    os.system("spd-say \"Your tea is ready!\"")
 
 arguments()
 main()
