@@ -75,15 +75,14 @@ essentials() {
     $install gvim
 
     # following packages should already be installed ...
-    $install git network-manager lxappearance htop ranger w3m
+    $install git network-manager lxappearance
 
     # zsh & zprezto
     $install zsh
-    git clone git clone --recursive https://github.com/sorin-ionescu/prezto.git "${$HOME}/.zprezto"
+    git clone --recursive https://github.com/sorin-ionescu/prezto.git "${HOME}/.zprezto"
 
     # these are probably not installed
-    $install firefox thunderbird thunar libreoffice evince
-    $install unzip fzf deepin-screenshot
+    $install firefox thunderbird thunar libreoffice install unzip fzf flameshot pass
 
     $install mpd ncmpcpp mpc
     echo
@@ -116,31 +115,14 @@ additionals() {
     fi
 
     echo
-    if ask "Do you want to install discord-canary? (AUR)" y; then
-        install_discord
+    if ask "Do you want to install discord?" y; then
+        $install discord
     fi
 
     echo
     if ask "Do you want to install pulsemixer? (AUR)" y; then
-        yay -S  pulsemixer-git
+        $install pulsemixer
     fi
-}
-
-install_discord() {
-    # we need to add gpg keys to our keyring to install libc++ (discord dependency)
-    (
-    tmp_dir="$(mktemp -d)/"
-    wget -O "${tmp_dir}libc++.tar.gz" \
-        'https://aur.archlinux.org/cgit/aur.git/snapshot/libc%2B%2B.tar.gz'
-    tar -xaf "${tmp_dir}libc++.tar.gz" -C ${tmp_dir}
-    . $(echo "${tmp_dir}libc++/PKGBUILD")
-    for key in ${validpgpkeys[@]}; do
-        gpg --recv-key $key
-        gpg --lsign $key
-    done
-    )
-
-    yay -S discord-canary
 }
 
 development() {
