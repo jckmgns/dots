@@ -21,7 +21,7 @@ main() {
 
     echo
     echo "Updating package list and upgrading already installed packages ..."
-    sudo pacman -Syu --noconfirm # update package list and start full upgrade
+    sudo pacman -Syyu --noconfirm # update package list and start full upgrade
 
     drivers
     basics
@@ -46,8 +46,6 @@ main() {
 }
 
 drivers() {
-    # install and setup nonfree graphics card drivers,
-    # via manjaro hardware detection (0300 is the ID for graphics cards)
     echo
     if ask "Do you want to install (nonfree) graphics card drivers?" y; then
         sudo mhwd -a pci nonfree 0300
@@ -56,33 +54,21 @@ drivers() {
     echo
     if ask "Do you want to install wacom drivers?" y; then
         $install libwacom
-        # $install xf86-input-wacom
     fi
 }
 
 basics() {
-    $install yay
-    $install pulseaudio-alsa
-
-    $install bash-completion
-
-    $install polybar rofi feh picom unclutter rxvt-unicode redshift
+    $install dunst feh picom polybar redshift rofi rxvt-unicode unclutter
 }
 
 essentials() {
-    # install gvim for clipboard support
-    $remove vim # remove terminal-only-vim to avoid conflicts
-    $install gvim
+    $install firefox flameshot fzf git libreoffice lxappearance noto-fonts-cjk pass thunar thunderbird unzip zsh
 
-    # following packages should already be installed ...
-    $install git network-manager lxappearance
-
-    # zsh & zprezto
-    $install zsh
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${HOME}/.zprezto"
 
-    # these are probably not installed
-    $install firefox thunderbird thunar libreoffice install unzip fzf flameshot pass
+    # remove terminal-only vim and install gvim for clipboard support
+    $remove vim
+    $install gvim
 
     $install mpd ncmpcpp mpc
     echo
