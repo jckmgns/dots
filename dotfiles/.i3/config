@@ -203,13 +203,13 @@ bindsym XF86AudioLowerVolume    exec mpc volume -5
 # ===========================================
 
 # set display power managament signaling to 30m
-exec_always --no-startup-id xset dpms 1800 1800 1800 
+exec_always --no-startup-id xset -dpms # disable power management
 exec_always --no-startup-id xset s off # set screensaver off
 exec_always --no-startup-id xset r rate 250 25 # keyboard repeat rate
 exec_always --no-startup-id xset m 0 0 # mouse pointer speed
 exec_always --no-startup-id xset b off # bell volume
 
-exec_always --no-startup-id "setxkbmap -layout us -option compose:ralt"
+exec_always --no-startup-id "setxkbmap -layout us -variant colemak -option compose:ralt"
 
 # custom keybinds
 # ===========================================
