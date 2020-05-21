@@ -68,7 +68,7 @@ essentials() {
 
     # remove terminal-only vim and install gvim for clipboard support
     $remove vim
-    $install gvim
+    $install gvim neovim
 
     $install mpd ncmpcpp mpc
     echo

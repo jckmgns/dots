@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 main() {
-    echo | vim +PlugInstall
+    echo | nvim +PlugInstall
 }
 
 main
