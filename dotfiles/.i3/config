@@ -210,6 +210,7 @@ exec_always --no-startup-id xset m 0 0 # mouse pointer speed
 exec_always --no-startup-id xset b off # bell volume
 
 exec_always --no-startup-id "setxkbmap -layout us -variant colemak -option compose:ralt"
+exec_always --no-startup-id xset r 66 # repeat for caps lock key (backspace in colemak)
 
 # custom keybinds
 # ===========================================
