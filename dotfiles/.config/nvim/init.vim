@@ -82,6 +82,9 @@ let g:lsp_diagnostics_echo_cursor = 1
 " asyncomplete.vim
 let g:asyncomplete_popup_delay = 200
 
+" gitgutter
+set updatetime=500
+
 " Internal / Shipped Plugins
 " ==============================
 
@@ -116,7 +119,7 @@ set wildmenu " Enhanced command-line completion
 
 set cursorline " Highligh the screen line of the cursor
 
-set colorcolumn=80
+set colorcolumn=101
 highlight colorcolumn ctermbg=darkgray
 
 " Status line
@@ -185,3 +188,6 @@ nnoremap <silent> <leader>w m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
 
 " Mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" Insert signature with current date
+iabbrev sig strftime('-jackm, %Y-%m-%d') 
