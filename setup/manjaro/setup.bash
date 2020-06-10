@@ -62,7 +62,7 @@ basics() {
 }
 
 essentials() {
-    $install firefox flameshot fzf git libreoffice lxappearance noto-fonts-cjk pass thunar thunderbird unzip zsh
+    $install firefox flameshot fzf git libreoffice lxappearance noto-fonts-cjk pass thunar thunderbird unzip vlc zsh
 
     git clone --recursive https://github.com/sorin-ionescu/prezto.git "${HOME}/.zprezto"
 
@@ -106,7 +106,7 @@ additionals() {
     fi
 
     echo
-    if ask "Do you want to install pulsemixer? (AUR)" y; then
+    if ask "Do you want to install pulsemixer?" y; then
         $install pulsemixer
     fi
 }
