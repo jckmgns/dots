@@ -2,7 +2,7 @@
     name = Jack Magnus
     email = jack.magnus@jadomag.com
 [core]
-    editor = vim
+    editor = nvim
     excludesfile = ~/.excludesfile
     whitespace = trailing-space,space-before-tab
 [alias]
