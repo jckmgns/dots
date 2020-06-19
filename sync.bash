@@ -7,8 +7,8 @@ main() {
 }
 
 create_links() {
-    local source="$DIR/dotfiles"
-    local backup_root="$DIR/backup/dotfiles"
+    local source="$DIR/home"
+    local backup_root="$DIR/backup/home"
     local backup="${backup_root}/$(date +"%Y-%m-%d_%T")"
 
     # create missing directories ...
