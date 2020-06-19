@@ -1,4 +1,7 @@
-# ~/bin
+# ~/.config
+export XDG_CONFIG_HOME="$HOME/.config"
+
+# ~/.bin
 export PATH="$HOME/.bin:$PATH"
 
 # rust
