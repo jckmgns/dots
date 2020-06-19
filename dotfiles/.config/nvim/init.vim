@@ -2,13 +2,14 @@
 " PLUG
 " ------------------------------------------------------------
 
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-        \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+if empty(glob("$HOME/.local/share/nvim/site/autoload/plug.vim"))
+    silent !sh -c 'curl -fLo "$HOME/.local/share/nvim/site/autoload/plug.vim"
+                \ --create-dirs
+                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-call plug#begin('~/.vim/bundle')
+call plug#begin('$HOME/.local/share/nvim/plugged')
 
 " ------------------------------------------------------------
 
@@ -38,7 +39,7 @@ Plug 'easymotion/vim-easymotion'
 " Searching
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'rking/ag.vim'
+Plug 'jremmen/vim-ripgrep'
 
 " Utility
 Plug 'tpope/vim-commentary'
@@ -71,7 +72,7 @@ endif
 
 " Languages
 " ==============================
-" Language specific settings are located under ~/.vim/ftplugin/*
+" Language specific settings are located under ~/.config/nvim/ftplugin/*
 
 " Plugins
 " ==============================
@@ -110,14 +111,17 @@ set autoread " Autoload file changes
 " User Interface
 syntax enable " Enables syntax highlighting
 
+set termguicolors " Enable true color support
+
 set background=dark
-silent! colorscheme gruvbox
+
+autocmd vimenter * colorscheme gruvbox
 
 set number relativenumber " Show hybrid line numbers
 
 set wildmenu " Enhanced command-line completion
 
-set cursorline " Highligh the screen line of the cursor
+set cursorline " Highlight the screen line of the cursor
 
 set colorcolumn=101
 highlight colorcolumn ctermbg=darkgray
@@ -146,7 +150,7 @@ set shiftwidth=4 " How many columns text will be shifted
 set expandtab " Insert spaces when pressing tab
 
 " Searching
-set incsearch " Show where pattern mathes while typing
+set incsearch " Show where pattern matches while typing
 set hlsearch " Highlight all search pattern matches
 set ignorecase " Ignores case when searching
 set smartcase " Overrides 'ignorecase' if search contains upper case characters
@@ -154,16 +158,16 @@ set smartcase " Overrides 'ignorecase' if search contains upper case characters
 set path+=** " Recursive folder search
 
 " Store backup files outside of working directory
-if !isdirectory($HOME."/.vim/backup")
-    silent call mkdir($HOME."/.vim/backup", "p")
+if !isdirectory("$HOME/.local/share/backup")
+    silent call mkdir($HOME . "/.local/share/backup", "p")
 endif
-set backupdir=$HOME/.vim/backup//
+set backupdir=$HOME/.local/share/backup//
 
 " Store swap files outside of working directory
-if !isdirectory($HOME."/.vim/swap")
-    silent call mkdir($HOME."/.vim/swap", "p")
+if !isdirectory("$HOME/.local/share/swap")
+    silent call mkdir($HOME . "/.local/share/swap", "p")
 endif
-set directory=$HOME/.vim/swap//
+set backupdir=$HOME/.local/share/swap//
 
 " ------------------------------------------------------------
 " KEY MAPPINGS
@@ -189,5 +193,11 @@ nnoremap <silent> <leader>w m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
 " Mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+" Abbreviations
+" ==============================
+
 " Insert signature with current date
-iabbrev sig strftime('-jackm, %Y-%m-%d') 
+iabbrev <expr> sd strftime('-jackm, %Y-%m-%d')
+
+" Insert email address
+iabbrev @@ jack.magnus@jadomag.com
