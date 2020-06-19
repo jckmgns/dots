@@ -8,7 +8,7 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -247,6 +247,7 @@ assign [class="discord"] $workspace_02
 assign [class="Thunderbird"] $workspace_03
 
 assign [class="Steam"] $workspace_04
+assign [class="itch"] $workspace_04
 
 # assign [class="Gvim"] $workspace_09
 assign [class="jetbrains-idea-ce"] $workspace_09
