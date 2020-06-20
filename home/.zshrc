@@ -1,34 +1,39 @@
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+# Concurrent Configuration
+# ------------------------------
+
+if [[ -f "$HOME/.zshrc.d/zshrc.d.zsh" ]]; then
+    source "$HOME/.zshrc.d/zshrc.d.zsh"
 fi
 
-# Enables symbolic color names
-autoload -U colors
-colors
+# Prompt
+# ------------------------------
 
-# Enable zsh completion
-autoload -Uz compinit
-compinit
+autoload -Uz colors && colors
 
-# Source custom prompts folder
-fpath=( "$HOME/.zprompts" $fpath )
-promptinit
+setopt prompt_subst
 
-# Set custom prompt (~/.zprompts/prompt_custom_setup)
-prompt custom
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:git:*' formats ' (%b)'
 
-# Overwrite LS_COLORS with custom settings
-eval $(dircolors -b $HOME/.dircolors)
+local dir='%B%F{blue}$(fish-pwd)%f%b'
+local vcs='%B%F{yellow}${vcs_info_msg_0_}%f%b'
 
-# Enable interactive and colored completion menu
-zstyle ':completion:*' menu select
-zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
+PROMPT=" $dir$vcs %% "
+RPROMPT='$(rprompt)'
 
-# Source fzf key bindings and completion
-source  /usr/share/fzf/key-bindings.zsh
-source  /usr/share/fzf/completion.zsh
+# Plugins
+# ------------------------------
 
-# Disable changing directory to a path stored in a variable.
-# (directory module in zprezto)
-unsetopt CDABLE_VARS
+if [[ ! -f "$HOME/.local/share/zsh/antigen.zsh" ]]; then
+    curl -L --create-dirs git.io/antigen -o "$HOME/.local/share/zsh/antigen.zsh"
+fi
+source "$HOME/.local/share/zsh/antigen.zsh"
+
+antigen bundle popstas/zsh-command-time # show execution time for long commands
+
+antigen bundle zsh-users/zsh-completions # additional completion definitions 
+antigen bundle zsh-users/zsh-syntax-highlighting # fish-like syntax highlighting
+
+antigen apply
