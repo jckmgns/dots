@@ -25,7 +25,7 @@ alias scp='noglob scp'
 alias sftp='noglob sftp'
 
 # list aliases
-alias ls="ls --color=auto"
+alias ls="ls --color -h --group-directories-first"
 
 alias l='ls -1A'
 alias ll='ls -lh'
