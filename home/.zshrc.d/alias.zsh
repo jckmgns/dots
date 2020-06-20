@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# setopt CORRECT
+# setopt correct
 #
 # disable correction
 # alias cd='nocorrect cd'
@@ -25,6 +25,8 @@ alias scp='noglob scp'
 alias sftp='noglob sftp'
 
 # list aliases
+alias ls="ls --color=auto"
+
 alias l='ls -1A'
 alias ll='ls -lh'
 alias lr='ll -R'

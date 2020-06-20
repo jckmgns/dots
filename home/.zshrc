@@ -23,6 +23,12 @@ local vcs='%B%F{yellow}${vcs_info_msg_0_}%f%b'
 PROMPT=" $dir$vcs %% "
 RPROMPT='$(rprompt)'
 
+# External
+# ------------------------------
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
+
 # Plugins
 # ------------------------------
 
