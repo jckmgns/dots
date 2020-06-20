@@ -77,93 +77,93 @@ endif
 " Plugins
 " ==============================
 
-" Language server protocol
+" Language Server Protocol
 let g:lsp_diagnostics_echo_cursor = 1
 
-" asyncomplete.vim
+" Asyncomplete
 let g:asyncomplete_popup_delay = 200
 
-" gitgutter
+" Gitgutter
 set updatetime=500
 
 " Internal / Shipped Plugins
 " ==============================
 
-" matchit
-runtime! macros/matchit.vim " Extended % matching for HTML, LaTeX, and more ...
+" Matchit
+runtime! macros/matchit.vim " extended % matching for HTML, LaTeX, and more ...
 
-" netrw
+" Netrw
 let g:netrw_banner = 0
 
 " General
 " ==============================
 
-set history=128 " Number of rememebered command-lines
+set history=128 " number of rememebered command-lines
 
-set omnifunc=syntaxcomplete#Complete " Enable omni-completion
+set omnifunc=syntaxcomplete#Complete " enable omni-completion
 
-set scrolloff=10 " Number of screen lines to keep around cursor
+set scrolloff=10 " number of screen lines to keep around cursor
 
-set ttimeoutlen=10 " Time that is waited for a key code sequence
+set ttimeoutlen=10 " time that is waited for a key code sequence
 
-set autoread " Autoload file changes
+set autoread " autoload file changes
 
 " User Interface
-syntax enable " Enables syntax highlighting
+syntax enable " enables syntax highlighting
 
-set termguicolors " Enable true color support
+set termguicolors " enable true color support
 
 set background=dark
 
 autocmd vimenter * colorscheme gruvbox
 
-set number relativenumber " Show hybrid line numbers
+set number relativenumber " show hybrid line numbers
 
-set wildmenu " Enhanced command-line completion
+set wildmenu " enhanced command-line completion
 
-set cursorline " Highlight the screen line of the cursor
+set cursorline " highlight the screen line of the cursor
 
 set colorcolumn=101
 highlight colorcolumn ctermbg=darkgray
 
 " Status line
-set laststatus=2 " Always show status line
+set laststatus=2 " always show status line
 
 set statusline=
-set statusline+=\ %n\  " Buffer number
-set statusline+=\ %<%f\  " File name
-set statusline+=%m " Modified flag
-set statusline+=%r " Readonly flag
+set statusline+=\ %n\  " buffer number
+set statusline+=\ %<%f\  " file name
+set statusline+=%m " modified flag
+set statusline+=%r " readonly flag
 
-set statusline+=%= " Separation point between left and right aligned items
+set statusline+=%= " separation point between left and right aligned items
 
-set statusline+=%y\  " File type (filetype plugin)
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " File encoding
-set statusline+=%5l " Current line
-set statusline+=/%L " Total lines
-set statusline+=%4v\  " Virtual column number
+set statusline+=%y\  " file type (filetype plugin)
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " file encoding
+set statusline+=%5l " current line
+set statusline+=/%L " total lines
+set statusline+=%4v\  " virtual column number
 
 " Tabs and Spaces
-set tabstop=4 " How many columns a tab counts for
-set softtabstop=4 " How many columns are inserted when pressing tab
-set shiftwidth=4 " How many columns text will be shifted
-set expandtab " Insert spaces when pressing tab
+set tabstop=4 " how many columns a tab counts for
+set softtabstop=4 " how many columns are inserted when pressing tab
+set shiftwidth=4 " how many columns text will be shifted
+set expandtab " insert spaces when pressing tab
 
 " Searching
-set incsearch " Show where pattern matches while typing
-set hlsearch " Highlight all search pattern matches
-set ignorecase " Ignores case when searching
-set smartcase " Overrides 'ignorecase' if search contains upper case characters
+set incsearch " show where pattern matches while typing
+set hlsearch " highlight all search pattern matches
+set ignorecase " ignores case when searching
+set smartcase " overrides 'ignorecase' if search contains upper case characters
 
-set path+=** " Recursive folder search
+set path+=** " recursive folder search
 
-" Store backup files outside of working directory
+" store backup files outside of working directory
 if !isdirectory("$HOME/.local/share/backup")
     silent call mkdir($HOME . "/.local/share/backup", "p")
 endif
 set backupdir=$HOME/.local/share/backup//
 
-" Store swap files outside of working directory
+" store swap files outside of working directory
 if !isdirectory("$HOME/.local/share/swap")
     silent call mkdir($HOME . "/.local/share/swap", "p")
 endif
@@ -176,28 +176,28 @@ set backupdir=$HOME/.local/share/swap//
 " Plugins
 " ==============================
 
-" fzf
+" Fzf
 nnoremap <Leader>t :Files<CR>
 
 " General
 " ==============================
 
-" Move vertically by visual line
+" move vertically by visual line
 nnoremap j gj
 nnoremap k gk
 
-" Remove all trailing whitespace when pressing <Leader>w
+" remove all trailing whitespace when pressing <Leader>w
 nnoremap <silent> <leader>w m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
             \<Bar> :nohl <Bar> :unlet _s <CR>`'
 
-" Mute search highlighting when pressing Control-l
+" mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
 " Abbreviations
 " ==============================
 
-" Insert signature with current date
+" insert signature with current date
 iabbrev <expr> sd strftime('-jackm, %Y-%m-%d')
 
-" Insert email address
+" insert email address
 iabbrev @@ jack.magnus@jadomag.com
