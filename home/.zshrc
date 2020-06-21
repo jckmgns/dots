@@ -1,8 +1,10 @@
 # Concurrent Configuration
 # ------------------------------
 
-if [[ -f "$HOME/.zshrc.d/zshrc.d.zsh" ]]; then
-    source "$HOME/.zshrc.d/zshrc.d.zsh"
+if [[ -d "$HOME/.zshrc.d" ]]; then
+    for file in "$HOME"/.zshrc.d/*.zsh; do
+        source $file
+	done
 fi
 
 # Prompt
