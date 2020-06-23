@@ -27,5 +27,5 @@ filetype indent on " load indent file for file type
 set path+=** " recursive folder search
 
 " move by visual line
-nnoremap j gj " move
+nnoremap j gj
 nnoremap k gk
