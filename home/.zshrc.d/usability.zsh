@@ -1,5 +1,8 @@
 #!/usr/bin/env zsh
 
+# treat these characters as part of a word
+export WORDCHARS='*?_-.[]~&;!#$%^(){}<>'
+
 setopt autocd # change directory without `cd`
 setopt autopushd # make cd work like pushd
 setopt extendedglob # extended globbing, eg. `cp ^*.(tar`

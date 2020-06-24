@@ -16,12 +16,10 @@ function fish-pwd {
 
 function rprompt {
     local exit_status=$?
-    local result
+    local result=""
 
     if [[ $exit_status != 0 ]]; then
         result="%B%F{red}[$exit_status]%f%b"
-    else
-        result="%B%F{magenta}%*%f"
     fi
 
     print $result
