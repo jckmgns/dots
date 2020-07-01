@@ -39,7 +39,6 @@ Plug 'easymotion/vim-easymotion'
 " Searching
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'jremmen/vim-ripgrep'
 
 " Utility
 Plug 'tpope/vim-commentary'
