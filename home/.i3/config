@@ -1,7 +1,7 @@
 # set mod key
 set $mod Mod4
 
-# font 
+# font
 font pango:Inconsolata 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -13,8 +13,8 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# start rofi --show-run
-bindsym $mod+d exec rofi -show run # -width 100 -padding 360
+# show dmenu
+bindsym $mod+d exec dmenu_run -i -l 16 -fn 'monospace:pixelsize=14' -nb '#282828' -nf '#fbf1c7' -sb '#fbf1c7' -sf '#282828'
 
 # change focus
 bindsym $mod+j focus left
@@ -67,16 +67,16 @@ bindsym $mod+a focus parent
 bindsym $mod+q focus child
 
 # workspace variables
-set $workspace_01 "1: WWW"
-set $workspace_02 "2: Chat"
-set $workspace_03 "3: Mail" 
-set $workspace_04 "4: Games"
+set $workspace_01 "1"
+set $workspace_02 "2"
+set $workspace_03 "3"
+set $workspace_04 "4"
 set $workspace_05 "5"
 set $workspace_06 "6"
 set $workspace_07 "7"
 set $workspace_08 "8"
-set $workspace_09 "9: Editor"
-set $workspace_10 "10: Terminal"
+set $workspace_09 "9"
+set $workspace_10 "10"
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace_01
@@ -120,28 +120,30 @@ workspace $workspace_10 output $monitor_1
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
-# restart i3 inplace 
+
+# restart i3 inplace
 bindsym $mod+Shift+r restart
-# exit i3 
+
+# exit i3
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window
 mode "resize" {
-# vim like bindings 
-		bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
-
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+    # vim like bindings
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym semicolon resize grow width 10 px or 10 ppt
+    
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+    
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
 
 # enter resize mode
@@ -150,33 +152,61 @@ bindsym $mod+r mode "resize"
 # colors
 # ===========================================
 
-set $color0  #282828
-set $color1  #cc241d
-set $color2  #98971a
-set $color3  #d79921
-set $color4  #458588
-set $color5  #b16286
-set $color6  #689d6a
-set $color7  #a89984
-set $color8  #928374
-set $color9  #fb4934
-set $color10  #b8bb26
-set $color11  #fabd2f
-set $color12  #83a598
-set $color13  #d3869b
-set $color14  #8ec07c
-set $color15  #ebdbb2
+set $bg             #282828
+set $red            #cc241d
+set $green          #98971a
+set $yellow         #d79921
+set $blue           #458588
+set $purple         #b16286
+set $aqua           #689d6a
+set $light_gray     #a89984
+set $gray           #928374
+set $light_red      #fb4934
+set $light_green    #b8bb26
+set $light_yellow   #fabd2f
+set $light_blue     #83a598
+set $light_purple   #d3869b
+set $light_aqua     #8ec07c
+set $fg             #ebdbb2
 
-# class                     border  	    backgr. 	    text    	    indicator           child_border 	
-client.focused              $color8         $color0         $color15        $color15            $color8
-client.focused_inactive     $color0         $color0         $color15        $color0             $color0
-client.unfocused            $color0         $color0         $color15        $color0             $color0
-client.urgent               $color1         $color1         $color15        $color1
+set $light_bg       #fbf1c7
+set $light_fg       #3c3836
+
+# class                     border      backgr.     text        indicator       child_border
+client.focused              $gray       $bg         $fg         $fg             $gray
+client.focused_inactive     $bg         $bg         $fg         $bg             $bg
+client.unfocused            $bg         $bg         $fg         $bg             $bg
+client.urgent               $red        $red        $fg         $red            $red
 
 # bar
 # ===========================================
 
-exec_always ${HOME}/.config/polybar/launch.sh
+bindsym $mod+n bar hidden_state toggle
+
+bar {
+    font pango:monospace 11
+
+    mode hide
+    modifier none
+
+    position top
+
+    status_command ~/.i3/status.bash
+
+    workspace_min_width 24
+
+    colors {
+        background $bg
+        statusline $bg
+        separator $bg
+
+        # class             border      backgr.     text
+        focused_workspace   $light_bg   $light_bg   $light_fg
+        active_workspace    $bg         $bg         $fg
+        inactive_workspace  $bg         $bg         $fg
+        urgent_workspace    $light_red  $light_red  $bg
+    }
+}
 
 # MPD
 # ===========================================
@@ -184,12 +214,12 @@ exec_always ${HOME}/.config/polybar/launch.sh
 exec mpd # start daemon
 
 # mpc hotkeys
-bindsym $mod+Insert     exec mpc toggle
-bindsym $mod+Home       exec mpc stop
-bindsym $mod+End        exec mpc next
-bindsym $mod+Delete     exec mpc prev
-bindsym $mod+Prior      exec mpc volume +5
-bindsym $mod+Next       exec mpc volume -5
+bindsym $mod+Insert exec mpc toggle
+bindsym $mod+Home   exec mpc stop
+bindsym $mod+End    exec mpc next
+bindsym $mod+Delete exec mpc prev
+bindsym $mod+Prior  exec mpc volume +5
+bindsym $mod+Next   exec mpc volume -5
 
 # mpc hokeys - media keys
 bindsym XF86AudioPlay           exec mpc toggle
@@ -199,10 +229,9 @@ bindsym XF86AudioPrev           exec mpc prev
 bindsym XF86AudioRaiseVolume    exec mpc volume +5
 bindsym XF86AudioLowerVolume    exec mpc volume -5
 
-# xset & setxkbmap 
+# xset & setxkbmap
 # ===========================================
 
-# set display power managament signaling to 30m
 exec_always --no-startup-id xset -dpms # disable power management
 exec_always --no-startup-id xset s off # set screensaver off
 exec_always --no-startup-id xset r rate 250 25 # keyboard repeat rate
@@ -210,50 +239,42 @@ exec_always --no-startup-id xset m 0 0 # mouse pointer speed
 exec_always --no-startup-id xset b off # bell volume
 
 exec_always --no-startup-id "setxkbmap -layout us -variant colemak -option compose:ralt"
-exec_always --no-startup-id xset r 66 # repeat for caps lock key (backspace in colemak)
+exec_always --no-startup-id xset r 66 # enable repeat for caps lock key (backspace in colemak)
 
 # custom keybinds
 # ===========================================
 
 bindsym $mod+i exec xdotool click 1 # 'fake' left mouseclick
 
-# system applications 
+# system applications
 # ===========================================
 
 exec unclutter -noevents -root -idle 3
 exec picom --config ~/.config/picom.conf -b
-# exec --no-startup-id dbus-launch nm-applet 
+# exec --no-startup-id dbus-launch nm-applet
 
 exec_always feh --randomize --bg-fill ~/.wallpaper/*
 # exec_always feh --bg-scale ~/Pictures/wallpaper.png
-# exec_always --no-startup-id xsetroot -solid $color0
+# exec_always --no-startup-id xsetroot -solid $bg
 
 exec redshift
 
 # custom applications / autstart
 # ===========================================
 
-exec --no-startup-id thunderbird 
-exec --no-startup-id i3-msg 'workspace 10: Terminal'
+exec --no-startup-id thunderbird
 
 # application & monitor assignments
 # ===========================================
 
 assign [class="Chromium-browser"] $workspace_01
 assign [class="Chromium"] $workspace_01
-assign [class="Firefox"] $workspace_01
 assign [class="firefox"] $workspace_01
 assign [class="discord"] $workspace_02
 assign [class="Thunderbird"] $workspace_03
 
 assign [class="Steam"] $workspace_04
 assign [class="itch"] $workspace_04
-
-# assign [class="Gvim"] $workspace_09
-assign [class="jetbrains-idea-ce"] $workspace_09
-
-# move current workspace to other monitor 
-# bindsym $mod+Tab exec i3-msg move workspace to output right
 
 # window config
 # ===========================================
