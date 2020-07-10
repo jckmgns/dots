@@ -192,12 +192,3 @@ nnoremap <silent> <leader>w m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
 
 " mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
-
-" Abbreviations
-" ==============================
-
-" insert signature with current date
-iabbrev <expr> sd strftime('-jackm, %Y-%m-%d')
-
-" insert email address
-iabbrev @@ jack.magnus@jadomag.com
