@@ -1,4 +1,0 @@
-#include "./themes/gruvbox-dark.theme"
-rofi.separator-style: solid
-rofi.width: 50
-rofi.padding: 30 
