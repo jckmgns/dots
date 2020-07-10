@@ -177,6 +177,7 @@ set backupdir=$HOME/.local/share/swap//
 
 " Fzf
 nnoremap <Leader>t :Files<CR>
+nnoremap <Leader>b :Buffers<CR>
 
 " General
 " ==============================
