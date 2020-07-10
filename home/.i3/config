@@ -13,8 +13,9 @@ bindsym $mod+Return exec st
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# show dmenu
-bindsym $mod+d exec dmenu_run -i -l 16 -fn 'monospace:pixelsize=14' -nb '#282828' -nf '#fbf1c7' -sb '#fbf1c7' -sf '#282828'
+# use fzf based command explorer inside st as a dmenu
+bindsym $mod+d exec st -g 100x20 -c 'stdmenu' -e i3-dmenu-desktop --dmenu='~/.i3/dmenu.bash'
+for_window [class="stdmenu"] floating enable
 
 # change focus
 bindsym $mod+j focus left
