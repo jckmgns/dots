@@ -185,7 +185,7 @@ client.urgent               $red        $red        $fg         $red            
 bindsym $mod+n bar hidden_state toggle
 
 bar {
-    font pango:monospace 11
+    font pango:monospace 10
 
     mode hide
     modifier none
