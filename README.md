@@ -1,11 +1,13 @@
-# Dotfiles
+# Dots
 
-This project contains files and setup scripts for managing linux configuration.
+Dotfiles and setup scripts specifically for Arch Linux.
 
-It is strongly recommended to store this repository on the same disk as your
-`$HOME` directory (e.g. in `$HOME` itself).
+## Store location
 
-## Repository structure
+Clone this repository to the same disk as your `$HOME` directory; could
+otherwise lead to weird behaviour based on mount order.
+
+## Structure
 
 Cloning this repository yields following file structure:
 
@@ -17,28 +19,21 @@ dotfiles/
 └── README.md
 ```
 
-An additional directory called `backup/` will be created after running
-sync.bash.
+An additional folder `backup/` will be created after executing `sync.bash`.
 
 #### home/
 
-Contains relevant configuration files. Can by synchronized by using `sync.bash`
-(please see [below](#syncbash) for further reading).
+Contains dotfiles which can be moved to home with `sync.bash`.
 
 #### setup/
 
-Houses setup scripts for installing and configuring a clean system.
+Setup scripts to install and configure packages.
 
 #### backup/
 
-Running `sync.bash` will create an additional top level directory called
-`backup`. It contains all files that were already present before synchronizing
-files from `home/` to `$HOME`. Files will be archived according to date and
-time of backup.
+Contains backup data after `sync.bash` has been run.
 
 #### sync.bash
 
-Synchronizes everything contained in `home/` to `$HOME`. This is done by
-creating softlinks to every file contained in `home/`, creating necessary
-folders as needed. Files that were already present before synchronization will
-be copied into its respective `backup/` subfolder.
+Creates softlinks of all files located under `home/` in `$HOME`. Files which
+were already present are copied to `backup/`.
