@@ -19,7 +19,7 @@
     shrink = no
 
     # Transparency of the window. Range: [0; 100].
-    transparency = 20
+    transparency = 10
 
     # Padding between text and separator.
     padding = 8
