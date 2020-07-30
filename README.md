@@ -2,11 +2,6 @@
 
 Dotfiles and setup scripts specifically for Arch Linux.
 
-## Store location
-
-Clone this repository to the same disk as your `$HOME` directory; could
-otherwise lead to weird behaviour based on mount order.
-
 ## Structure
 
 Cloning this repository yields following file structure:
