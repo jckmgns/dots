@@ -14,7 +14,7 @@ main() {
 }
 
 mpd() {
-    echo -e "\n${BLUE}Setup MPD for local playback${CLEAR}"
+    echo -e "\n${BLUE}Setup MPD for local playback${DFLT}"
 
     sudo systemctl stop mpd.service
     sudo systemctl disable mpd.service
