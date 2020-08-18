@@ -179,6 +179,14 @@ set backupdir=$HOME/.local/share/swap//
 nnoremap <silent> <leader>n :ALENext<CR>
 nnoremap <silent> <leader>p :ALEPrevious<CR>
 
+" easymotion
+map <leader>j <Plug>(easymotion-j)
+map <leader>k <Plug>(easymotion-k)
+map <leader>w <Plug>(easymotion-w)
+map <leader>b <Plug>(easymotion-b)
+nmap <leader>f <Plug>(easymotion-overwin-f)
+nmap <leader>2f <Plug>(easymotion-overwin-f2)
+
 " Fzf
 nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
