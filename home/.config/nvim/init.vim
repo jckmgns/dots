@@ -175,6 +175,10 @@ set backupdir=$HOME/.local/share/swap//
 " Plugins
 " ==============================
 
+" ALE
+nnoremap <silent> <leader>n :ALENext<CR>
+nnoremap <silent> <leader>p :ALEPrevious<CR>
+
 " Fzf
 nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
