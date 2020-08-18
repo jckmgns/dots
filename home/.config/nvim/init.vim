@@ -37,7 +37,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'easymotion/vim-easymotion'
 
 " Searching
-Plug 'junegunn/fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Utility
