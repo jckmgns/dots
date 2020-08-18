@@ -24,3 +24,18 @@ function rprompt {
 
     print $result
 }
+
+autoload -Uz colors && colors
+
+setopt prompt_subst
+
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+zstyle ':vcs_info:git:*' formats ' (%b)'
+
+local dir='%B%F{blue}$(fish-pwd)%f%b'
+local vcs='%B%F{yellow}${vcs_info_msg_0_}%f%b'
+
+PROMPT=" $dir$vcs %% "
+RPROMPT='$(rprompt)'
