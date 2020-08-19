@@ -38,6 +38,7 @@ pass
 picom
 pulsemixer
 python-pipx
+python-pynvim
 ranger
 redshift
 ripgrep
