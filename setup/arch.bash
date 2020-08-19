@@ -23,7 +23,10 @@ mpd() {
 rust() {
     echo -e "\n${BLUE}Start Rust installation${DFLT}"
 
-    curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
+    if ! command -v rustup &> /dev/null; then
+        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    fi
+
     export PATH="${HOME}/.cargo/bin:${PATH}"
     rustup component add clippy # clippy
     rustup component add rls rust-analysis rust-src # language server
