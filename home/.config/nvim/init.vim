@@ -204,3 +204,9 @@ nnoremap <silent> <leader>w m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
 
 " mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+" Abbreviations
+" ==============================
+
+iabbrev <expr> ## strftime('%Y-%m-%d')
+iabbrev @@ jack.magnus@infodesire.com
