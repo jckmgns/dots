@@ -22,10 +22,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'othree/xml.vim'
 
 " Completion
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/async.vim'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'autozimu/languageclient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 
 " Linting
 Plug 'w0rp/ale'
@@ -57,18 +57,6 @@ call plug#end()
 " SETTINGS
 " ------------------------------------------------------------
 
-" Language servers
-" ==============================
-
-" Rust
-if executable('rls')
-    au User lsp_setup call lsp#register_server({
-                \ 'name': 'rls',
-                \ 'cmd': {server_info->['rustup', 'run', 'nightly', 'rls']},
-                \ 'whitelist': ['rust']
-                \ })
-endif
-
 " Languages
 " ==============================
 " Language specific settings are located under ~/.config/nvim/ftplugin/*
@@ -76,11 +64,8 @@ endif
 " Plugins
 " ==============================
 
-" Language Server Protocol
-let g:lsp_diagnostics_echo_cursor = 1
-
-" Asyncomplete
-let g:asyncomplete_popup_delay = 200
+" Language Client
+source ~/.config/nvim/languageclient.vim
 
 " Gitgutter
 set updatetime=500
@@ -100,6 +85,8 @@ let g:netrw_banner = 0
 set history=128 " number of rememebered command-lines
 
 set omnifunc=syntaxcomplete#Complete " enable omni-completion
+
+set completeopt=longest,menuone
 
 set scrolloff=10 " number of screen lines to keep around cursor
 
@@ -198,7 +185,7 @@ nnoremap j gj
 nnoremap k gk
 
 " remove all trailing whitespace when pressing <Leader>w
-nnoremap <silent> <leader>w m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
+nnoremap <silent> <leader>W m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
             \<Bar> :nohl <Bar> :unlet _s <CR>`'
 
 " mute search highlighting when pressing Control-l
