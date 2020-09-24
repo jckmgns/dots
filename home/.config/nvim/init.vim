@@ -86,7 +86,7 @@ set history=128 " number of rememebered command-lines
 
 set omnifunc=syntaxcomplete#Complete " enable omni-completion
 
-set completeopt=longest,menuone
+set completeopt=longest,menuone " instert mode completion options
 
 set scrolloff=10 " number of screen lines to keep around cursor
 
@@ -194,5 +194,5 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " Abbreviations
 " ==============================
 
-iabbrev <expr> ## strftime('%Y-%m-%d')
+iabbrev <expr> $# strftime('%Y-%m-%d')
 iabbrev @@ jack.magnus@infodesire.com
