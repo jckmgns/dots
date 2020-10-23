@@ -1,6 +1,6 @@
 # Dots
 
-Dotfiles and setup scripts specifically for Arch Linux.
+Dotfiles and setup scripts for Arch Linux and its derivatives.
 
 ## Structure
 
@@ -14,7 +14,8 @@ dotfiles/
 └── README.md
 ```
 
-An additional folder `backup/` will be created after executing `sync.bash`.
+An additional folder called `backup/` will be created after executing
+`sync.bash`.
 
 #### home/
 
@@ -30,5 +31,5 @@ Contains backup data after `sync.bash` has been run.
 
 #### sync.bash
 
-Creates softlinks of all files located under `home/` in `$HOME`. Files which
-were already present are copied to `backup/`.
+Creates softlinks of all files located under `home/` in `$HOME`. Existing files
+are copied into a subfolder under `backup/`.
