@@ -1,3 +1,9 @@
+# colors
+set $bg             #282828
+set $red            #cc241d
+set $gray           #928374
+set $fg             #ebdbb2
+
 # set mod key
 set $mod Mod4
 
@@ -13,10 +19,8 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
-# use fzf based command explorer inside terminal as a dmenu
-bindsym $mod+d exec alacritty -d 100 20 -t 'termdmenu' -e i3-dmenu-desktop --dmenu='~/.i3/dmenu.bash'
-for_window [title="termdmenu"] floating enable
-for_window [title="termdmenu"] sticky enable
+# dmenu
+bindsym $mod+d exec dmenu_run -nb "$bg" -nf "$fg" -sb "$fg" -sf "$bg"
 
 # change focus
 bindsym $mod+j focus left
@@ -151,29 +155,6 @@ mode "resize" {
 # enter resize mode
 bindsym $mod+r mode "resize"
 
-# colors
-# ===========================================
-
-set $bg             #282828
-set $red            #cc241d
-set $green          #98971a
-set $yellow         #d79921
-set $blue           #458588
-set $purple         #b16286
-set $aqua           #689d6a
-set $light_gray     #a89984
-set $gray           #928374
-set $light_red      #fb4934
-set $light_green    #b8bb26
-set $light_yellow   #fabd2f
-set $light_blue     #83a598
-set $light_purple   #d3869b
-set $light_aqua     #8ec07c
-set $fg             #ebdbb2
-
-set $light_bg       #fbf1c7
-set $light_fg       #3c3836
-
 # class                     border      backgr.     text        indicator       child_border
 client.focused              $gray       $bg         $fg         $fg             $gray
 client.focused_inactive     $bg         $bg         $fg         $bg             $bg
@@ -203,10 +184,10 @@ bar {
         separator $bg
 
         # class             border      backgr.     text
-        focused_workspace   $light_bg   $light_bg   $light_fg
+        focused_workspace   $fg         $fg         $bg
         active_workspace    $bg         $bg         $fg
         inactive_workspace  $bg         $bg         $fg
-        urgent_workspace    $light_red  $light_red  $bg
+        urgent_workspace    $red        $red        $bg
     }
 }
 
