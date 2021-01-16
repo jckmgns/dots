@@ -1,0 +1,47 @@
+env:
+  TERM: alacritty
+
+window:
+  padding:
+    x: 3
+    y: 3
+
+font:
+  normal:
+    family: monospace
+  bold:
+    family: monospace
+  size: 9.0
+
+colors:
+  primary:
+    background: '#1b1c1d'
+    foreground: '#e7dfda'
+
+  search:
+    matches:
+      background: '#dfc7aa'
+      foreground: '#1b1c1e'
+    bar:
+      background: '#1b1c1d'
+      foreground: '#e7dfda'
+
+  normal:
+    black:   '#1b1c1d'
+    red:     '#c7847f'
+    green:   '#ae9c84'
+    yellow:  '#dfc7aa'
+    blue:    '#95939a'
+    magenta: '#b99eab'
+    cyan:    '#b1b4b3'
+    white:   '#978f8a'
+
+  bright:
+    black:   '#767779'
+    red:     '#c7847f'
+    green:   '#ae9c84'
+    yellow:  '#dfc7aa'
+    blue:    '#95939a'
+    magenta: '#b99eab'
+    cyan:    '#b1b4b3'
+    white:   '#eae1db'
