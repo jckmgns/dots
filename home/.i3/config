@@ -164,15 +164,10 @@ client.urgent               $red        $red        $fg         $red            
 # bar
 # ===========================================
 
-bindsym $mod+n bar hidden_state toggle
-
 bar {
-    font pango:monospace 10
-
-    mode hide
-    modifier none
-
     position top
+
+    font pango:monospace 10
 
     status_command ~/.i3/status.bash
 
