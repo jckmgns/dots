@@ -3,6 +3,7 @@ amd-ucode
 base
 base-devel
 blender
+chrony
 dhcpcd
 dmenu
 dunst
