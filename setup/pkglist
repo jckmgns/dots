@@ -39,7 +39,9 @@ noto-fonts-extra
 openssh
 pass
 picom
-pulsemixer
+pipewire
+pipewire-jack
+pipewire-pulse
 python-pipx
 python-pynvim
 ranger
