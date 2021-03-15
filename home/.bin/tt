@@ -42,7 +42,7 @@ def main():
 
     print("\rYour tea is ready!        ")
     os.system("notify-send \"Your tea is ready!\"")
-    os.system("spd-say \"Your tea is ready!\"")
+    # os.system("spd-say \"Your tea is ready!\"")
 
 arguments()
 main()
