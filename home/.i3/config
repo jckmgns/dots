@@ -230,6 +230,8 @@ exec unclutter -noevents -root -idle 3
 exec picom --config ~/.config/picom.conf -b
 # exec --no-startup-id dbus-launch nm-applet
 
+exec dunst
+
 exec_always feh --randomize --bg-fill ~/.wallpaper/*
 # exec_always feh --bg-scale ~/Pictures/wallpaper.png
 # exec_always --no-startup-id xsetroot -solid $bg
