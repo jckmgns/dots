@@ -38,10 +38,11 @@ noto-fonts-emoji
 noto-fonts-extra
 openssh
 pass
+pavucontrol
 picom
-pipewire
-pipewire-jack
-pipewire-pulse
+pulseaudio
+pulseaudio-alsa
+pulsemixer
 python-pipx
 python-pynvim
 ranger
