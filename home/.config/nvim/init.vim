@@ -176,6 +176,7 @@ nmap <leader>2f <Plug>(easymotion-overwin-f2)
 
 " Fzf
 nnoremap <Leader>t :Files<CR>
+nnoremap <Leader>n :Buffers<CR>
 
 " General
 " ==============================
