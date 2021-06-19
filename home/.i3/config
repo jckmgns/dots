@@ -1,8 +1,8 @@
 # colors
-set $bg             #282828
-set $red            #cc241d
-set $gray           #928374
-set $fg             #ebdbb2
+set $bg             #241E1A
+set $red            #A9514C
+set $gray           #806B5D
+set $fg             #EEDDC1
 
 # set mod key
 set $mod Mod4

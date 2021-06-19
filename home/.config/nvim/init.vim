@@ -47,7 +47,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
 " Appearance
-Plug 'morhetz/gruvbox'
+Plug 'jadomag/curtailed'
 
 " ------------------------------------------------------------
 
@@ -95,13 +95,12 @@ set ttimeoutlen=10 " time that is waited for a key code sequence
 set autoread " autoload file changes
 
 " User Interface
-syntax enable " enables syntax highlighting
+syntax enable
 
 set termguicolors " enable true color support
 
 set background=dark
-
-autocmd vimenter * colorscheme gruvbox
+colorscheme curtailed
 
 set number relativenumber " show hybrid line numbers
 
