@@ -128,19 +128,21 @@ set statusline+=%5l " current line
 set statusline+=/%L " total lines
 set statusline+=%4v\  " virtual column number
 
-" Tabs and Spaces
+" Tabs and spaces
 set tabstop=4 " how many columns a tab counts for
 set softtabstop=4 " how many columns are inserted when pressing tab
 set shiftwidth=4 " how many columns text will be shifted
 set expandtab " insert spaces when pressing tab
 
-" Searching
+" Search and replace
 set incsearch " show where pattern matches while typing
 set hlsearch " highlight all search pattern matches
 set ignorecase " ignores case when searching
 set smartcase " overrides 'ignorecase' if search contains upper case characters
 
 set path+=** " recursive folder search
+
+set inccommand=nosplit " show effects of a command (e.g. replace) incrementally
 
 " store backup files outside of working directory
 if !isdirectory("$HOME/.local/share/backup")
