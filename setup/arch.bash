@@ -3,44 +3,46 @@
 BLUE="\e[34m" # blue
 DFLT="\e[39m" # default
 
-main() {
-    sudo pacman -S --needed - < pkglist
+# Install packages (that are not up-to-date)
+sudo pacman -S --needed - < pkglist
 
-    mpd
-    rust
-    yay
+# Simple Terminal
+if ! hash st &> /dev/null; then
+    echo -e "\n${BLUE}Install simple terminal (st)${DFLT}"
 
-    echo -e "\n${BLUE}Setup complete${DFLT}"
-}
+    git clone --recurse-submodules https://github.com/jadomag/stw /tmp/stw
+    /tmp/stw/install
 
-mpd() {
-    echo -e "\n${BLUE}Setup MPD for local playback${DFLT}"
+    rm -rf /tmp/stw
+fi
 
-    sudo systemctl stop mpd.service
-    sudo systemctl disable mpd.service
-}
+# MPD
+echo -e "\n${BLUE}Setup MPD for local playback${DFLT}"
 
-rust() {
+sudo systemctl stop mpd.service
+sudo systemctl disable mpd.service
+
+# Rust
+if ! hash rustup &> /dev/null; then
     echo -e "\n${BLUE}Start Rust installation${DFLT}"
 
-    if ! command -v rustup &> /dev/null; then
-        curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    fi
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
     export PATH="${HOME}/.cargo/bin:${PATH}"
+
     rustup component add clippy # clippy
     rustup component add rls rust-analysis rust-src # language server
-}
+fi
 
-yay() {
-    if ! command -v yay &> /dev/null; then
-        echo -e "\n${BLUE}Start yay installation${DFLT}"
+# yay
+if ! hash yay &> /dev/null; then
+    echo -e "\n${BLUE}Start yay installation${DFLT}"
 
-        git clone https://aur.archlinux.org/yay.git /tmp/yay
-        (cd /tmp/yay && makepkg -si)
+    git clone https://aur.archlinux.org/yay.git /tmp/yay
+    (cd /tmp/yay && makepkg -si)
 
-        rm -rf /tmp/yay
-    fi
-}
+    rm -rf /tmp/yay
+fi
 
-main
+
+echo -e "\n${BLUE}Setup complete${DFLT}"

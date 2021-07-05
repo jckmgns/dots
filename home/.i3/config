@@ -14,7 +14,7 @@ font pango:Inconsolata 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec st
 
 # kill focused window
 bindsym $mod+Shift+q kill
