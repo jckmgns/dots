@@ -110,21 +110,21 @@
     context = ctrl+shift+period
 
 [urgency_low]
-    background = "#458588"
-    foreground = "#ebdbb2"
-    frame_color = "#83a598"
+    background = "#241f1a"
+    foreground = "#f5e7cf"
+    frame_color = "#6e897d"
     timeout = 5
 
 [urgency_normal]
-    background = "#282828"
-    foreground = "#ebdbb2"
-    frame_color = "#928374"
+    background = "#241f1a"
+    foreground = "#f5e7cf"
+    frame_color = "#c1b5a2"
     timeout = 10
 
 [urgency_critical]
-    background = "#cc241d"
-    foreground = "#ebdbb2"
-    frame_color = "#fb4934"
+    background = "#241f1a"
+    foreground = "#f5e7cf"
+    frame_color = "#a74646"
     timeout = 0
 
 # vim: ft=cfg
