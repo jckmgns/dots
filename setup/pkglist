@@ -3,6 +3,7 @@ base
 base-devel
 blender
 chrony
+ctags
 dhcpcd
 dmenu
 dunst
