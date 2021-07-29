@@ -6,6 +6,7 @@ family = "Iosevka Extended"
 spacing = "normal"
 serifs = "sans"
 no-cv-ss = true
+no-ligation = true
 
 [buildPlans.iosevka-extended.weights.regular]
 shape = 400
@@ -42,6 +43,7 @@ family = "Iosevka Aile Extended"
 spacing = "quasi-proportional"
 serifs = "sans"
 no-cv-ss = true
+no-ligation = true
 
 [buildPlans.iosevka-aile-extended.weights.regular]
 shape = 400
