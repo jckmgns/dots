@@ -147,6 +147,12 @@ mode "resize" {
     bindsym Up resize shrink height 10 px or 10 ppt
     bindsym Right resize grow width 10 px or 10 ppt
 
+    # mnemonic bindings (wide, narrow, tall, small)
+    bindsym w resize grow width 10 px or 10 ppt
+    bindsym n resize shrink width 10 px or 10 ppt
+    bindsym t resize grow height 10 px or 10 ppt
+    bindsym s resize shrink height 10 px or 10 ppt
+
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
