@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-autoload -U compinit && compinit # Tab completions
+autoload -Uz compinit && compinit # Tab completions
 
 # Completion to include menu selection, case insensitive and match in words
 zstyle ':completion:*' menu select
