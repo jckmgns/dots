@@ -21,12 +21,6 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'rust-lang/rust.vim'
 Plug 'othree/xml.vim'
 
-" Completion
-Plug 'autozimu/languageclient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
 " Linting
 Plug 'w0rp/ale'
 
@@ -63,9 +57,6 @@ call plug#end()
 
 " Plugins
 " ==============================
-
-" Language Client
-source ~/.config/nvim/languageclient.vim
 
 " Gitgutter
 set updatetime=500
