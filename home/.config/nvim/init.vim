@@ -58,6 +58,11 @@ call plug#end()
 " Plugins
 " ==============================
 
+" ALE
+let g:ale_linters = { 
+    \ 'c': [],
+    \ }
+
 " Gitgutter
 set updatetime=500
 
