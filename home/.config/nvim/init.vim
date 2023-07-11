@@ -19,7 +19,7 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 " Languages
 Plug 'tikhomirov/vim-glsl'
 Plug 'rust-lang/rust.vim'
-Plug 'othree/xml.vim'
+Plug 'sukima/xmledit'
 
 " Linting
 Plug 'w0rp/ale'
