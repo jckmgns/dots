@@ -193,4 +193,3 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " ==============================
 
 iabbrev <expr> $# strftime('%Y-%m-%d')
-iabbrev @@ jack.magnus@jadomag.com
