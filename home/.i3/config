@@ -250,9 +250,7 @@ assign [class="Chromium-browser"] $workspace_01
 assign [class="Chromium"] $workspace_01
 assign [class="firefox"] $workspace_01
 assign [class="discord"] $workspace_02
-
-assign [class="Steam"] $workspace_04
-assign [class="itch"] $workspace_04
+assign [class="steam"] $workspace_04
 
 # window config
 # ===========================================
