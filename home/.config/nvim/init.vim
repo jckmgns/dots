@@ -28,7 +28,7 @@ Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 
 " Motion
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 
 " Searching
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -62,6 +62,8 @@ call plug#end()
 let g:ale_linters = { 
     \ 'c': [],
     \ }
+" Sneak
+let g:sneak#label = 1 " label-mode as a replacement for easy motion.
 
 " Gitgutter
 set updatetime=500
@@ -162,14 +164,6 @@ set backupdir=$HOME/.local/share/swap//
 " ALE
 nnoremap <silent> <leader>n :ALENext<CR>
 nnoremap <silent> <leader>p :ALEPrevious<CR>
-
-" easymotion
-map <leader>j <Plug>(easymotion-j)
-map <leader>k <Plug>(easymotion-k)
-map <leader>w <Plug>(easymotion-w)
-map <leader>b <Plug>(easymotion-b)
-nmap <leader>f <Plug>(easymotion-overwin-f)
-nmap <leader>2f <Plug>(easymotion-overwin-f2)
 
 " Fzf
 nnoremap <Leader>t :Files<CR>
