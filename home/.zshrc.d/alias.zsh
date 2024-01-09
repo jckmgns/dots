@@ -38,3 +38,5 @@ alias lt='ll -tr'
 alias lc='lt -c'
 alias lu='lt -u'
 alias sl='ls'
+
+alias feh='feh --draw-filename --auto-zoom --scale-down --sort name --version-sort'
