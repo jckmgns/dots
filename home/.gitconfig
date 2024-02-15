@@ -1,6 +1,6 @@
 [user]
     name = Jack Magnus
-    email = jack.magnus@jadomag.com
+    email = git@jadomag.com
 [core]
     editor = nvim
     excludesfile = ~/.excludesfile
@@ -19,3 +19,7 @@
 	date = iso
 [apply]
     whitespace = fix
+[column]
+	ui = auto
+[branch]
+	sort = committerdate
