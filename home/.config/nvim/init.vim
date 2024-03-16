@@ -183,6 +183,10 @@ nnoremap <silent> <leader>W m':let _s=@/ <Bar> :%s/\s\+$//e <Bar> :let @/=_s
 " mute search highlighting when pressing Control-l
 nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 
+" add "il" as operator for whole line.
+onoremap <silent> il :<C-u>normal! $v0<CR>
+xnoremap <silent> il :<C-u>normal! $v0<CR>
+
 " Abbreviations
 " ==============================
 
