@@ -236,9 +236,7 @@ exec picom --config ~/.config/picom.conf -b
 
 exec dunst
 
-exec_always feh --randomize --bg-fill ~/.wallpaper/*
-# exec_always feh --bg-scale ~/Pictures/wallpaper.png
-# exec_always --no-startup-id xsetroot -solid $bg
+exec_always feh --bg-fill ~/.wallpaper.jpg
 
 # custom applications / autstart
 # ===========================================
