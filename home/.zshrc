@@ -28,6 +28,9 @@ alias sl='ls'
 
 alias feh='feh --draw-filename --auto-zoom --scale-down --sort name --version-sort'
 
+export rgl() { rg -n --color always "$1" | less -R }
+
+
 # Completion
 # ------------------------------
 
