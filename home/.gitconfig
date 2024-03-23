@@ -1,6 +1,6 @@
 [user]
     name = Jack Magnus
-    email = git@jadomag.com
+    email = git@jackmagnus.cc
 [core]
     editor = nvim
     excludesfile = ~/.excludesfile
