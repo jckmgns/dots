@@ -58,12 +58,9 @@ call plug#end()
 " Plugins
 " ==============================
 
-" ALE
-let g:ale_linters = { 
-    \ 'c': [],
-    \ }
 " Sneak
 let g:sneak#label = 1 " label-mode as a replacement for easy motion.
+let g:sneak#use_ic_scs = 1 " use 'ignorecase' and 'smartcase' to determine case sensitivity
 
 " Gitgutter
 set updatetime=500
@@ -84,7 +81,7 @@ set history=128 " number of rememebered command-lines
 
 set omnifunc=syntaxcomplete#Complete " enable omni-completion
 
-set completeopt=longest,menuone " instert mode completion options
+set completeopt=longest,menu " instert mode completion options
 
 set scrolloff=10 " number of screen lines to keep around cursor
 
