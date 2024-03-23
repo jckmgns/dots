@@ -21,9 +21,6 @@ Plug 'tikhomirov/vim-glsl'
 Plug 'rust-lang/rust.vim'
 Plug 'sukima/xmledit'
 
-" Linting
-Plug 'w0rp/ale'
-
 " Git
 Plug 'airblade/vim-gitgutter'
 
@@ -157,10 +154,6 @@ set backupdir=$HOME/.local/share/swap//
 
 " Plugins
 " ==============================
-
-" ALE
-nnoremap <silent> <leader>n :ALENext<CR>
-nnoremap <silent> <leader>p :ALEPrevious<CR>
 
 " Fzf
 nnoremap <Leader>t :Files<CR>
