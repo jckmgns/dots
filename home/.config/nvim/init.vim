@@ -50,7 +50,10 @@ call plug#end()
 
 " Languages
 " ==============================
+
 " Language specific settings are located under ~/.config/nvim/ftplugin/*
+
+set cino+=(0 " indent characters to same column for parameter alignment.
 
 " Plugins
 " ==============================
