@@ -1,8 +1,8 @@
 # colors
-set $bg             #221407
-set $red            #A55050
-set $gray           #9d856d
-set $fg             #f5e0cc
+set $bg #1C1E21
+set $gr #928A83
+set $fg #f5e0cc
+set $re #8F5454
 
 # set mod key
 set $mod Mod4
@@ -67,10 +67,10 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-bindsym $mod+q focus child
+bindsym $mod+c focus child
 
 # workspace variables
 set $workspace_01 "1"
@@ -161,11 +161,11 @@ mode "resize" {
 # enter resize mode
 bindsym $mod+r mode "resize"
 
-# class                     border      backgr.     text        indicator       child_border
-client.focused              $gray       $bg         $fg         $fg             $gray
-client.focused_inactive     $bg         $bg         $fg         $bg             $bg
-client.unfocused            $bg         $bg         $fg         $bg             $bg
-client.urgent               $red        $red        $fg         $red            $red
+# class                   border   background   text   indicator   child_border
+client.focused            $gr      $gr          $bg    $fg         $gr
+client.focused_inactive   $bg      $bg          $fg    $fg         $bg
+client.unfocused          $bg      $bg          $fg    $fg         $bg
+client.urgent             $re      $re          $fg    $re         $re
 
 # bar
 # ===========================================
@@ -175,18 +175,18 @@ bar {
 
     status_command ~/.i3/status.bash
 
-    workspace_min_width 24
+    workspace_min_width 18
 
     colors {
         background $bg
         statusline $bg
         separator $bg
 
-        # class             border      backgr.     text
-        focused_workspace   $fg         $fg         $bg
-        active_workspace    $bg         $bg         $fg
-        inactive_workspace  $bg         $bg         $fg
-        urgent_workspace    $red        $red        $bg
+        # class              border   background   text
+        focused_workspace    $fg      $fg          $bg
+        active_workspace     $bg      $bg          $fg
+        inactive_workspace   $bg      $bg          $fg
+        urgent_workspace     $re      $re          $fg
     }
 }
 
@@ -194,7 +194,7 @@ bar {
 # ===========================================
 
 exec_always --no-startup-id xset -dpms # disable power management
-exec_always --no-startup-id xset s off # set screensaver off
+exec_always --no-startup-id xset s off # disable screensaver
 exec_always --no-startup-id xset r rate 250 25 # keyboard repeat rate
 exec_always --no-startup-id xset m 0 0 # mouse pointer speed
 exec_always --no-startup-id xset b off # bell volume
@@ -215,9 +215,10 @@ exec picom --config ~/.config/picom.conf -b
 
 exec dunst
 
-exec_always feh --bg-fill ~/.wallpaper.jpg
+exec_always --no-startup-id hsetroot -solid "$bg"
+# exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
 
-# custom applications / autstart
+# custom applications / autostart
 # ===========================================
 
 # application & monitor assignments
@@ -232,7 +233,7 @@ assign [class="steam"] $workspace_04
 # window config
 # ===========================================
 
-for_window [class="^.*"] border pixel 2 # remove top bar
+for_window [class="^.*"] border pixel 0
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -240,3 +241,6 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+
+gaps inner  2
+gaps outer -2
