@@ -162,9 +162,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                   border   background   text   indicator   child_border
-client.focused            $gr      $gr          $bg    $fg         $gr
-client.focused_inactive   $bg      $bg          $fg    $fg         $bg
-client.unfocused          $bg      $bg          $fg    $fg         $bg
+client.focused            $gr      $gr          $bg    $gr         $gr
+client.focused_inactive   $bg      $bg          $fg    $bg         $bg
+client.unfocused          $bg      $bg          $fg    $bg         $bg
 client.urgent             $re      $re          $fg    $re         $re
 
 # bar
@@ -215,8 +215,7 @@ exec picom --config ~/.config/picom.conf -b
 
 exec dunst
 
-exec_always --no-startup-id hsetroot -solid "$bg"
-# exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
+exec_always --no-startup-id feh --bg-fill ~/.wallpaper.jpg
 
 # custom applications / autostart
 # ===========================================
@@ -233,7 +232,9 @@ assign [class="steam"] $workspace_04
 # window config
 # ===========================================
 
-for_window [class="^.*"] border pixel 0
+hide_edge_borders both
+
+for_window [class="^.*"] border pixel 1
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -241,6 +242,3 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-
-gaps inner  2
-gaps outer -2
