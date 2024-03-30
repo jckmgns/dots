@@ -19,16 +19,17 @@ alias lk='ll -Sr'
 alias ll='ls -lh'
 alias lm='la | "$PAGER"'
 alias lr='ll -R'
-alias ls="ls --color -h --group-directories-first --time-style=long-iso"
+alias ls="ls --color --human-readable --indicator-style=file-type --group-directories-first --time-style=long-iso"
 alias lt='ll -tr'
 alias lu='lt -u'
 alias lx='ll -XB'
 alias sl='ls'
 
+alias htop='htop --no-color'
+
 alias feh='feh --draw-filename --auto-zoom --scale-down --sort name --version-sort'
 
 export rgl() { rg -n --color always "$1" | less -R }
-
 
 # Completion
 # ------------------------------
