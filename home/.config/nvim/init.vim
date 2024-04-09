@@ -46,12 +46,13 @@ call plug#end()
 " SETTINGS
 " ------------------------------------------------------------
 
-" Languages
+" Language specific
 " ==============================
 
-" Language specific settings are located under ~/.config/nvim/ftplugin/*
+" Formatting
+" ==============================
 
-set cino+=(0 " indent characters to same column for parameter alignment.
+autocmd FileType * set formatoptions-=o " disable automatic commenting on 'o'/'O'.
 
 " Plugins
 " ==============================
