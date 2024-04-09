@@ -6,9 +6,17 @@
     excludesfile = ~/.excludesfile
     whitespace = trailing-space,space-before-tab
 [alias]
-    lg = log --decorate --oneline --graph
+	cp = cherry-pick
+    blc = blame -CCC -M -w
+    ch = checkout
+    co = commit -v
+    dfh = diff HEAD~
     la = log --all --decorate --oneline --graph
-    sub = restore --staged
+    lg = log --decorate --oneline --graph
+    lns = log --name-status
+    sh = show
+    shs = show --name-status
+    st = status
 [merge]
     tool = vimdiff
 [pull]
