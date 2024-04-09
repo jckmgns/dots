@@ -16,9 +16,6 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 " Plugins
 " ==============================
 
-" Languages
-Plug 'sukima/xmledit'
-
 " Git
 Plug 'airblade/vim-gitgutter'
 
@@ -45,14 +42,6 @@ call plug#end()
 " ------------------------------------------------------------
 " SETTINGS
 " ------------------------------------------------------------
-
-" Language specific
-" ==============================
-
-" Formatting
-" ==============================
-
-autocmd FileType * set formatoptions-=o " disable automatic commenting on 'o'/'O'.
 
 " Plugins
 " ==============================
