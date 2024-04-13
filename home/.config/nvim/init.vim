@@ -32,6 +32,8 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 
+Plug 'junegunn/vim-easy-align'
+
 " Appearance
 Plug 'jadomag/curtailed'
 
@@ -149,6 +151,9 @@ set backupdir=$HOME/.local/share/swap//
 " Fzf
 nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>n :Buffers<CR>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " General
 " ==============================
