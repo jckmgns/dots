@@ -6,16 +6,6 @@ DFLT="\e[39m" # default
 # install packages (which aren't up-to-date)
 sudo pacman -S --needed - < pkglist
 
-# st
-if ! hash st &> /dev/null; then
-    echo -e "\n${BLUE}Install simple terminal (st)${DFLT}"
-
-    git clone --recurse-submodules https://github.com/jadomag/st.git /tmp/st
-    /tmp/st/install
-
-    rm -rf /tmp/st
-fi
-
 # yay
 if ! hash yay &> /dev/null; then
     echo -e "\n${BLUE}Install yay${DFLT}"
