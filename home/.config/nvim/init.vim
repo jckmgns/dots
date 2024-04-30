@@ -34,6 +34,8 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'junegunn/vim-easy-align'
 
+Plug 'buztard/vim-rel-jump'
+
 " Appearance
 Plug 'jadomag/curtailed'
 
@@ -84,7 +86,7 @@ syntax enable
 
 set termguicolors " enable true color support
 
-set background=dark
+set background=light
 colorscheme curtailed
 
 set number relativenumber " show hybrid line numbers
@@ -152,6 +154,7 @@ set backupdir=$HOME/.local/share/swap//
 nnoremap <Leader>t :Files<CR>
 nnoremap <Leader>n :Buffers<CR>
 
+" Easy align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
