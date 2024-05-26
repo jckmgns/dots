@@ -16,6 +16,9 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 " Plugins
 " ==============================
 
+" Languages
+Plug 'tikhomirov/vim-glsl'
+
 " Git
 Plug 'airblade/vim-gitgutter'
 
