@@ -16,4 +16,23 @@ fi
 
 xrdb ~/.Xresources
 
-exec i3
+# Statusbar
+
+while true; do
+   xsetroot -name "$( date +"%F %R" )"
+   sleep 1m
+done &
+
+# Autostart
+
+xset -dpms # disable power management
+xset s off # disable screensaver
+xset r rate 200 40 # keyboard repeat rate
+xset m 0 0 # mouse pointer speed
+xset b off # bell volume
+
+setxkbmap -layout us -option -option compose:ralt
+
+picom --config ~/.config/picom.conf -b
+
+exec dwm
