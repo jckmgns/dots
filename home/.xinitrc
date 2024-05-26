@@ -34,5 +34,6 @@ xset b off # bell volume
 setxkbmap -layout us -option -option compose:ralt
 
 picom --config ~/.config/picom.conf -b
+feh --bg-fill ~/.wallpaper.jpg
 
 exec dwm
