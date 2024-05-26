@@ -195,7 +195,7 @@ bar {
 
 exec_always --no-startup-id xset -dpms # disable power management
 exec_always --no-startup-id xset s off # disable screensaver
-exec_always --no-startup-id xset r rate 250 25 # keyboard repeat rate
+exec_always --no-startup-id xset r rate 200 40 # keyboard repeat rate
 exec_always --no-startup-id xset m 0 0 # mouse pointer speed
 exec_always --no-startup-id xset b off # bell volume
 
