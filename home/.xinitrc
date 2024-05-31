@@ -27,13 +27,15 @@ done &
 
 xset -dpms # disable power management
 xset s off # disable screensaver
-xset r rate 200 40 # keyboard repeat rate
+xset r rate 210 30 # keyboard repeat rate
 xset m 0 0 # mouse pointer speed
 xset b off # bell volume
 
 setxkbmap -layout us -option -option compose:ralt
 
 picom --config ~/.config/picom.conf -b
+dunst&
+
 feh --bg-fill ~/.wallpaper.jpg
 
 exec dwm
