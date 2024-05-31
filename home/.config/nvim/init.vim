@@ -147,12 +147,6 @@ if !isdirectory("$HOME/.local/share/backup")
 endif
 set backupdir=$HOME/.local/share/backup//
 
-" store swap files outside of working directory
-if !isdirectory("$HOME/.local/share/swap")
-    silent call mkdir($HOME . "/.local/share/swap", "p")
-endif
-set backupdir=$HOME/.local/share/swap//
-
 " ------------------------------------------------------------
 " KEY MAPPINGS
 " ------------------------------------------------------------
