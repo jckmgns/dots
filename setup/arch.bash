@@ -4,7 +4,7 @@ BLUE="\e[34m" # blue
 DFLT="\e[39m" # default
 
 # install packages (which aren't up-to-date)
-sudo pacman -S --needed - < pkglist
+sudo pacman -Syu --needed - < pkglist
 
 # yay
 if ! hash yay &> /dev/null; then
