@@ -38,11 +38,18 @@ def main():
         m = s // 60
         s = s % 60
 
-        print("\rTime remainig: %0.2dm %0.2ds " % (m, s), end='', flush=True)
+        print("\rTime remaining: %0.2dm %0.2ds " % (m, s), end="", flush=True)
 
-    print("\rYour tea is ready!        ")
+    # clear line for the final message.
+    print("\r                              ", end="", flush=True)
+
+    now = time.localtime()
+    message = "\r%0.2d:%0.2d - Your tea is ready!"
+    message = message % (now.tm_hour, now.tm_min)
+
+    print(message)
     os.system("notify-send \"Your tea is ready!\"")
-    # os.system("spd-say \"Your tea is ready!\"")
+
 
 arguments()
 main()
