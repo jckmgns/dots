@@ -13,6 +13,7 @@
     la = log --all --decorate --oneline --graph
     lg = log --decorate --oneline --graph
     lns = log --name-status
+    rs = restore --staged
     shs = show --name-status
     st = status
 [merge]
