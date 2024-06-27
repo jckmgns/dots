@@ -8,13 +8,11 @@
 [alias]
 	cp = cherry-pick
     blc = blame -CCC -M -w
-    ch = checkout
-    co = commit -v
+    co = checkout
     dfh = diff HEAD~
     la = log --all --decorate --oneline --graph
     lg = log --decorate --oneline --graph
     lns = log --name-status
-    sh = show
     shs = show --name-status
     st = status
 [merge]
