@@ -4,6 +4,7 @@
 [core]
     editor = nvim
     excludesfile = ~/.excludesfile
+    hooksPath = /home/jack/.githooks
     whitespace = trailing-space,space-before-tab
 [alias]
 	cp = cherry-pick
