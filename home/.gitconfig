@@ -3,7 +3,7 @@
     email = git@jackmagnus.cc
 [core]
     editor = nvim
-    excludesfile = ~/.excludesfile
+    excludesfile = ~/.gitignore
     hooksPath = /home/jack/.githooks
     whitespace = trailing-space,space-before-tab
 [alias]
@@ -15,7 +15,7 @@
     lg = log --decorate --oneline --graph
     lns = log --name-status
     rs = restore --staged
-    shs = show --name-status
+    sns = show --name-status
     st = status
 [merge]
     tool = vimdiff
