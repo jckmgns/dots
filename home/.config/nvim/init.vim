@@ -40,7 +40,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'buztard/vim-rel-jump'
 
 " Appearance
-Plug 'jckmgns/wilted'
+Plug 'jckmgns/vellum'
 
 " ------------------------------------------------------------
 
@@ -96,8 +96,7 @@ syntax enable
 
 set termguicolors " enable true color support
 
-let g:wilted#palette = 'fuchsia' " bouquet, fuchsia, chicory, sunflower
-colorscheme wilted
+colorscheme vellum
 
 set number relativenumber " show hybrid line numbers
 
