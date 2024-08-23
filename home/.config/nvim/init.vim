@@ -37,8 +37,6 @@ Plug 'tpope/vim-unimpaired'
 
 Plug 'junegunn/vim-easy-align'
 
-Plug 'buztard/vim-rel-jump'
-
 " Appearance
 Plug 'jckmgns/vellum'
 
@@ -96,6 +94,7 @@ syntax enable
 
 set termguicolors " enable true color support
 
+set background=light
 colorscheme vellum
 
 set number relativenumber " show hybrid line numbers
