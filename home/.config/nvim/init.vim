@@ -95,6 +95,7 @@ syntax enable
 set termguicolors " enable true color support
 
 set background=light
+let g:vellum#monochrome=1
 colorscheme vellum
 
 set number relativenumber " show hybrid line numbers
