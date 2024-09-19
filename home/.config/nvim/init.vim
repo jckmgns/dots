@@ -55,6 +55,8 @@ autocmd FileType c    setlocal commentstring=//\ %s
 autocmd FileType cpp  setlocal commentstring=//\ %s
 autocmd FileType glsl setlocal commentstring=//\ %s
 
+set cinoptions+=L0
+
 " Plugins
 " ==============================
 
