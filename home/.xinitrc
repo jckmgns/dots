@@ -25,13 +25,7 @@ done &
 
 # Autostart
 
-xset -dpms # disable power management
-xset s off # disable screensaver
-xset r rate 210 30 # keyboard repeat rate
-xset m 0 0 # mouse pointer speed
-xset b off # bell volume
-
-setxkbmap -layout us -option -option compose:ralt
+./.xset
 
 picom --config ~/.config/picom.conf -b
 dunst&
