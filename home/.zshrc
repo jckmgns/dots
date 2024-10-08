@@ -29,7 +29,7 @@ alias htop='htop --no-color'
 
 alias feh='feh --draw-filename --auto-zoom --scale-down --sort name --version-sort'
 
-export rgl() { rg -n --color always "$@" | less -R }
+alias ugl='ug -nHQe'
 
 # Completion
 # ------------------------------
