@@ -25,7 +25,7 @@ done &
 
 # Autostart
 
-./.xset
+./.xsetrc
 
 picom --config ~/.config/picom.conf -b
 dunst&
