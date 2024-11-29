@@ -29,7 +29,7 @@ alias htop='htop --no-color'
 
 alias feh='feh --draw-filename --auto-zoom --scale-down --sort name --version-sort'
 
-alias ugl='ug -nHQe'
+alias ugl='ug -njHQe'
 
 # Completion
 # ------------------------------
