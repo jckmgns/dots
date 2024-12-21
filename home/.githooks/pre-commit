@@ -1,1 +1,22 @@
-/home/jack/dots/dotfiles/.githooks/pre-commit
+#!/usr/bin/env bash
+# Search for variations of "nocheckin" or "nocommit" and abort accordingly.
+
+abort_commit=false
+
+# Iterating over the files instead of calling 'git grep' directly is faster for
+# some reason.
+
+files=$(git diff --name-only --cached)
+
+for file in ${files};do
+    if git grep --cached --color=always -EHino '(no[-_]?checkin|no[-_]?commit)' ${file}; then
+        abort_commit=true
+    fi
+done
+
+if [ "$abort_commit" = true ]; then
+    echo "Commit aborted: contains file(s) marked not to be committed."
+    exit 1
+fi
+
+exit 0
