@@ -16,9 +16,6 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 " Plugins
 " ==============================
 
-" Languages
-Plug 'tikhomirov/vim-glsl'
-
 " Git
 Plug 'airblade/vim-gitgutter'
 
@@ -51,9 +48,10 @@ call plug#end()
 " Languages
 " ==============================
 
+autocmd BufRead,BufNewFile *.glsl set filetype=c
+
 autocmd FileType c    setlocal commentstring=//\ %s
 autocmd FileType cpp  setlocal commentstring=//\ %s
-autocmd FileType glsl setlocal commentstring=//\ %s
 
 set cinoptions+=L0  " Don't indent labels, so the cursor doesn't jump when typing namespace colons.
 set cinoptions+=N-s " Don't indent inside namespace.
