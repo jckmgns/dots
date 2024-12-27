@@ -105,9 +105,6 @@ set wildmenu " enhanced command-line completion
 
 set cursorline " highlight the screen line of the cursor
 
-set colorcolumn=101
-highlight colorcolumn ctermbg=darkgray
-
 " Status line
 set laststatus=2 " always show status line
 
