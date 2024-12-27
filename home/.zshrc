@@ -152,10 +152,10 @@ fi
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
-export FZF_DEFAULT_COMMAND='fd --files'
+export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_DEFAULT_OPTS='--no-color --reverse --height 50%'
 
-export FZF_CTRL_T_COMMAND='fd --files'
+export FZF_CTRL_T_COMMAND='fd --type file'
 export FZF_CTRL_T_OPTS='--preview "head --lines 100 {}"'
 
 # Plugins
