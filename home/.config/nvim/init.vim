@@ -101,7 +101,7 @@ colorscheme vellum
 set number relativenumber " show hybrid line numbers
 
 set linebreak " Visually wraps long lines at characters defined in 'breakat'.
-+set showbreak=>\  " String to put at the start of wrapped lines (the backslash escapes a trailing space).
+set showbreak=>\  " String to put at the start of wrapped lines (the backslash escapes a trailing space).
 
 set wildmenu " enhanced command-line completion
 
