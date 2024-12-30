@@ -60,7 +60,6 @@ set cinoptions+=N-s " Don't indent inside namespace.
 " ==============================
 
 " Sneak
-let g:sneak#label = 1 " label-mode as a replacement for easy motion.
 let g:sneak#use_ic_scs = 1 " use 'ignorecase' and 'smartcase' to determine case sensitivity
 
 " Gitgutter
