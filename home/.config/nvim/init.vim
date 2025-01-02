@@ -53,8 +53,10 @@ autocmd BufRead,BufNewFile *.glsl set filetype=c
 autocmd FileType c    setlocal commentstring=//\ %s
 autocmd FileType cpp  setlocal commentstring=//\ %s
 
-set cinoptions+=L0  " Don't indent labels, so the cursor doesn't jump when typing namespace colons.
-set cinoptions+=N-s " Don't indent inside namespace.
+set cinoptions+=L0     " Don't indent labels (added so the cursor doesn't jump for namespace colons).
+set cinoptions+=N-s    " Don't indent inside namespace.
+
+let c_no_curly_error=1 " Don't highlight {} inside () as an error (added for compound literals).
 
 " Plugins
 " ==============================
