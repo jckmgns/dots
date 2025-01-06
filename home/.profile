@@ -10,6 +10,10 @@ export EDITOR="nvim"
 export PATH="$HOME/.cargo/bin:$PATH"
 export CARGO_HOME="$HOME/.cargo"
 
+# c/c++
+export CC=clang
+export CXX=clang
+
 # change shell to zsh
 export SHELL=$(which zsh)
 
