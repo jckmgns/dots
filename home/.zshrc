@@ -156,7 +156,7 @@ export FZF_DEFAULT_COMMAND='fd --type file'
 export FZF_DEFAULT_OPTS='--no-color --reverse --height 50%'
 
 export FZF_CTRL_T_COMMAND='fd --type file'
-export FZF_CTRL_T_OPTS='--preview "head --lines 100 {}"'
+export FZF_CTRL_T_OPTS='--no-preview'
 
 # Plugins
 # ------------------------------
