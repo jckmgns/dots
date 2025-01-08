@@ -1,1 +1,2 @@
+--recurse=yes
 --kinds-c=+{prototype}

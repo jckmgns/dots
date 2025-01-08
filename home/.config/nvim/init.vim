@@ -76,6 +76,9 @@ runtime! macros/matchit.vim " extended % matching for HTML, LaTeX, and more ...
 " Netrw
 let g:netrw_banner = 0
 
+" ctags
+autocmd BufWritePost *.c,*.h silent! !ctags . &
+
 " General
 " ==============================
 
