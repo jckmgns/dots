@@ -157,8 +157,8 @@ set backupdir=$HOME/.local/share/backup//
 
 " Fzf
 nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>f :Files<CR>
-nnoremap <Leader>t :Tags<CR>
+nnoremap <Leader>t :Files<CR>
+nnoremap <Leader>a :Tags<CR>
 
 " Easy align
 xmap ga <Plug>(EasyAlign)
