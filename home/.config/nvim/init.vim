@@ -184,8 +184,3 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " add "il" as operator for whole line.
 onoremap <silent> il :<C-u>normal! $v0<CR>
 xnoremap <silent> il :<C-u>normal! $v0<CR>
-
-" Abbreviations
-" ==============================
-
-iabbrev <expr> $# strftime('%Y-%m-%d')
