@@ -58,27 +58,6 @@ set cinoptions+=N-s    " Don't indent inside namespace.
 
 let c_no_curly_error=1 " Don't highlight {} inside () as an error (added for compound literals).
 
-" Plugins
-" ==============================
-
-" Sneak
-let g:sneak#use_ic_scs = 1 " use 'ignorecase' and 'smartcase' to determine case sensitivity
-
-" Gitgutter
-set updatetime=500
-
-" Internal / Shipped Plugins
-" ==============================
-
-" Matchit
-runtime! macros/matchit.vim " extended % matching for HTML, LaTeX, and more ...
-
-" Netrw
-let g:netrw_banner = 0
-
-" ctags
-autocmd BufWritePost *.c,*.h silent! !ctags . &
-
 " General
 " ==============================
 
@@ -100,7 +79,6 @@ syntax enable
 set termguicolors " enable true color support
 
 set background=light
-let g:vellum#monochrome=1
 colorscheme vellum
 
 set number relativenumber " show hybrid line numbers
@@ -151,24 +129,35 @@ if !isdirectory("$HOME/.local/share/backup")
 endif
 set backupdir=$HOME/.local/share/backup//
 
+" Plugins
+" ==============================
+" Sneak
+let g:sneak#use_ic_scs = 1 " use 'ignorecase' and 'smartcase' to determine case sensitivity
+
+" Gitgutter
+set updatetime=500
+
+" Internal / Shipped Plugins
+" ==============================
+
+" Matchit
+runtime! macros/matchit.vim " extended % matching for HTML, LaTeX, and more ...
+
+" Netrw
+let g:netrw_banner = 0
+
+" ctags
+autocmd BufWritePost *.c,*.h silent! !ctags . &
+
 " ------------------------------------------------------------
 " KEY MAPPINGS
 " ------------------------------------------------------------
 
-" Plugins
-" ==============================
-
-" Fzf
-nnoremap <Leader>b :Buffers<CR>
-nnoremap <Leader>t :Files<CR>
-nnoremap <Leader>a :Tags<CR>
-
-" Easy align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
 " General
 " ==============================
+
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " move vertically by visual line
 nnoremap j gj
@@ -184,3 +173,15 @@ nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 " add "il" as operator for whole line.
 onoremap <silent> il :<C-u>normal! $v0<CR>
 xnoremap <silent> il :<C-u>normal! $v0<CR>
+
+" Plugins
+" ==============================
+
+" Fzf
+nnoremap <Leader>b :Buffers<CR>
+nnoremap <Leader>f :Files<CR>
+nnoremap <Leader>t :Tags<CR>
+
+" Easy align
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
