@@ -20,7 +20,7 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 
 " Motion
-Plug 'justinmk/vim-sneak'
+Plug 'ggandor/leap.nvim'
 
 " Searching
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -131,8 +131,10 @@ set backupdir=$HOME/.local/share/backup//
 
 " Plugins
 " ==============================
-" Sneak
-let g:sneak#use_ic_scs = 1 " use 'ignorecase' and 'smartcase' to determine case sensitivity
+
+" leap.nvim
+lua require('leap').create_default_mappings()
+lua require('leap.user').set_repeat_keys('<enter>', '<backspace>')
 
 " Gitgutter
 set updatetime=500
