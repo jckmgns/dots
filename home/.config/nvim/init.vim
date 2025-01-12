@@ -122,7 +122,6 @@ set inccommand=nosplit " Show effects of a command (e.g. replace) incrementally.
 
 " leap.nvim
 lua require('leap').create_default_mappings()
-lua require('leap.user').set_repeat_keys(';', ',')
 
 " mini.vim
 lua require('mini.align').setup()
