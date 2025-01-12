@@ -11,6 +11,9 @@ call plug#begin('$HOME/.local/share/nvim/plugged')
 
 " --------------------------------
 
+" XML/HTML
+Plug 'othree/xml.vim'
+
 " Git
 Plug 'airblade/vim-gitgutter'
 
