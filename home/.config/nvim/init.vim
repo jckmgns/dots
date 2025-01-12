@@ -188,12 +188,12 @@ function! ClearTrailingWhitespace()
     let l:position = winsaveview()
     :silent! keeppatterns %s/\s\+$//
     call winrestview(l:position)
-endfun
+endfunction
 command! ClearTrailingWhitespace call ClearTrailingWhitespace()
 
 " Show the name of the syntax group for the character under the cursor.
 function! ShowSyntaxGroup()
     let l:s = synID(line('.'), col('.'), 1)
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-endfun
+endfunction
 command! ShowSyntaxGroup call ShowSyntaxGroup()
