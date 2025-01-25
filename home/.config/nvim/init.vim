@@ -162,6 +162,9 @@ let mapleader=" "
 " Unmap mark, since 'm' is used for mini.surround.
 map m <Nop>
 
+" Add a fallback mapping for mark (contains a trailing space).
+nnoremap mm :mark 
+
 " Move by visual line.
 nnoremap j gj
 nnoremap k gk
