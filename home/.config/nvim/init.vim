@@ -205,3 +205,11 @@ function! ShowSyntaxGroup()
     echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
 endfunction
 command! ShowSyntaxGroup call ShowSyntaxGroup()
+
+" ================ PROGRAMS ================
+
+" grepprg
+if executable('ugrep')
+    set grepprg=ugrep\ -RInk\ -j\ -u\ --tabs=1\ --ignore-files
+    set grepformat=%f:%l:%c:%m,%f+%l+%c+%m,%-G%f\\\|%l\\\|%c\\\|%m
+endif
