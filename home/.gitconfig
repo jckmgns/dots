@@ -10,6 +10,7 @@
 	cp = cherry-pick
     blc = blame -CCC -M -w
     co = checkout
+    cdf = clean -df
     dfh = diff HEAD~
     la = log --all --decorate --oneline --graph
     lg = log --decorate --oneline --graph
