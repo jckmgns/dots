@@ -213,3 +213,15 @@ if executable('ugrep')
     set grepprg=ugrep\ -RInk\ -j\ -u\ --tabs=1\ --ignore-files
     set grepformat=%f:%l:%c:%m,%f+%l+%c+%m,%-G%f\\\|%l\\\|%c\\\|%m
 endif
+
+" ================ NEOVIDE ================
+
+if exists("g:neovide")
+    set guifont=monospace:h12
+
+    let g:neovide_scroll_animation_length   = 0.2
+    let g:neovide_position_animation_length = 0
+
+    let g:neovide_cursor_animation_length = 0.06
+    let g:neovide_cursor_trail_size       = 0.6
+endif
