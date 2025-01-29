@@ -65,7 +65,7 @@ set ttimeoutlen=10 " Time that is waited for a key code sequence.
 
 set autoread " Autoload file changes.
 
-set formatoptions-=o " Disable automatic comment leader insertion when hitting 'o'.
+set formatoptions+=o/ " Insert a comment leader only when // is at the start of the line.
 
 " ==== User Interface ====
 
