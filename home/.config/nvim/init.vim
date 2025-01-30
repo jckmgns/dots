@@ -217,7 +217,7 @@ endif
 " ================ NEOVIDE ================
 
 if exists("g:neovide")
-    set guifont=monospace:h12
+    set guifont=monospace:h13.5
 
     let g:neovide_scroll_animation_length   = 0.2
     let g:neovide_position_animation_length = 0

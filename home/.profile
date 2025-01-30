@@ -6,6 +6,9 @@ export PATH="$HOME/.local/bin:$PATH"
 export VISUAL="nvim"
 export EDITOR="nvim"
 
+# Fix for font scaling of applications based on winit (e.g., Neovide).
+export WINIT_X11_SCALE_FACTOR=1
+
 # rust
 export PATH="$HOME/.cargo/bin:$PATH"
 export CARGO_HOME="$HOME/.cargo"
